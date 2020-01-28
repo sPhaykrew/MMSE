@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rmutt.mmse">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".history"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Start_Test"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Question_list"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_2_1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_2_2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_3"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_4_1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_4_2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_5"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_6"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_7"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_8"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_9"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".No_9_show_message"
+            android:screenOrientation="landscape" />
+        <activity android:name=".No_10"
+            android:screenOrientation="portrait"
+            android:requestLegacyExternalStorage="true"/>
+        <activity android:name=".No_11"
+            android:screenOrientation="portrait"
+            android:requestLegacyExternalStorage="true"/>
+        <activity
+            android:name=".No_11_show_message"
+            android:screenOrientation="landscape" />
+    </application>
+
+</manifest>

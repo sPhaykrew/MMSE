@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/logout"
+        android:title="ออกจากระบบ">
+    </item>
+
+    <item android:id="@+id/import_patient"
+        android:title="นำเข้าผู้ป่วย">
+    </item>
+
+    <item android:id="@+id/add_patient"
+        android:title="เพิ่มผู้ป่วย">
+    </item>
+
+    <item android:id="@+id/google_drive"
+        android:title="ล็อคอินกูเกิลไดรฟ์">
+    </item>
+
+</menu>

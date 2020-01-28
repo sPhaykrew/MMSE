@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ออกจากแบบทดสอบ ?"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_gravity="start|top"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ต้องการออกจากแบบทดสอบใช่หรือไม่ แบบทดสอบหน้าปัจจุบันจะไม่ถูกบันทึก\n"
+            android:textSize="16dp"
+            android:layout_gravity="start|top"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:theme="@style/Back_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ยกเลิก"
+            android:id="@+id/cancel"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:theme="@style/Back_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ยืนยัน"
+            android:id="@+id/cf"/>
+
+    </LinearLayout>
+
+</LinearLayout>
