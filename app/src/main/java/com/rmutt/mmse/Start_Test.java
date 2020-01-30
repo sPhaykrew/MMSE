@@ -90,6 +90,8 @@ public class Start_Test extends AppCompatActivity {
         edit_name.setText(patient.getName());
         edit_age.setText(String.valueOf(patient.getAge()));
 
+        final Patient_Model patient_model = database.patient(patient_ID);
+
         String sum_date_time;
         if (patient.getTime() == null) {
             ArrayList<String> get_date_time = date_time(); //get real date_time
@@ -232,6 +234,10 @@ public class Start_Test extends AppCompatActivity {
                     } else {
                         database.update_patient(patient_ID,edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),
                                 education,calculate,checktest,where, finalSum_date_time);
+                    }
+
+                    if (patient_model.getStatus().equals("เริ่มทำ")){
+                        database.update_patient_status(patient_ID,"ทำต่อ");
                     }
 
                     Intent intent = new Intent(getApplicationContext(),No_1.class);

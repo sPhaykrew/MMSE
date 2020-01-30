@@ -169,6 +169,7 @@ public class No_11 extends AppCompatActivity {
                     }
                     String path_image = export_image(convertBitmapIntoByteArray());
                     database.update_no11(patient_ID,answer,path_image,sumscore);
+                    database.update_patient_status(patient_ID,"พร้อมส่ง");
 
                     Intent go_finish = new Intent(getApplicationContext(),Question_list.class);
                     startActivity(go_finish);

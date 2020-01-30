@@ -98,6 +98,23 @@ public class No_5 extends AppCompatActivity {
         final Patient_Model patient_model = database.patient(patient_ID);
         check_test = patient_model.getCheck_test();
 
+        switch (check_test) {
+            case "ใช่" :
+                textView1.setText("ต้นไม้");
+                textView2.setText("ทะเล");
+                textView3.setText("รถยนต์");
+                break;
+            case "ไม่" :
+                textView1.setText("ดอกไม้");
+                textView2.setText("แม่น้ำ");
+                textView3.setText("รถไฟ");
+                break;
+        }
+
+        edit5_1.setHint("พิมพ์กรณีผิดของ"+textView1.getText());
+        edit5_2.setHint("พิมพ์กรณีผิดของ"+textView2.getText());
+        edit5_3.setHint("พิมพ์กรณีผิดของ"+textView3.getText());
+
         edit5_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
         edit5_2.setFocusable(false);
         edit5_3.setFocusable(false);
@@ -147,19 +164,6 @@ public class No_5 extends AppCompatActivity {
 
             sumscore = Integer.parseInt(get_no5.get(3)); // get ค่า score
 
-        }
-
-        switch (check_test) {
-            case "ใช่" :
-                textView1.setText("ต้นไม้");
-                textView2.setText("ทะเล");
-                textView3.setText("รถยนต์");
-                break;
-            case "ไม่" :
-                textView1.setText("ดอกไม้");
-                textView2.setText("แม่น้ำ");
-                textView3.setText("รถไฟ");
-                break;
         }
 
         radioGroup5_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

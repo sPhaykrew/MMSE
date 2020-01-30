@@ -109,6 +109,8 @@ public class No_8 extends AppCompatActivity {
         ArrayAdapter adapter_place = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,place_list);
         spinner_place.setAdapter(adapter_place);
 
+        question.setText("ฟังดีๆนะเดี๋ยว ผม/ดิฉัน จะส่งกระดาษให้คุณ แล้วคุณ "+patient_model.getName()+" รับด้วยมือขวาพับครึ่งกระดาษ");
+
 //        edit8_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ถูก"
 //        edit8_2.setFocusable(false);
 //        edit8_3.setFocusable(false);
@@ -185,7 +187,7 @@ public class No_8 extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 check_spinner = spinner_place.getSelectedItem().toString();
-                question3.setText("วางไว้ที่ " + spinner_place.getSelectedItem().toString());
+                question3.setText("วางไว้ที่" + spinner_place.getSelectedItem().toString());
             }
 
             @Override

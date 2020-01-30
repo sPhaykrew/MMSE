@@ -51,7 +51,7 @@ public class Database extends SQLiteAssetHelper {
             switch (model.getStatus()){
                 case "เริ่มทำ" : model.setStatus_color(Color.parseColor("#EB5757")); break;
                 case "ทำต่อ" : model.setStatus_color(Color.parseColor("#F2EB4C")); break;
-                case "ส่งแล้ว" : model.setStatus_color(Color.parseColor("#27AE60")); break;
+                case "พร้อมส่ง" : model.setStatus_color(Color.parseColor("#27AE60")); break;
             }
             patient_models.add(model);
             cursor.moveToNext();
@@ -80,7 +80,7 @@ public class Database extends SQLiteAssetHelper {
             switch (model.getStatus()){
                 case "เริ่มทำ" : model.setStatus_color(Color.parseColor("#EB5757")); break;
                 case "ทำต่อ" : model.setStatus_color(Color.parseColor("#F2EB4C")); break;
-                case "ส่งแล้ว" : model.setStatus_color(Color.parseColor("#27AE60")); break;
+                case "พร้อมส่ง" : model.setStatus_color(Color.parseColor("#27AE60")); break;
             }
             cursor.moveToNext();
         }
@@ -99,6 +99,14 @@ public class Database extends SQLiteAssetHelper {
         Val.put("check_test",check_test);
         Val.put("where_",where);
         Val.put("time",time);
+        db.update("Patient",Val, "patient_ID=" + patient_ID, null);
+        db.close();
+    }
+
+    public void update_patient_status (String patient_ID,String status){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues Val = new ContentValues();
+        Val.put("status",status);
         db.update("Patient",Val, "patient_ID=" + patient_ID, null);
         db.close();
     }

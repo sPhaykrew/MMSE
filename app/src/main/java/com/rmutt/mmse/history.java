@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -64,7 +66,7 @@ public class history extends AppCompatActivity {
         switch (patient.getStatus()){
             case "เริ่มทำ" : history_button.setText("เริ่มทำ"); break;
             case "ทำต่อ" : history_button.setText("ทำต่อ"); break;
-            case "ส่งแล้ว" : history_button.setText("ส่งข้อมูล"); break;
+            case "พร้อมส่ง" : history_button.setText("ส่งข้อมูล"); break;
         }
 
         history_button.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +83,9 @@ public class history extends AppCompatActivity {
                         startActivity(go_QuestionList);
                         finish();
                         break;
-                    case "ส่งแล้ว" : break;
+                    case "พร้อมส่ง" :
+                        Toast.makeText(getApplicationContext(),"ส่งแล้ว",Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         });

@@ -103,6 +103,23 @@ public class No_3 extends AppCompatActivity {
         question.setText("ขอให้คุณ "+ patient_model.getName() + " โปรดตั้งใจฟังให้ดีเพราะจะบอกเพียงครั่งเดียวไม่มีการบอกซ้ำอีกเมื่อ ผม/ดิฉันพูดจบให้คุณ " + patient_model.getName()
         + " พูดทบทวนตามที่ได้ยิน ให้ครบทั้ง 3 ชื่อแล้วพยายามจำไว้ให้ดีเดี่ยว ผม/ดิฉัน จะถามซ้ำ");
 
+        switch (check_test) {
+            case "ใช่" :
+                textView1.setText("ต้นไม้");
+                textView2.setText("ทะเล");
+                textView3.setText("รถยนต์");
+                break;
+            case "ไม่" :
+                textView1.setText("ดอกไม้");
+                textView2.setText("แม่น้ำ");
+                textView3.setText("รถไฟ");
+                break;
+        }
+
+        edit3_1.setHint("พิมพ์กรณีผิดของ"+textView1.getText());
+        edit3_2.setHint("พิมพ์กรณีผิดของ"+textView2.getText());
+        edit3_3.setHint("พิมพ์กรณีผิดของ"+textView3.getText());
+
         edit3_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
         edit3_2.setFocusable(false);
         edit3_3.setFocusable(false);
@@ -152,19 +169,6 @@ public class No_3 extends AppCompatActivity {
 
             sumscore = Integer.parseInt(get_no3.get(3)); // get ค่า score
 
-        }
-
-        switch (check_test) {
-            case "ใช่" :
-                textView1.setText("ต้นไม้");
-                textView2.setText("ทะเล");
-                textView3.setText("รถยนต์");
-                break;
-            case "ไม่" :
-                textView1.setText("ดอกไม้");
-                textView2.setText("แม่น้ำ");
-                textView3.setText("รถไฟ");
-                break;
         }
 
         radioGroup3_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
