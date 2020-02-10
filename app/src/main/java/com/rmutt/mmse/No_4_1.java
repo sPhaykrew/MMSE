@@ -83,19 +83,19 @@ public class No_4_1 extends AppCompatActivity {
             Split split = new Split();
 
             edit4_1.setText(split.get_answer(get_no4.get(0)));
-            edit4_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit4_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit4_2.setText(split.get_answer(get_no4.get(1)));
-            edit4_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit4_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit4_3.setText(split.get_answer(get_no4.get(2)));
-            edit4_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit4_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit4_4.setText(split.get_answer(get_no4.get(3)));
-            edit4_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit4_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit4_5.setText(split.get_answer(get_no4.get(3)));
-            edit4_5.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit4_5.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             get_EditText1 = get_no4.get(0);

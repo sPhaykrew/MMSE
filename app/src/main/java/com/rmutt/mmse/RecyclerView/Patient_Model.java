@@ -2,7 +2,7 @@ package com.rmutt.mmse.RecyclerView;
 
 public class Patient_Model {
 
-    private String patient_ID,status,time,name,education,calculate,check_test,where;
+    private String patient_ID,status,time,name,education,calculate,check_test,where,patient_PK;
     private int age,status_color;
 
     public String getPatient_ID() {
@@ -83,5 +83,13 @@ public class Patient_Model {
 
     public void setWhere(String where) {
         this.where = where;
+    }
+
+    public String getPatient_PK() {
+        return patient_PK;
+    }
+
+    public void setPatient_PK(String patient_PK) {
+        this.patient_PK = patient_PK;
     }
 }

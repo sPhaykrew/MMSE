@@ -27,8 +27,9 @@ public class Login extends AppCompatActivity {
         Button CF = findViewById(R.id.CF);
         final EditText mmse_ID = findViewById(R.id.mmse_id);
 
-        isReadStoragePermissionGranted();
-        isWriteStoragePermissionGranted();
+        //isReadStoragePermissionGranted();
+
+        final boolean ss = isWriteStoragePermissionGranted();
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sp.edit();
@@ -54,7 +55,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    public  boolean isReadStoragePermissionGranted() {
+    public  boolean isReadStoragePermissionGranted() { //ต้องขอทีละ permission
         String TAG = "Permission";
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -74,7 +75,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public  boolean isWriteStoragePermissionGranted() {
+    public  boolean isWriteStoragePermissionGranted() { //ต้องขอทีละ permission
         String TAG = "Permission";
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)

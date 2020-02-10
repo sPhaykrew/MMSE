@@ -143,17 +143,17 @@ public class No_8 extends AppCompatActivity {
                 edit8_3.setText(split.get_answer(get_no8.get(2)));
             }
 
-            for (int i = 0; i < radioGroup8_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup8_1.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup8_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup8_2.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup8_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup8_3.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup8_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup8_1.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup8_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup8_2.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup8_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup8_3.getChildAt(i).setEnabled(false);
+//            }
 
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
@@ -177,7 +177,7 @@ public class No_8 extends AppCompatActivity {
                 }
             }
             spinner_place.setSelection(place_position); // set season select
-            spinner_place.setEnabled(false);
+            //spinner_place.setEnabled(false);
 
             sumscore = Integer.parseInt(get_no8.get(4)); // get ค่า score
 
@@ -211,6 +211,10 @@ public class No_8 extends AppCompatActivity {
                         {
                             sumscore = sumscore - 1;
                         }
+
+                        if (edit8_1.getText().toString().equals("รับด้วยมือขวา")){
+                            edit8_1.setText("");
+                        }
                         checkradio8_1 = "wrong";
                         break;
                 }
@@ -232,6 +236,10 @@ public class No_8 extends AppCompatActivity {
                         {
                             sumscore = sumscore - 1;
                         }
+
+                        if (edit8_2.getText().toString().equals("พับครึ่ง")){
+                            edit8_2.setText("");
+                        }
                         checkradio8_2 = "wrong";
                         break;
                 }
@@ -252,6 +260,10 @@ public class No_8 extends AppCompatActivity {
                         if (checkradio8_3.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit8_3.getText().toString().equals(question3.getText().toString())){
+                            edit8_3.setText("");
                         }
                         checkradio8_3 = "wrong";
                         break;

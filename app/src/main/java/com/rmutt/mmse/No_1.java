@@ -87,7 +87,7 @@ public class No_1 extends AppCompatActivity {
         });
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
         radioGroup1_1 = findViewById(R.id.radiogroup1_1);
@@ -108,7 +108,7 @@ public class No_1 extends AppCompatActivity {
         spinner_season.setAdapter(adapter_season);
 
         //ถ้าเคยทำไว้แล้วจะ set ตำคอบไว้กับปิดไม่ให้แก้ไข
-        ArrayList<String> get_no1 = database.get_no1(patient_ID);
+        ArrayList<String> get_no1 = database.get_no1(patient_PK);
         if (get_no1.get(0) != null){
             Split split = new Split();
 
@@ -144,37 +144,37 @@ public class No_1 extends AppCompatActivity {
                 checkradio1_5 = "wrong";
             }
 
-            for (int i = 0; i < radioGroup1_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup1_1.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup1_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup1_2.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup1_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup1_3.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup1_4.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup1_4.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup1_5.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup1_5.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup1_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup1_1.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup1_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup1_2.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup1_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup1_3.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup1_4.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup1_4.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup1_5.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup1_5.getChildAt(i).setEnabled(false);
+//            }
 
             edit1_1.setText(split.get_answer(get_no1.get(0)));
-            edit1_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit1_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit1_2.setText(split.get_answer(get_no1.get(1)));
-            edit1_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit1_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit1_3.setText(split.get_answer(get_no1.get(2)));
-            edit1_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit1_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit1_4.setText(split.get_answer(get_no1.get(3)));
-            edit1_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit1_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             if (get_no1.get(4) != null) { //หาค่า position ของ season
                 switch (split.get_answer(get_no1.get(4))) {
@@ -190,7 +190,7 @@ public class No_1 extends AppCompatActivity {
                 }
             }
             spinner_season.setSelection(season_position); // set season select
-            spinner_season.setEnabled(false);
+            //spinner_season.setEnabled(false);
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             get_EditText1 = get_no1.get(0);
@@ -211,7 +211,7 @@ public class No_1 extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.radio1_1_correct :
                         edit1_1.setText(get_date_time.get(0).toString());
-                        edit1_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+                        //edit1_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
                         checkradio1_1 = "correct";
                         sumscore = sumscore + 1;
                         break;
@@ -221,6 +221,11 @@ public class No_1 extends AppCompatActivity {
                         if (checkradio1_1.equals("correct")) {
                             sumscore = sumscore - 1;
                         }
+
+                        if(edit1_1.getText().toString().equals(get_date_time.get(0).toString())){
+                            edit1_1.setText("");
+                        }
+
                         checkradio1_1 = "wrong";
                         break;
                 }
@@ -233,7 +238,7 @@ public class No_1 extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.radio1_2_correct :
                         edit1_2.setText(get_date_time.get(1).toString());
-                        edit1_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+                        //edit1_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
                         checkradio1_2 = "correct";
                         sumscore = sumscore + 1;
                         break;
@@ -242,6 +247,10 @@ public class No_1 extends AppCompatActivity {
                         edit1_2.setFocusableInTouchMode(true); // เปิดให้ผู้ใช้แก้ไข edit text ได้
                         if (checkradio1_2.equals("correct")) {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit1_2.getText().toString().equals(get_date_time.get(1).toString())){
+                            edit1_2.setText("");
                         }
                         checkradio1_2 = "wrong";
                         break;
@@ -255,7 +264,7 @@ public class No_1 extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.radio1_3_correct :
                         edit1_3.setText(get_date_time.get(2).toString());
-                        edit1_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+                        //edit1_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
                         checkradio1_3 = "correct";
                         sumscore = sumscore + 1;
                         break;
@@ -264,6 +273,10 @@ public class No_1 extends AppCompatActivity {
                         edit1_3.setFocusableInTouchMode(true); // เปิดให้ผู้ใช้แก้ไข edit text ได้
                         if (checkradio1_3.equals("correct")) {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit1_3.getText().toString().equals(get_date_time.get(2).toString())){
+                            edit1_3.setText("");
                         }
                         checkradio1_3 = "wrong";
                         break;
@@ -277,7 +290,7 @@ public class No_1 extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.radio1_4_correct :
                         edit1_4.setText(get_date_time.get(3).toString());
-                        edit1_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+                        //edit1_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
                         checkradio1_4= "correct";
                         sumscore = sumscore + 1;
                         break;
@@ -286,6 +299,9 @@ public class No_1 extends AppCompatActivity {
                         edit1_4.setFocusableInTouchMode(true); // เปิดให้ผู้ใช้แก้ไข edit text ได้
                         if (checkradio1_4.equals("correct")) {
                             sumscore = sumscore - 1;
+                        }
+                        if (edit1_4.getText().toString().equals(get_date_time.get(3).toString())){
+                            edit1_4.setText("");
                         }
                         checkradio1_4 = "wrong";
                         break;
@@ -368,8 +384,8 @@ public class No_1 extends AppCompatActivity {
                         season = spinner_season.getSelectedItem().toString() + "_ผิด";
                     }
 
-                    database.update_no1(patient_ID, get_EditText1, get_EditText2, get_EditText3, get_EditText4,season,sumscore);
-                    Patient_Model patient_models = database.patient(patient_ID);
+                    database.update_no1(patient_PK, get_EditText1, get_EditText2, get_EditText3, get_EditText4,season,sumscore);
+                    Patient_Model patient_models = database.patient(patient_PK);
 
                     if (patient_models.getWhere().equals("โรงพยาบาล"))
                     {

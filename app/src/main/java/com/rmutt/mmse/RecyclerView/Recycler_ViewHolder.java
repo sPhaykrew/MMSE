@@ -1,6 +1,7 @@
 package com.rmutt.mmse.RecyclerView;
 
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class Recycler_ViewHolder extends RecyclerView.ViewHolder implements View
     LinearLayout status_corlor;
     CardView cardView;
     RecyclerClick itemClick;
+    ImageButton imageButton;
 
     Recycler_ViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -25,6 +27,7 @@ public class Recycler_ViewHolder extends RecyclerView.ViewHolder implements View
         time = itemView.findViewById(R.id.time);
         status_corlor = itemView.findViewById(R.id.color_status);
         cardView = itemView.findViewById(R.id.card_recycler);
+        imageButton = itemView.findViewById(R.id.delete);
 
         itemView.setOnClickListener(this);
 

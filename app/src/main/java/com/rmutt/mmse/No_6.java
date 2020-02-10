@@ -107,13 +107,13 @@ public class No_6 extends AppCompatActivity {
                 edit6_2.setText(split.get_answer(get_no6.get(1)));
             }
 
-            for (int i = 0; i < radioGroup6_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup6_1.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup6_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup6_2.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup6_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup6_1.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup6_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup6_2.getChildAt(i).setEnabled(false);
+//            }
 
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
@@ -139,6 +139,10 @@ public class No_6 extends AppCompatActivity {
                         {
                             sumscore = sumscore - 1;
                         }
+
+                        if (edit6_1.getText().toString().equals("ดินสอ")){
+                            edit6_1.setText("");
+                        }
                         checkradio6_1 = "wrong";
                         break;
                 }
@@ -159,6 +163,10 @@ public class No_6 extends AppCompatActivity {
                         if (checkradio6_2.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit6_2.getText().toString().equals("นาฬิกา")){
+                            edit6_2.setText("");
                         }
                         checkradio6_2 = "wrong";
                         break;

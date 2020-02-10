@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -50,7 +51,7 @@ public class history extends AppCompatActivity {
         history_button = findViewById(R.id.history_button);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        String ID = sp.getString("Patient_ID", "null");
+        String ID = sp.getString("Patient_PK", "null");
 
         Database database = new Database(getApplicationContext());
         final Patient_Model patient = database.patient(ID);

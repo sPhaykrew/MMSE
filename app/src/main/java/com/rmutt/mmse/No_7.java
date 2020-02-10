@@ -106,7 +106,7 @@ public class No_7 extends AppCompatActivity {
                 radioGroup7_1.getChildAt(i).setEnabled(false);
             }
 
-            edit7_1.setFocusable(false);
+            //edit7_1.setFocusable(false); //ปิดไม่ให้แก้ไขได้
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             get_EditText1 = get_no7.get(0);
@@ -128,6 +128,10 @@ public class No_7 extends AppCompatActivity {
                         if (checkradio7_1.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit7_1.getText().toString().equals("ใครใคร่ขายไข่ไก่")){
+                            edit7_1.setText("");
                         }
                         checkradio7_1 = "wrong";
                         break;

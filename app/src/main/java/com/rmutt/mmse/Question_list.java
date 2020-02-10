@@ -3,18 +3,22 @@ package com.rmutt.mmse;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.CompoundButtonCompat;
 
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 
@@ -23,8 +27,10 @@ import java.util.ArrayList;
 public class Question_list extends AppCompatActivity {
 
     CheckBox no1,no2,no3,no4,no5,no6,no7,no8,no9,no10,no11;
+    LinearLayout question_1,question_2,question_3,question_4,question_5,question_6,question_7,question_8,question_9,question_10,question_11;
     Button next;
     ArrayList<String> get_no1,get_no2,get_no3,get_no4,get_no5,get_no6,get_no7,get_no8,get_no9,get_no10,get_no11;
+    TextView no4_text_1,no4_text_2,no9_text_1,no9_text_2,no10_text_1,no10_text_2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,6 +63,25 @@ public class Question_list extends AppCompatActivity {
         no10 = findViewById(R.id.no10);
         no11 = findViewById(R.id.no11);
 
+        question_1 = findViewById(R.id.question_1);
+        question_2 = findViewById(R.id.question_2);
+        question_3 = findViewById(R.id.question_3);
+        question_4 = findViewById(R.id.question_4);
+        question_5 = findViewById(R.id.question_5);
+        question_6 = findViewById(R.id.question_6);
+        question_7 = findViewById(R.id.question_7);
+        question_8 = findViewById(R.id.question_8);
+        question_9 = findViewById(R.id.question_9);
+        question_10 = findViewById(R.id.question_10);
+        question_11 = findViewById(R.id.question_11);
+
+        no4_text_1 = findViewById(R.id.no4_text_1);
+        no4_text_2 = findViewById(R.id.no4_text_2);
+        no9_text_1 = findViewById(R.id.no9_text_1);
+        no9_text_2 = findViewById(R.id.no9_text_2);
+        no10_text_1 = findViewById(R.id.no10_text_1);
+        no10_text_2 = findViewById(R.id.no10_text_2);
+
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
         final String patient_id = sp.getString("Patient_ID", "null");
 
@@ -75,11 +100,194 @@ public class Question_list extends AppCompatActivity {
         get_no10 = database.get_no10(patient_id);
         get_no11 = database.get_no11(patient_id);
 
+        if (patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+            int states[][] = {{android.R.attr.state_checked}, {}}; //เปลี่ยนสี checkbox
+            int colors[] = {Color.parseColor("#808080"), Color.parseColor("#808080")};
+
+            no4_text_1.setTextColor(Color.parseColor("#808080"));
+            no4_text_2.setTextColor(Color.parseColor("#808080"));
+            no4_text_2.setText("ทดสอบสมาธิ(ยกเว้น)");
+            CompoundButtonCompat.setButtonTintList(no4, new ColorStateList(states, colors));
+
+            no9_text_1.setTextColor(Color.parseColor("#808080"));
+            no9_text_2.setTextColor(Color.parseColor("#808080"));
+            no9_text_2.setText("ทดสอบการอ่านการเข้าใจความหมาย สามารถทำตามได้(ยกเว้น)");
+            CompoundButtonCompat.setButtonTintList(no9, new ColorStateList(states, colors));
+
+            no10_text_1.setTextColor(Color.parseColor("#808080"));
+            no10_text_2.setTextColor(Color.parseColor("#808080"));
+            no10_text_2.setText("ทดสอบการเขียนภาษาอย่างมีความหมาย(ยกเว้น)");
+            CompoundButtonCompat.setButtonTintList(no10, new ColorStateList(states, colors));
+
+
+        }
+
         final boolean get_check_answer = check_answer();
 
         if (get_check_answer){
             next.setText("ส่งข้อมูล");
         }
+
+        question_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no1.get(0) != null) {
+                    Intent no1 = new Intent(getApplicationContext(),No_1.class);
+                    startActivity(no1);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no2.get(0) != null ){
+                    switch (patient_model.getWhere()){
+                        case "โรงพยาบาล" :
+                            Intent no_2_1 = new Intent(getApplicationContext(),No_2_1.class);
+                            startActivity(no_2_1);
+                            finish();
+                            break;
+                        case "บ้าน" :
+                            Intent no_2_2 = new Intent(getApplicationContext(),No_2_2.class);
+                            startActivity(no_2_2);
+                            finish();
+                            break;
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no3.get(0) != null) {
+                    Intent no3 = new Intent(getApplicationContext(),No_3.class);
+                    startActivity(no3);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no4.get(0) != null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+                    switch (patient_model.getCalculate()){
+                        case "เป็น" :
+                            Intent no4_1 = new Intent(getApplicationContext(),No_4_1.class);
+                            startActivity(no4_1);
+                            finish();
+                            break;
+                        case "ไม่เป็น" :
+                            Intent no4_2 = new Intent(getApplicationContext(),No_4_2.class);
+                            startActivity(no4_2);
+                            finish();
+                            break;
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no5.get(0) != null) {
+                    Intent no5 = new Intent(getApplicationContext(),No_5.class);
+                    startActivity(no5);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no6.get(0) != null) {
+                    Intent no6 = new Intent(getApplicationContext(),No_6.class);
+                    startActivity(no6);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no7.get(0) != null) {
+                    Intent no7 = new Intent(getApplicationContext(),No_7.class);
+                    startActivity(no7);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no8.get(0) != null) {
+                    Intent no8 = new Intent(getApplicationContext(),No_8.class);
+                    startActivity(no8);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no9.get(0) == null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+                    Intent no9 = new Intent(getApplicationContext(),No_9.class);
+                    startActivity(no9);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no10.get(0) == null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+                    Intent no10 = new Intent(getApplicationContext(),No_10.class);
+                    startActivity(no10);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        question_11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (get_no11.get(0) != null) {
+                    Intent no11 = new Intent(getApplicationContext(),No_11.class);
+                    startActivity(no11);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"ยังไม่ได้ทำแบบทดสอบกรุณากดปุ่มถัดไป",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -52,6 +52,8 @@ public class No_10 extends AppCompatActivity {
     int sumscore = 0;
     String checkradio10_1 = "";
     String answer;
+    String mmse_ID;
+    String patient_ID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,8 +66,6 @@ public class No_10 extends AppCompatActivity {
         TextView Title = toolbar.findViewById(R.id.title_sub);
         Title.setText("รายการคำถาม");
         final ImageView back = toolbar.findViewById(R.id.back);
-
-
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +100,8 @@ public class No_10 extends AppCompatActivity {
         radioGroup10_1 = findViewById(R.id.radiogroup10_1);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        patient_ID = sp.getString("Patient_ID", "null");
+        mmse_ID = sp.getString("mmse_ID", "null");
         final Database database = new Database(getApplicationContext());
         Patient_Model patient_model = database.patient(patient_ID);
 
@@ -116,9 +117,9 @@ public class No_10 extends AppCompatActivity {
                 ((RadioButton) radioGroup10_1.getChildAt(1)).setChecked(true);
             }
 
-            for (int i = 0; i < radioGroup10_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup10_1.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup10_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup10_1.getChildAt(i).setEnabled(false);
+//            }
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             answer = get_no10.get(0);
@@ -128,7 +129,7 @@ public class No_10 extends AppCompatActivity {
             bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             take_picture.setImageBitmap(bitmap);
 
-            take_picture.setEnabled(false);
+            //take_picture.setEnabled(false);
         }
 
         radioGroup10_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -243,7 +244,7 @@ public class No_10 extends AppCompatActivity {
             file.canExecute();
         }
         try {
-            file_name = directory_path  + timeStamp + ".jpeg";
+            file_name = directory_path  + mmse_ID+"_"+patient_ID+"_10" + ".jpeg";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data);
             fileOutputStream.close();

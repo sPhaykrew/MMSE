@@ -62,10 +62,10 @@ public class Start_Test extends AppCompatActivity {
         });
 
         final SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String patient_PK = sp.getString("Patient_PK", "null");
 
         final Database database = new Database(this);
-        patient = database.patient(patient_ID);
+        patient = database.patient(patient_PK);
 
         edit_id = findViewById(R.id.edit_ID);
         edit_name = findViewById(R.id.edit_name);
@@ -90,7 +90,7 @@ public class Start_Test extends AppCompatActivity {
         edit_name.setText(patient.getName());
         edit_age.setText(String.valueOf(patient.getAge()));
 
-        final Patient_Model patient_model = database.patient(patient_ID);
+        final Patient_Model patient_model = database.patient(patient_PK);
 
         String sum_date_time;
         if (patient.getTime() == null) {
@@ -100,7 +100,7 @@ public class Start_Test extends AppCompatActivity {
             sum_date_time = patient.getTime(); //get old date_time
         }
 
-        if (!patient_ID.equals("null")){
+        if (!patient_PK.equals("null")){
             edit_id.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
         }
 
@@ -215,12 +215,12 @@ public class Start_Test extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"กรุณากรอกข้อมูลให้ครบ",Toast.LENGTH_SHORT).show();
                 } else {
 
-                    if (patient_ID.equals("null")){
+                    if (patient_PK.equals("null")){
                         database.insert_patient(edit_id.getText().toString(),edit_name.getText().toString(),
                                 Integer.parseInt(edit_age.getText().toString()),education,calculate,checktest
-                                ,where, finalSum_date_time);
+                                ,where, finalSum_date_time,"ทำต่อ");
 
-                        database.insert_patient_id_test(edit_id.getText().toString());
+                        database.insert_patient_id_test(edit_id.getText().toString()); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
 
                         //เวลาเพิ่มผู้ป่วยเอง หน้าต่อไปจะหา patient_id ไม่เจอเลยต้องเคลียแล้วรับค่าจาก edit_id แทนแล้วเซฟใหม่
                         SharedPreferences.Editor editor = sp.edit();
@@ -230,14 +230,14 @@ public class Start_Test extends AppCompatActivity {
 
                         editor.putString("Patient_ID",edit_id.getText().toString());
                         editor.commit();
-
+                        
                     } else {
-                        database.update_patient(patient_ID,edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),
+                        database.update_patient(patient_PK,edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),
                                 education,calculate,checktest,where, finalSum_date_time);
-                    }
 
-                    if (patient_model.getStatus().equals("เริ่มทำ")){
-                        database.update_patient_status(patient_ID,"ทำต่อ");
+                        if (patient_model.getStatus().equals("เริ่มทำ")){
+                            database.update_patient_status(patient_PK,"ทำต่อ");
+                        }
                     }
 
                     Intent intent = new Intent(getApplicationContext(),No_1.class);

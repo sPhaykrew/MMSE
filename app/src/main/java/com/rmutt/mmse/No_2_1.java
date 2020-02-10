@@ -128,40 +128,40 @@ public class No_2_1 extends AppCompatActivity {
                 ((RadioButton)radioGroup2_5.getChildAt(1)).setChecked(true);
             }
 
-            for (int i = 0; i < radioGroup2_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup2_1.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup2_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup2_2.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup2_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup2_3.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup2_4.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup2_4.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup2_5.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup2_5.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup2_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup2_1.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup2_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup2_2.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup2_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup2_3.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup2_4.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup2_4.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup2_5.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup2_5.getChildAt(i).setEnabled(false);
+//            }
 
             edit2_1.setText(split.get_answer(get_no2.get(0)));
-            edit2_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit2_1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit2_2.setText(split.get_answer(get_no2.get(1)));
-            edit2_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit2_2.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit2_3.setText(split.get_answer(get_no2.get(2)));
-            edit2_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit2_3.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit2_4.setText(split.get_answer(get_no2.get(3)));
-            edit2_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit2_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             edit2_5.setText(split.get_answer(get_no2.get(3)));
-            edit2_5.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit2_5.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             get_EditText1 = get_no2.get(0);

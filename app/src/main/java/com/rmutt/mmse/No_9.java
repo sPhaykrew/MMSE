@@ -114,11 +114,11 @@ public class No_9 extends AppCompatActivity {
                 edit9_1.setText(split.get_answer(get_no9.get(0)));
             }
 
-            for (int i = 0; i < radioGroup9_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup9_1.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup9_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup9_1.getChildAt(i).setEnabled(false);
+//            }
 
-            edit9_1.setFocusable(false);
+            //edit9_1.setFocusable(false);
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             get_EditText1 = get_no9.get(0);
@@ -138,6 +138,10 @@ public class No_9 extends AppCompatActivity {
                         if (checkradio9_1.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit9_1.getText().toString().equals("หลับตาได้")){
+                            edit9_1.setText("");
                         }
                         checkradio9_1 = "wrong";
                         break;

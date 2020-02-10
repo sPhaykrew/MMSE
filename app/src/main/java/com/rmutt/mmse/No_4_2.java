@@ -88,7 +88,7 @@ public class No_4_2 extends AppCompatActivity {
         if (get_no4.get(0) != null){
 
             StringBuilder sum_string = new StringBuilder();
-            int get_score =get_no4.size() - 1; //เช็คว่าตำแหน่ง score อยู่ที่ตำแหน่งใด
+            //int get_score =get_no4.size() - 1; //เช็คว่าตำแหน่ง score อยู่ที่ตำแหน่งใด
 
 //            for (int i=0;i<get_score;i++){
 //                sum_string.append(split.get_answer(get_no4.get(i)));
@@ -96,8 +96,9 @@ public class No_4_2 extends AppCompatActivity {
 ////                Log.d("sss",get_no4.get(i));
 //            }
 
-            edit1.setText(get_no4.get(get_score-1));
-            edit1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            //edit1.setText(get_no4.get(get_score-1));
+            edit1.setText(get_no4.get(5));
+            //edit1.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             getAnser1 = get_no4.get(0);
@@ -106,7 +107,8 @@ public class No_4_2 extends AppCompatActivity {
             getAnser4 = get_no4.get(3);
             getAnser5 = get_no4.get(4);
 
-            sumscore = Integer.parseInt(get_no4.get(get_score)); // get ค่า score
+            //sumscore = Integer.parseInt(get_no4.get(get_score)); // get ค่า score
+            sumscore = Integer.parseInt(get_no4.get(6)); // get ค่า score
 
         }
 
@@ -119,6 +121,12 @@ public class No_4_2 extends AppCompatActivity {
                 } else {
                     get_EditText1 = edit1.getText().toString();
                     ArrayList<String> segment = split.segmentation(get_EditText1);
+
+                    int index = 5-segment.size();
+                    for (int i=0;i<index;i++){
+                        segment.add("null");
+                        Log.d("loop", String.valueOf(i));
+                    }
 
                     if (segment.get(0).equals("ว")){
                         getAnser1 = segment.get(0) + "_ถูก";

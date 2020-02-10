@@ -34,7 +34,8 @@ public class Database extends SQLiteAssetHelper {
         ArrayList<Patient_Model> patient_models = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from patient",null);
+        Cursor cursor = db.rawQuery("select patient_ID,name,age,education,calculate,check_test,status,where_,time,patient_PK " +
+                "from patient",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             Patient_Model model = new Patient_Model();
@@ -47,6 +48,7 @@ public class Database extends SQLiteAssetHelper {
             model.setStatus(cursor.getString(6));
             model.setWhere(cursor.getString(7));
             model.setTime(cursor.getString(8));
+            model.setPatient_PK(cursor.getString(9));
 
             switch (model.getStatus()){
                 case "เริ่มทำ" : model.setStatus_color(Color.parseColor("#EB5757")); break;
@@ -60,11 +62,19 @@ public class Database extends SQLiteAssetHelper {
         return patient_models;
     }
 
-    public Patient_Model patient(String patient_id){
+    public void delete_patient (String patient_PK){
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete("test","test_ID = " + patient_PK,null);
+        db.delete("patient","patient_PK = " + patient_PK,null);
+        db.close();
+    }
+
+    public Patient_Model patient(String patient_PK){
         Patient_Model model = new Patient_Model();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from patient where patient_ID = "+patient_id,null);
+        Cursor cursor = db.rawQuery("select patient_ID,name,age,education,calculate,check_test,status,where_,time,Patient_PK " +
+                "from patient where patient_PK = "+patient_PK,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             model.setPatient_ID(cursor.getString(0));
@@ -76,6 +86,7 @@ public class Database extends SQLiteAssetHelper {
             model.setStatus(cursor.getString(6));
             model.setWhere(cursor.getString(7));
             model.setTime(cursor.getString(8));
+            model.setPatient_PK(cursor.getString(9));
 
             switch (model.getStatus()){
                 case "เริ่มทำ" : model.setStatus_color(Color.parseColor("#EB5757")); break;
@@ -88,7 +99,7 @@ public class Database extends SQLiteAssetHelper {
         return model;
     }
 
-    public void update_patient (String patient_ID,String name,int age,String education,String calculate,String check_test
+    public void update_patient (String patient_PK,String name,int age,String education,String calculate,String check_test
     ,String where,String time){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues Val = new ContentValues();
@@ -99,7 +110,7 @@ public class Database extends SQLiteAssetHelper {
         Val.put("check_test",check_test);
         Val.put("where_",where);
         Val.put("time",time);
-        db.update("Patient",Val, "patient_ID=" + patient_ID, null);
+        db.update("Patient",Val, "patient_PK=" + patient_PK, null);
         db.close();
     }
 
@@ -112,7 +123,7 @@ public class Database extends SQLiteAssetHelper {
     }
 
     public void insert_patient (String patient_ID,String name,int age,String education,String calculate,String check_test
-    ,String where,String time){
+    ,String where,String time,String status){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues Val = new ContentValues();
         Val.put("patient_ID",patient_ID);
@@ -121,14 +132,14 @@ public class Database extends SQLiteAssetHelper {
         Val.put("education",education);
         Val.put("calculate",calculate);
         Val.put("check_test",check_test);
-        Val.put("status","ทำต่อ");
+        Val.put("status",status);
         Val.put("where_",where);
         Val.put("time",time);
         db.insert("Patient", null, Val);
         db.close();
     }
 
-    public void update_no1(String patient_ID,String no1_1,String no1_2,String no1_3,String no1_4,String no1_5,int sumscore){
+    public void update_no1(String patient_PK,String no1_1,String no1_2,String no1_3,String no1_4,String no1_5,int sumscore){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues Val = new ContentValues();
         Val.put("no1_1",no1_1);
@@ -137,14 +148,14 @@ public class Database extends SQLiteAssetHelper {
         Val.put("no1_4",no1_4);
         Val.put("no1_5",no1_5);
         Val.put("sum_score1",sumscore);
-        db.update("Test",Val,"patient_ID=" + patient_ID,null);
+        db.update("Test",Val,"test_ID=" + patient_PK,null);
         db.close();
     }
 
-    public ArrayList<String> get_no1(String patient_id){
+    public ArrayList<String> get_no1(String patient_PK){
         ArrayList<String> get_no1 = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select no1_1,no1_2,no1_3,no1_4,no1_5,sum_score1 from Test where patient_ID = " + patient_id,null);
+        Cursor cursor = db.rawQuery("select no1_1,no1_2,no1_3,no1_4,no1_5,sum_score1 from Test where test_ID = " + patient_PK,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             get_no1.add(cursor.getString(0));
@@ -425,6 +436,40 @@ public class Database extends SQLiteAssetHelper {
         }
         db.close();
         return get_no11;
+    }
+
+    public void result_score(int score,String patient_ID){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues Val = new ContentValues();
+        Val.put("result_score",score);
+        db.update("Test",Val,"patient_ID=" + patient_ID,null);
+        db.close();
+    }
+
+    public int get_result_score(String patient_id){
+        int result_score = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select result_score from Test where patient_ID = " + patient_id,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            result_score = cursor.getInt(0);
+            cursor.moveToNext();
+        }
+        db.close();
+        return result_score;
+    }
+
+    public String test_ID(String patient_id){
+        String test_ID = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select test_ID from Test where patient_ID = " + patient_id,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            test_ID = cursor.getString(0);
+            cursor.moveToNext();
+        }
+        db.close();
+        return test_ID;
     }
 
 }

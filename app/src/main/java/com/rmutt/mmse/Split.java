@@ -14,6 +14,11 @@ public class Split {
         }
     }
 
+    public String get_check_answer(String answer){
+        String[] get_check_answer = answer.split("_");
+        return get_check_answer[1];
+    }
+
     public String get_answer(String answer){
         String[] get_anser = answer.split("_");
         return get_anser[0];
@@ -23,5 +28,10 @@ public class Split {
         String[] get_anser = answer.split("(?!^)");
         ArrayList<String> segment = new ArrayList<>(Arrays.asList(get_anser));
         return segment;
+    }
+
+    public String get_nameImage(String pathImage){
+        String[] get_nameImage = pathImage.split("/");
+        return get_nameImage[get_nameImage.length-1];
     }
 }

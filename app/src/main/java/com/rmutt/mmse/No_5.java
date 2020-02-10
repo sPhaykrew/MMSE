@@ -115,9 +115,9 @@ public class No_5 extends AppCompatActivity {
         edit5_2.setHint("พิมพ์กรณีผิดของ"+textView2.getText());
         edit5_3.setHint("พิมพ์กรณีผิดของ"+textView3.getText());
 
-        edit5_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
-        edit5_2.setFocusable(false);
-        edit5_3.setFocusable(false);
+//        edit5_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
+//        edit5_2.setFocusable(false);
+//        edit5_3.setFocusable(false);
 
         //ถ้าเคยทำไว้แล้วจะ set ตำคอบไว้กับปิดไม่ให้แก้ไข
         ArrayList<String> get_no5 = database.get_no5(patient_ID);
@@ -126,6 +126,7 @@ public class No_5 extends AppCompatActivity {
 
             if (split.check_answer(get_no5.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup5_1.getChildAt(0)).setChecked(true);
+                edit5_1.setText(split.get_answer(get_no5.get(0)));
             } else {
                 ((RadioButton) radioGroup5_1.getChildAt(1)).setChecked(true);
                 edit5_1.setText(split.get_answer(get_no5.get(0)));
@@ -133,6 +134,7 @@ public class No_5 extends AppCompatActivity {
 
             if (split.check_answer(get_no5.get(1))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup5_2.getChildAt(0)).setChecked(true);
+                edit5_2.setText(split.get_answer(get_no5.get(1)));
             } else {
                 ((RadioButton) radioGroup5_2.getChildAt(1)).setChecked(true);
                 edit5_2.setText(split.get_answer(get_no5.get(1)));
@@ -140,22 +142,23 @@ public class No_5 extends AppCompatActivity {
 
             if (split.check_answer(get_no5.get(2))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup5_3.getChildAt(0)).setChecked(true);
+                edit5_3.setText(split.get_answer(get_no5.get(2)));
             } else {
                 ((RadioButton) radioGroup5_3.getChildAt(1)).setChecked(true);
                 edit5_3.setText(split.get_answer(get_no5.get(2)));
             }
 
-            for (int i = 0; i < radioGroup5_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup5_1.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup5_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup5_2.getChildAt(i).setEnabled(false);
-            }
-
-            for (int i = 0; i < radioGroup5_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup5_3.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup5_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup5_1.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup5_2.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup5_2.getChildAt(i).setEnabled(false);
+//            }
+//
+//            for (int i = 0; i < radioGroup5_3.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup5_3.getChildAt(i).setEnabled(false);
+//            }
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             get_EditText1 = get_no5.get(0);
@@ -171,15 +174,20 @@ public class No_5 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.radio3_1_correct :
-                        edit5_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
+                        edit5_1.setText(textView1.getText().toString());
+                        //edit5_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
                         checkradio5_1 = "correct";
                         sumscore = sumscore + 1;
                         break;
                     case R.id.radio3_1_wrong :
-                        edit5_1.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
+                        //edit5_1.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
                         if (checkradio5_1.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit5_1.getText().toString().equals(textView1.getText().toString())){
+                            edit5_1.setText("");
                         }
                         checkradio5_1 = "wrong";
                         break;
@@ -192,15 +200,20 @@ public class No_5 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.radio3_2_correct :
-                        edit5_2.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
+                        edit5_2.setText(textView2.getText().toString());
+                        //edit5_2.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
                         checkradio5_2 = "correct";
                         sumscore = sumscore + 1;
                         break;
                     case R.id.radio3_2_wrong :
-                        edit5_2.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
+                        //edit5_2.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
                         if (checkradio5_2.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit5_2.getText().toString().equals(textView2.getText().toString())){
+                            edit5_2.setText("");
                         }
                         checkradio5_2 = "wrong";
                         break;
@@ -213,15 +226,20 @@ public class No_5 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.radio3_3_correct :
-                        edit5_3.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
+                        edit5_3.setText(textView3.getText().toString());
+                        //edit5_3.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ไม่พูด"
                         checkradio5_3 = "correct";
                         sumscore = sumscore + 1;
                         break;
                     case R.id.radio3_3_wrong :
-                        edit5_3.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
+                        //edit5_3.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
                         if (checkradio5_3.equals("correct"))
                         {
                             sumscore = sumscore - 1;
+                        }
+
+                        if (edit5_3.getText().toString().equals(textView3.getText().toString())){
+                            edit5_3.setText("");
                         }
                         checkradio5_3 = "wrong";
                         break;
@@ -264,6 +282,7 @@ public class No_5 extends AppCompatActivity {
 
                     Intent go_no6 = new Intent(getApplicationContext(),No_6.class);
                     startActivity(go_no6);
+                    finish();
 
                 }
             }

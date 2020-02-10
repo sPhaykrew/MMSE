@@ -3,8 +3,9 @@ package com.rmutt.mmse;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,20 +20,27 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.rmutt.mmse.Export_Import.Import_Export;
 
 public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+
+    int import_patient_code = 12;
+    Import_Export Import;
+    String mmse_ID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        Import = new Import_Export(getApplicationContext());
+
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String mmse_ID = sp.getString("mmse_ID", "null");
+        mmse_ID = sp.getString("mmse_ID", "null");
 
         Toolbar toolbar = findViewById(R.id.toolbar_main);
         TextView Title = toolbar.findViewById(R.id.title);
-        Title.setText("หมายเลขอาสาสมัคร "+mmse_ID);
+        Title.setText("หมายเลขอาสา "+mmse_ID);
         ImageView show_menu = toolbar.findViewById(R.id.show_menu);
 
         show_menu.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +103,11 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 return true;
 
             case R.id.import_patient :
-                Toast.makeText(this,"2",Toast.LENGTH_SHORT).show();
+                Intent import_patient = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                import_patient.addCategory(Intent.CATEGORY_OPENABLE);
+                import_patient.setType("text/*");
+                startActivityForResult(import_patient,import_patient_code);
+
                 return true;
 
             case R.id.add_patient :
@@ -110,11 +122,23 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 return true;
 
             case R.id.google_drive :
-                Toast.makeText(this,"4",Toast.LENGTH_SHORT).show();
+                Import_Export import_export = new Import_Export(getApplicationContext());
+                import_export.export_test("6");
+                import_export.export_data("6",mmse_ID,"ssssss");
                 return true;
 
 
             default: return false;
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        assert data != null;
+        String path = String.valueOf(data.getData());
+        Log.e("Pathb", path);
+        Import.import_csv(Uri.parse(path));
+    }
+
 }

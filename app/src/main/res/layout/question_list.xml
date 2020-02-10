@@ -10,264 +10,425 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_1"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. ทดสอบการเรียนรู้เกี่ยวกับเวลาปัจจุบัน"
+            android:text="1. "
             android:textSize="16dp"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบการเรียนรู้เกี่ยวกับเวลาปัจจุบัน"
+            android:textSize="16dp"
+            android:textColor="#000000"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="#53B19D"
             android:id="@+id/no1"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_2"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2. ทดสอบการเรียนรู้เกี่ยวกับที่อยู่ปัจจุบัน"
+            android:text="2. "
+            android:textColor="#000000"
             android:textSize="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบการเรียนรู้เกี่ยวกับที่อยู่ปัจจุบัน"
+            android:textSize="16dp"
+            android:textColor="#000000"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no2"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_3"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3. ทดสอบความจำโดยให้จำชื่อของ 3 อย่าง"
+            android:text="3. "
+            android:textColor="#000000"
             android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบความจำโดยให้จำชื่อของ 3 อย่าง"
+            android:textSize="16dp"
+            android:textColor="#000000"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no3"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_4"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4. ทดสอบสมาธิ"
+            android:id="@+id/no4_text_1"
+            android:text="4. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/no4_text_2"
+            android:text="ทดสอบสมาธิ"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no4"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_5"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5. ทดสอบความจำระยะสั้นของชื่อสิ่งของ 3 อย่างที่ให้จำไว้แล้ว"
+            android:text="5. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบความจำระยะสั้นของชื่อสิ่งของ 3 อย่างที่ให้จำไว้แล้ว"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no5"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_6"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6. ทดสอบการบอกชื่อสิ่งของทีไ่ด้เห็น"
+            android:text="6. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบการบอกชื่อสิ่งของทีไ่ด้เห็น"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no6"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_7"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7. ทดสอบการพูดซ้ำคำที่ได้ยิน"
+            android:text="7. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบการพูดซ้ำคำที่ได้ยิน"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no7"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_8"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8. ทดสอบการเข้าใจความมายและทำตามคำสั่ง"
+            android:text="8. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบการเข้าใจความมายและทำตามคำสั่ง"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no8"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_9"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="9. ทดสอบการอ่านการเข้าใจความหมาย สามารถทำตามได้"
+            android:id="@+id/no9_text_1"
+            android:text="9. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/no9_text_2"
+            android:text="ทดสอบการอ่านการเข้าใจความหมาย สามารถทำตามได้"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no9"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_10"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10. ทดสอบการเขียนภาษาอย่างมีความหมาย"
+            android:id="@+id/no10_text_1"
+            android:text="10. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/no10_text_2"
+            android:text="ทดสอบการเขียนภาษาอย่างมีความหมาย"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no10"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question_11"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11. ทดสอบความสัมพันธ์ตากับมือ"
+            android:text="11. "
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ทดสอบความสัมพันธ์ตากับมือ"
+            android:textColor="#000000"
             android:textSize="16dp"
             android:layout_weight="1"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no11"
+            android:buttonTint="#53B19D"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="center|right" />
 
     </LinearLayout>
 

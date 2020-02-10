@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rmutt.mmse.Database;
 import com.rmutt.mmse.Login;
 import com.rmutt.mmse.R;
 import com.rmutt.mmse.history;
@@ -40,18 +41,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<Recycler_ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Recycler_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final Recycler_ViewHolder holder, final int position) {
+
+        final Database database = new Database(context);
 
         holder.patient_ID.setText(model.get(position).getPatient_ID()); //set data
         holder.status.setText(model.get(position).getStatus());
         holder.time.setText(model.get(position).getTime());
         holder.status_corlor.setBackgroundColor(model.get(position).getStatus_color());
 
+        if (model.get(position).getStatus().equals("พร้อมส่ง")){ //hide button dele if status = พร้อมส่ง
+            holder.imageButton.setVisibility(View.INVISIBLE);
+        }
+
+        holder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                database.delete_patient(model.get(position).getPatient_PK());
+//                removeAt(position);
+                Toast.makeText(context,model.get(position).getPatient_PK(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
         holder.setItemClickListener(new RecyclerClick() {
             @Override
             public void onItemClickListener(View v, int position) {
 
-                String patient_ID = model.get(position).getPatient_ID(); // get ID when click recyclerview
+                String Patient_PK = model.get(position).getPatient_PK(); // get ID when click recyclerview
 
                 SharedPreferences sp = context.getSharedPreferences("Patient", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
@@ -59,7 +75,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<Recycler_ViewHolde
                 editor.clear(); // clear data
                 editor.apply();
 
-                editor.putString("Patient_ID",patient_ID);
+//                Toast.makeText(context,Patient_PK,Toast.LENGTH_SHORT).show();
+
+                editor.putString("Patient_PK",Patient_PK);
                 editor.commit();
 
                 Intent intent = new Intent(context,history.class);
@@ -72,5 +90,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<Recycler_ViewHolde
     @Override
     public int getItemCount() {
         return model.size();
+    }
+
+    public void removeAt(int position) {
+        model.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, model.size());
     }
 }

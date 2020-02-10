@@ -46,6 +46,9 @@ public class No_11 extends AppCompatActivity {
     int sumscore = 0;
     String checkradio11_1 = "";
     String answer;
+    Database database;
+    String patient_ID;
+    String mmse_ID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -94,8 +97,9 @@ public class No_11 extends AppCompatActivity {
         radioGroup11_1 = findViewById(R.id.radiogroup11_1);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
-        final Database database = new Database(getApplicationContext());
+        patient_ID = sp.getString("Patient_ID", "null");
+        mmse_ID = sp.getString("mmse_ID", "null");
+        database = new Database(getApplicationContext());
         final Patient_Model patient_model = database.patient(patient_ID);
 
         show_message.setOnClickListener(new View.OnClickListener() {
@@ -115,9 +119,9 @@ public class No_11 extends AppCompatActivity {
                 ((RadioButton) radioGroup11_1.getChildAt(1)).setChecked(true);
             }
 
-            for (int i = 0; i < radioGroup11_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup11_1.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup11_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup11_1.getChildAt(i).setEnabled(false);
+//            }
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
             answer = get_no11.get(0);
@@ -127,7 +131,7 @@ public class No_11 extends AppCompatActivity {
             bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             take_picture.setImageBitmap(bitmap);
 
-            take_picture.setEnabled(false);
+            //take_picture.setEnabled(false);
         }
 
         radioGroup11_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -170,6 +174,8 @@ public class No_11 extends AppCompatActivity {
                     String path_image = export_image(convertBitmapIntoByteArray());
                     database.update_no11(patient_ID,answer,path_image,sumscore);
                     database.update_patient_status(patient_ID,"พร้อมส่ง");
+
+                    database.result_score(result_score(),patient_ID);
 
                     Intent go_finish = new Intent(getApplicationContext(),Question_list.class);
                     startActivity(go_finish);
@@ -249,7 +255,7 @@ public class No_11 extends AppCompatActivity {
             file.canExecute();
         }
         try {
-            file_name = directory_path  + timeStamp + ".jpeg";
+            file_name = directory_path  + mmse_ID+"_"+patient_ID+"_11" + ".jpeg";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data);
             fileOutputStream.close();
@@ -281,6 +287,36 @@ public class No_11 extends AppCompatActivity {
             }
         });
         dialog_back.show();
+    }
+
+    public int result_score(){
+        int result_score = 0;
+
+        ArrayList<String> no_1 = database.get_no1(patient_ID);
+        ArrayList<String> no_2 = database.get_no2(patient_ID);
+        ArrayList<String> no_3 = database.get_no3(patient_ID);
+        ArrayList<String> no_4 = database.get_no4(patient_ID);
+        ArrayList<String> no_5 = database.get_no5(patient_ID);
+        ArrayList<String> no_6 = database.get_no6(patient_ID);
+        ArrayList<String> no_7 = database.get_no7(patient_ID);
+        ArrayList<String> no_8 = database.get_no8(patient_ID);
+        ArrayList<String> no_9 = database.get_no9(patient_ID);
+        ArrayList<String> no_10 = database.get_no10(patient_ID);
+        ArrayList<String> no_11 = database.get_no11(patient_ID);
+
+        result_score = result_score + Integer.parseInt(no_1.get(5));
+        result_score = result_score + Integer.parseInt(no_2.get(5));
+        result_score = result_score + Integer.parseInt(no_3.get(3));
+        result_score = result_score + Integer.parseInt(no_4.get(6));
+        result_score = result_score + Integer.parseInt(no_5.get(3));
+        result_score = result_score + Integer.parseInt(no_6.get(2));
+        result_score = result_score + Integer.parseInt(no_7.get(1));
+        result_score = result_score + Integer.parseInt(no_8.get(4));
+        result_score = result_score + Integer.parseInt(no_9.get(1));
+        result_score = result_score + Integer.parseInt(no_10.get(2));
+        result_score = result_score + Integer.parseInt(no_11.get(2));
+
+        return result_score;
     }
 
 }
