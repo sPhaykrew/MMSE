@@ -101,9 +101,9 @@ public class No_8 extends AppCompatActivity {
         edit8_3 = findViewById(R.id.edit8_3);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
-        final Patient_Model patient_model = database.patient(patient_ID);
+        final Patient_Model patient_model = database.patient(Patient_PK);
 
         spinner_place = findViewById(R.id.spinner_place);
         ArrayAdapter adapter_place = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,place_list);
@@ -115,7 +115,7 @@ public class No_8 extends AppCompatActivity {
 //        edit8_2.setFocusable(false);
 //        edit8_3.setFocusable(false);
 
-        ArrayList<String> get_no8 = database.get_no8(patient_ID);
+        ArrayList<String> get_no8 = database.get_no8(Patient_PK);
         if (get_no8.get(0) != null){
             Split split = new Split();
 
@@ -302,7 +302,7 @@ public class No_8 extends AppCompatActivity {
                         get_EditText3 = edit8_3.getText() + "_ผิด";
                     }
 
-                    database.update_no8(patient_ID,get_EditText1,get_EditText2,get_EditText3,spinner_place.getSelectedItem().toString(),sumscore);
+                    database.update_no8(Patient_PK,get_EditText1,get_EditText2,get_EditText3,spinner_place.getSelectedItem().toString(),sumscore);
 
                     if (!patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")) {
                         Intent go_no9 = new Intent(getApplicationContext(), No_9.class);

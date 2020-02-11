@@ -84,10 +84,10 @@ public class No_6 extends AppCompatActivity {
 //        edit6_2.setFocusable(false);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
-        ArrayList<String> get_no6 = database.get_no6(patient_ID);
+        ArrayList<String> get_no6 = database.get_no6(Patient_PK);
         if (get_no6.get(0) != null){
             Split split = new Split();
 
@@ -196,7 +196,7 @@ public class No_6 extends AppCompatActivity {
                         get_EditText2 = edit6_2.getText() + "_ผิด";
                     }
 
-                    database.update_no6(patient_ID,get_EditText1,get_EditText2,sumscore);
+                    database.update_no6(Patient_PK,get_EditText1,get_EditText2,sumscore);
 
                     Intent go_no7 = new Intent(getApplicationContext(),No_7.class);
                     startActivity(go_no7);

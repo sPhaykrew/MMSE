@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.CompoundButtonCompat;
 
+import com.rmutt.mmse.Export_Import.Import_Export;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ public class Question_list extends AppCompatActivity {
     Button next;
     ArrayList<String> get_no1,get_no2,get_no3,get_no4,get_no5,get_no6,get_no7,get_no8,get_no9,get_no10,get_no11;
     TextView no4_text_1,no4_text_2,no9_text_1,no9_text_2,no10_text_1,no10_text_2;
+    String mmse_ID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,22 +86,25 @@ public class Question_list extends AppCompatActivity {
         no10_text_2 = findViewById(R.id.no10_text_2);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_id = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
+
+        SharedPreferences mmse_sp = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
+        mmse_ID = mmse_sp.getString("mmse_ID", "null");
 
         Database database = new Database(getApplicationContext());
-        final Patient_Model patient_model = database.patient(patient_id);
+        final Patient_Model patient_model = database.patient(Patient_PK);
 
-        get_no1 = database.get_no1(patient_id);
-        get_no2 = database.get_no2(patient_id);
-        get_no3 = database.get_no3(patient_id);
-        get_no4 = database.get_no4(patient_id);
-        get_no5 = database.get_no5(patient_id);
-        get_no6 = database.get_no6(patient_id);
-        get_no7 = database.get_no7(patient_id);
-        get_no8 = database.get_no8(patient_id);
-        get_no9 = database.get_no9(patient_id);
-        get_no10 = database.get_no10(patient_id);
-        get_no11 = database.get_no11(patient_id);
+        get_no1 = database.get_no1(Patient_PK);
+        get_no2 = database.get_no2(Patient_PK);
+        get_no3 = database.get_no3(Patient_PK);
+        get_no4 = database.get_no4(Patient_PK);
+        get_no5 = database.get_no5(Patient_PK);
+        get_no6 = database.get_no6(Patient_PK);
+        get_no7 = database.get_no7(Patient_PK);
+        get_no8 = database.get_no8(Patient_PK);
+        get_no9 = database.get_no9(Patient_PK);
+        get_no10 = database.get_no10(Patient_PK);
+        get_no11 = database.get_no11(Patient_PK);
 
         if (patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
             int states[][] = {{android.R.attr.state_checked}, {}}; //เปลี่ยนสี checkbox
@@ -294,7 +300,10 @@ public class Question_list extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (get_check_answer){
-                    Toast.makeText(getApplicationContext(),"ส่งข้อมูล",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"ส่งข้อมูล",Toast.LENGTH_SHORT).show();
+                    Import_Export import_export = new Import_Export(getApplicationContext());
+                    import_export.export_test_data(Patient_PK);
+                    import_export.export_patient_data(Patient_PK,mmse_ID);
                 } else {
                     if (get_no1.get(0) == null) {
                         Intent go_no1 = new Intent(getApplicationContext(),No_1.class);
@@ -428,4 +437,5 @@ public class Question_list extends AppCompatActivity {
 
         return check_finish;
     }
+
 }

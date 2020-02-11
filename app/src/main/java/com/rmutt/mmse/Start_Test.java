@@ -41,6 +41,7 @@ public class Start_Test extends AppCompatActivity {
     int calculate_position = 0;
     int checktest_position = 0;
     int where_position = 0;
+    int pk_auto = 0;
     Patient_Model patient;
 
     @Override
@@ -60,6 +61,9 @@ public class Start_Test extends AppCompatActivity {
                 finish();
             }
         });
+
+        final SharedPreferences sp_pk = getSharedPreferences("Patient_PK_auto", Context.MODE_PRIVATE);
+        pk_auto = sp_pk.getInt("PK_auto", 0);
 
         final SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
         final String patient_PK = sp.getString("Patient_PK", "null");
@@ -216,11 +220,18 @@ public class Start_Test extends AppCompatActivity {
                 } else {
 
                     if (patient_PK.equals("null")){
+
+                        pk_auto = pk_auto+1; //กำหนด pk เอง เวลาเพิ่มผู้ป่วยซ้ำจะได้ระบุ pk เองได้
+                        String pk_auto_sum = edit_id.getText().toString() + "_" + pk_auto;
+                        final SharedPreferences.Editor editor_pk_auto = sp_pk.edit();
+                        editor_pk_auto.putInt("PK_auto",pk_auto);
+                        editor_pk_auto.apply();
+
                         database.insert_patient(edit_id.getText().toString(),edit_name.getText().toString(),
                                 Integer.parseInt(edit_age.getText().toString()),education,calculate,checktest
-                                ,where, finalSum_date_time,"ทำต่อ");
+                                ,where, finalSum_date_time,"ทำต่อ",pk_auto_sum);
 
-                        database.insert_patient_id_test(edit_id.getText().toString()); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+                        database.insert_patient_id_test(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
 
                         //เวลาเพิ่มผู้ป่วยเอง หน้าต่อไปจะหา patient_id ไม่เจอเลยต้องเคลียแล้วรับค่าจาก edit_id แทนแล้วเซฟใหม่
                         SharedPreferences.Editor editor = sp.edit();
@@ -228,9 +239,9 @@ public class Start_Test extends AppCompatActivity {
                         editor.clear(); // clear data
                         editor.apply();
 
-                        editor.putString("Patient_ID",edit_id.getText().toString());
+                        editor.putString("Patient_PK",pk_auto_sum);
                         editor.commit();
-                        
+
                     } else {
                         database.update_patient(patient_PK,edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),
                                 education,calculate,checktest,where, finalSum_date_time);

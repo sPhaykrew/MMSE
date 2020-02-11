@@ -28,6 +28,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 
@@ -53,7 +54,7 @@ public class No_10 extends AppCompatActivity {
     String checkradio10_1 = "";
     String answer;
     String mmse_ID;
-    String patient_ID;
+    String Patient_PK;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,14 +101,17 @@ public class No_10 extends AppCompatActivity {
         radioGroup10_1 = findViewById(R.id.radiogroup10_1);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        patient_ID = sp.getString("Patient_ID", "null");
-        mmse_ID = sp.getString("mmse_ID", "null");
+        Patient_PK = sp.getString("Patient_PK", "null");
+
+        SharedPreferences sp_mmse = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
+        mmse_ID = sp_mmse.getString("mmse_ID", "null");
+
         final Database database = new Database(getApplicationContext());
-        Patient_Model patient_model = database.patient(patient_ID);
+        Patient_Model patient_model = database.patient(Patient_PK);
 
         question.setText("คุณ "+patient_model.getName()+" เขียนข้อความอะไรก็ได้ที่อ่านแล้วรู้เรื่อง หรือมีความหมายมา 1 ประโยค");
 
-        final ArrayList<String> get_no10 = database.get_no10(patient_ID);
+        final ArrayList<String> get_no10 = database.get_no10(Patient_PK);
         if (get_no10.get(0) != null){
             Split split = new Split();
 
@@ -154,7 +158,7 @@ public class No_10 extends AppCompatActivity {
         take_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCamera();
+                isWriteStoragePermissionGranted();
             }
         });
 
@@ -170,7 +174,7 @@ public class No_10 extends AppCompatActivity {
                         answer = "ผิด";
                     }
                     String path_image = export_image(convertBitmapIntoByteArray());
-                    database.update_no10(patient_ID,answer,path_image,sumscore);
+                    database.update_no10(Patient_PK,answer,path_image,sumscore);
 
                     Intent go_no11 = new Intent(getApplicationContext(),No_11.class);
                     startActivity(go_no11);
@@ -244,7 +248,7 @@ public class No_10 extends AppCompatActivity {
             file.canExecute();
         }
         try {
-            file_name = directory_path  + mmse_ID+"_"+patient_ID+"_10" + ".jpeg";
+            file_name = directory_path  + mmse_ID+"_"+Patient_PK+"_10" + ".jpeg";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data);
             fileOutputStream.close();
@@ -278,4 +282,52 @@ public class No_10 extends AppCompatActivity {
         dialog_back.show();
     }
 
+    public  boolean isReadStoragePermissionGranted() { //ต้องขอทีละ permission
+        String TAG = "Permission";
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.v(TAG,"Permission is granted1");
+                return true;
+            } else {
+
+                Log.v(TAG,"Permission is revoked1");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted1");
+            return true;
+        }
+    }
+
+    public  boolean isWriteStoragePermissionGranted() { //ต้องขอทีละ permission
+        String TAG = "Permission";
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                openCamera();
+                Log.v(TAG,"Permission is granted2");
+                return true;
+            } else {
+                Log.v(TAG,"Permission is revoked2");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted2");
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) { //เอาทำงานต่อเลยหลังจากกดยอมรับ permission
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Toast.makeText(getApplicationContext(),String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
+        switch(requestCode) {
+            case 2 : openCamera(); break;
+        }
+    }
 }

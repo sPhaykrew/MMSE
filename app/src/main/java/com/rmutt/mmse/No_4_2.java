@@ -70,11 +70,11 @@ public class No_4_2 extends AppCompatActivity {
         });
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
         final Split split = new Split();
 
-        Patient_Model patient_model = database.patient(patient_ID);
+        Patient_Model patient_model = database.patient(Patient_PK);
 
         next = findViewById(R.id.next);
         before = findViewById(R.id.before);
@@ -84,7 +84,7 @@ public class No_4_2 extends AppCompatActivity {
         question.setText("ผม/ดิฉัน จะสะกดคำว่า มะนาวให้คุณ "+patient_model.getName()+" ฟัง แล้วคุณ "+patient_model.getName()
         +" สะกดถอยหลังจากพยัญชนะตัวหลังไปตัวแรก คำว่า มะนาว สะกดว่า มอม้า-สระอะ-นอหนู-สระอา-วอแหวน คุณ "+patient_model.getName()+" สะกดถอยหลังให้ฟัง");
 
-        ArrayList<String> get_no4 = database.get_no4(patient_ID);
+        ArrayList<String> get_no4 = database.get_no4(Patient_PK);
         if (get_no4.get(0) != null){
 
             StringBuilder sum_string = new StringBuilder();
@@ -163,7 +163,7 @@ public class No_4_2 extends AppCompatActivity {
                         getAnser5 = segment.get(4) + "_ผิด";
                     }
 
-                    database.update_no4(patient_ID,getAnser1,getAnser2,
+                    database.update_no4(Patient_PK,getAnser1,getAnser2,
                             getAnser3,getAnser4,getAnser5,sumscore,get_EditText1);
 
                     Intent go_no5 = new Intent(getApplicationContext(),No_5.class);

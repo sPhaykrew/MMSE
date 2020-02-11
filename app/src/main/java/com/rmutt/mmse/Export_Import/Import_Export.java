@@ -23,13 +23,12 @@ public class Import_Export {
 
     Database database;
     static Context context;
-    Patient_Model patientModel;
 
     public Import_Export(Context context){
         this.context = context;
     }
 
-    public void import_csv(Uri uri){
+    public void import_csv(Uri uri,String PK_auto){
 
         database = new Database(context);
 
@@ -42,9 +41,10 @@ public class Import_Export {
                 String[] get_CSV;
                 dataRead.readNext(); //ข้าม topic ไป คือข้ามบรรทัดแรก
                 while ((get_CSV = dataRead.readNext()) != null) { //get data from csv and insert in db
+                    String pk_auto_sum = get_CSV[0]+"_"+PK_auto;
                     database.insert_patient(get_CSV[0],get_CSV[1],Integer.parseInt(get_CSV[2]),null,null,null
-                    ,null,null,"เริ่มทำ");
-                    database.insert_patient_id_test(get_CSV[0]); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+                    ,null,null,"เริ่มทำ",pk_auto_sum);
+                    database.insert_patient_id_test(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
                 }
             } catch (Exception e) {
                 Log.d("error",e.toString());
@@ -52,11 +52,11 @@ public class Import_Export {
 
         }
 
-    public void export_data(String patient_ID,String mmse_ID,String get_file_name){
+    public void export_patient_data(String patient_PK, String mmse_ID){
 
-        patientModel = database.patient(patient_ID);
-        String test_ID = database.test_ID(patient_ID);
-        int get_result_score = database.get_result_score(patient_ID);
+        Patient_Model patientModel = database.patient(patient_PK);
+        String test_ID = database.test_ID(patient_PK);
+        int get_result_score = database.get_result_score(patient_PK);
 
         StringBuilder data = new StringBuilder();
         data.append("รหัสการทำแบบทดสอบ,รหัสอาสาสมัคร,รหัสผู้ป่วย,วันที่ทำแบบทดสอบ,ระดับการศึกษา,สถานที่ทำแบบทดสอบ,ทำแบบทดสอบภายใน 2 เดือนหรือไม่,ผลประเมิน\n");
@@ -70,32 +70,37 @@ public class Import_Export {
             file.canExecute();
         }
         try {
-            String file_name = directory_path + get_file_name + ".csv";
+//            String file_name = directory_path + test_ID +"_" +patientModel.getTime() + "_1" + ".csv";
+            String file_name = directory_path + test_ID +"_" + "ข้อมูลผู้ป่วย" + ".csv";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data.toString().getBytes());
             fileOutputStream.close();
+            database.update_patient_data_path(patient_PK,file_name);
             Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.d("error", e.toString());
         }
     }
 
-    public void export_test(String patient_ID){
+    public void export_test_data(String patient_PK){
+
+        database = new Database(context);
+        Patient_Model patientModel = database.patient(patient_PK);
 
         Split split = new Split();
-        database = new Database(context);
-        String test_ID = database.test_ID(patient_ID);
-        ArrayList no_1 = database.get_no1(patient_ID);
-        ArrayList no_2 = database.get_no2(patient_ID);
-        ArrayList no_3 = database.get_no3(patient_ID);
-        ArrayList no_4 = database.get_no4(patient_ID);
-        ArrayList no_5 = database.get_no5(patient_ID);
-        ArrayList no_6 = database.get_no6(patient_ID);
-        ArrayList no_7 = database.get_no7(patient_ID);
-        ArrayList no_8 = database.get_no8(patient_ID);
-        ArrayList no_9 = database.get_no9(patient_ID);
-        ArrayList no_10 = database.get_no10(patient_ID);
-        ArrayList no_11 = database.get_no11(patient_ID);
+
+        String test_ID = database.test_ID(patient_PK);
+        ArrayList no_1 = database.get_no1(patient_PK);
+        ArrayList no_2 = database.get_no2(patient_PK);
+        ArrayList no_3 = database.get_no3(patient_PK);
+        ArrayList no_4 = database.get_no4(patient_PK);
+        ArrayList no_5 = database.get_no5(patient_PK);
+        ArrayList no_6 = database.get_no6(patient_PK);
+        ArrayList no_7 = database.get_no7(patient_PK);
+        ArrayList no_8 = database.get_no8(patient_PK);
+        ArrayList no_9 = database.get_no9(patient_PK);
+        ArrayList no_10 = database.get_no10(patient_PK);
+        ArrayList no_11 = database.get_no11(patient_PK);
 
         StringBuilder data = new StringBuilder();
         data.append("รหัสการทำแบบทดสอบ,เลขคำถาม,เลขข้อ,ผล,คำตอบ\n");
@@ -159,10 +164,12 @@ public class Import_Export {
             file.canExecute();
         }
         try {
-            String file_name = directory_path + "hello" + ".csv";
+            //String file_name = directory_path + test_ID +"_" +patientModel.getTime() + "_2" + ".csv";
+            String file_name = directory_path + test_ID +"_" + "ผลการทำแบบทดสอบ" + ".csv";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data.toString().getBytes());
             fileOutputStream.close();
+            database.update_test_data_path(patient_PK,file_name);
             Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.d("error", e.toString());

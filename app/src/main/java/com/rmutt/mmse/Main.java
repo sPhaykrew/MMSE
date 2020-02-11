@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +26,8 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
     int import_patient_code = 12;
     Import_Export Import;
     String mmse_ID;
+    int pk_auto = 0;
+    SharedPreferences sp_pk;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,8 +36,11 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
 
         Import = new Import_Export(getApplicationContext());
 
-        SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
         mmse_ID = sp.getString("mmse_ID", "null");
+
+        sp_pk = getSharedPreferences("Patient_PK_auto", Context.MODE_PRIVATE);
+        pk_auto = sp_pk.getInt("PK_auto", 0);
 
         Toolbar toolbar = findViewById(R.id.toolbar_main);
         TextView Title = toolbar.findViewById(R.id.title);
@@ -122,9 +126,9 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 return true;
 
             case R.id.google_drive :
-                Import_Export import_export = new Import_Export(getApplicationContext());
-                import_export.export_test("6");
-                import_export.export_data("6",mmse_ID,"ssssss");
+//                Import_Export import_export = new Import_Export(getApplicationContext());
+//                import_export.export_test_data("6");
+//                import_export.export_patient_data("6",mmse_ID,"ssssss");
                 return true;
 
 
@@ -138,7 +142,11 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
         assert data != null;
         String path = String.valueOf(data.getData());
         Log.e("Pathb", path);
-        Import.import_csv(Uri.parse(path));
+        pk_auto = pk_auto+1; //กำหนด pk เอง เวลาเพิ่มผู้ป่วยซ้ำจะได้ระบุ pk เองได้
+        Import.import_csv(Uri.parse(path), String.valueOf(pk_auto)); //ดูได้หน้า start test
+        final SharedPreferences.Editor editor_pk_auto = sp_pk.edit();
+        editor_pk_auto.putInt("PK_auto",pk_auto);
+        editor_pk_auto.apply();
     }
 
 }

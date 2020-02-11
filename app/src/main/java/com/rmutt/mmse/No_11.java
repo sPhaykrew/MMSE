@@ -1,14 +1,17 @@
 package com.rmutt.mmse;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -21,9 +24,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 
@@ -47,8 +52,9 @@ public class No_11 extends AppCompatActivity {
     String checkradio11_1 = "";
     String answer;
     Database database;
-    String patient_ID;
+    String Patient_PK;
     String mmse_ID;
+    Patient_Model patient_model;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -97,10 +103,13 @@ public class No_11 extends AppCompatActivity {
         radioGroup11_1 = findViewById(R.id.radiogroup11_1);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        patient_ID = sp.getString("Patient_ID", "null");
-        mmse_ID = sp.getString("mmse_ID", "null");
+        Patient_PK = sp.getString("Patient_PK", "null");
+
+        SharedPreferences sp_mmse = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
+        mmse_ID = sp_mmse.getString("mmse_ID", "null");
+
         database = new Database(getApplicationContext());
-        final Patient_Model patient_model = database.patient(patient_ID);
+        patient_model = database.patient(Patient_PK);
 
         show_message.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +119,7 @@ public class No_11 extends AppCompatActivity {
             }
         });
 
-        ArrayList<String> get_no11 = database.get_no11(patient_ID);
+        ArrayList<String> get_no11 = database.get_no11(Patient_PK);
         if (get_no11.get(0) != null){
 
             if (get_no11.get(0).equals("ถูก")){ //สั้งให้ radiogroup เช็คคำตอบ
@@ -156,7 +165,7 @@ public class No_11 extends AppCompatActivity {
         take_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCamera();
+                isWriteStoragePermissionGranted();
             }
         });
 
@@ -172,10 +181,11 @@ public class No_11 extends AppCompatActivity {
                         answer = "ผิด";
                     }
                     String path_image = export_image(convertBitmapIntoByteArray());
-                    database.update_no11(patient_ID,answer,path_image,sumscore);
-                    database.update_patient_status(patient_ID,"พร้อมส่ง");
+                    database.update_no11(Patient_PK,answer,path_image,sumscore);
+                    database.update_patient_status(Patient_PK,"พร้อมส่ง");
 
-                    database.result_score(result_score(),patient_ID);
+                    database.result_score(result_score(),Patient_PK);
+                    except();
 
                     Intent go_finish = new Intent(getApplicationContext(),Question_list.class);
                     startActivity(go_finish);
@@ -255,7 +265,7 @@ public class No_11 extends AppCompatActivity {
             file.canExecute();
         }
         try {
-            file_name = directory_path  + mmse_ID+"_"+patient_ID+"_11" + ".jpeg";
+            file_name = directory_path  + mmse_ID+"_"+Patient_PK+"_11" + ".jpeg";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data);
             fileOutputStream.close();
@@ -289,20 +299,20 @@ public class No_11 extends AppCompatActivity {
         dialog_back.show();
     }
 
-    public int result_score(){
+    public int result_score(){ //ผลรวมคะแนนทั้งหมด
         int result_score = 0;
 
-        ArrayList<String> no_1 = database.get_no1(patient_ID);
-        ArrayList<String> no_2 = database.get_no2(patient_ID);
-        ArrayList<String> no_3 = database.get_no3(patient_ID);
-        ArrayList<String> no_4 = database.get_no4(patient_ID);
-        ArrayList<String> no_5 = database.get_no5(patient_ID);
-        ArrayList<String> no_6 = database.get_no6(patient_ID);
-        ArrayList<String> no_7 = database.get_no7(patient_ID);
-        ArrayList<String> no_8 = database.get_no8(patient_ID);
-        ArrayList<String> no_9 = database.get_no9(patient_ID);
-        ArrayList<String> no_10 = database.get_no10(patient_ID);
-        ArrayList<String> no_11 = database.get_no11(patient_ID);
+        ArrayList<String> no_1 = database.get_no1(Patient_PK);
+        ArrayList<String> no_2 = database.get_no2(Patient_PK);
+        ArrayList<String> no_3 = database.get_no3(Patient_PK);
+        ArrayList<String> no_4 = database.get_no4(Patient_PK);
+        ArrayList<String> no_5 = database.get_no5(Patient_PK);
+        ArrayList<String> no_6 = database.get_no6(Patient_PK);
+        ArrayList<String> no_7 = database.get_no7(Patient_PK);
+        ArrayList<String> no_8 = database.get_no8(Patient_PK);
+        ArrayList<String> no_9 = database.get_no9(Patient_PK);
+        ArrayList<String> no_10 = database.get_no10(Patient_PK);
+        ArrayList<String> no_11 = database.get_no11(Patient_PK);
 
         result_score = result_score + Integer.parseInt(no_1.get(5));
         result_score = result_score + Integer.parseInt(no_2.get(5));
@@ -317,6 +327,64 @@ public class No_11 extends AppCompatActivity {
         result_score = result_score + Integer.parseInt(no_11.get(2));
 
         return result_score;
+    }
+
+    public void except(){ //กรณีผู้ป่วย ไม่ได้เรียนหนังสือ
+        if (patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")) {
+            database.update_no4(Patient_PK, "ยกเว้น_ยกเว้น", "ยกเว้น_ยกเว้น", "ยกเว้น_ยกเว้น", "ยกเว้น_ยกเว้น", "ยกเว้น_ยกเว้น", 0, "ยกเว้น");
+            database.update_no9(Patient_PK, "ยกเว้น_ยกเว้น", 0);
+            database.update_no10(Patient_PK, "ยกเว้น", "ยกเว้น", 0);
+        }
+    }
+
+    public  boolean isReadStoragePermissionGranted() { //ต้องขอทีละ permission
+        String TAG = "Permission";
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.v(TAG,"Permission is granted1");
+                return true;
+            } else {
+
+                Log.v(TAG,"Permission is revoked1");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted1");
+            return true;
+        }
+    }
+
+    public  boolean isWriteStoragePermissionGranted() { //ต้องขอทีละ permission
+        String TAG = "Permission";
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                openCamera();
+                Log.v(TAG,"Permission is granted2");
+                return true;
+            } else {
+
+                Log.v(TAG,"Permission is revoked2");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted2");
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) { //เอาทำงานต่อเลยหลังจากกดยอมรับ permission
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Toast.makeText(getApplicationContext(),String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
+        switch(requestCode) {
+            case 2 : openCamera(); break;
+        }
     }
 
 }

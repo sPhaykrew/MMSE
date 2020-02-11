@@ -78,7 +78,7 @@ public class No_3 extends AppCompatActivity {
         });
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
         radioGroup3_1 = findViewById(R.id.radiogroup3_1);
@@ -97,7 +97,7 @@ public class No_3 extends AppCompatActivity {
         next = findViewById(R.id.next);
         before = findViewById(R.id.before);
 
-        final Patient_Model patient_model = database.patient(patient_ID);
+        final Patient_Model patient_model = database.patient(Patient_PK);
         check_test = patient_model.getCheck_test();
 
         question.setText("ขอให้คุณ "+ patient_model.getName() + " โปรดตั้งใจฟังให้ดีเพราะจะบอกเพียงครั่งเดียวไม่มีการบอกซ้ำอีกเมื่อ ผม/ดิฉันพูดจบให้คุณ " + patient_model.getName()
@@ -125,7 +125,7 @@ public class No_3 extends AppCompatActivity {
 //        edit3_3.setFocusable(false);
 
         //ถ้าเคยทำไว้แล้วจะ set ตำคอบไว้กับปิดไม่ให้แก้ไข
-        ArrayList<String> get_no3 = database.get_no3(patient_ID);
+        ArrayList<String> get_no3 = database.get_no3(Patient_PK);
         if (get_no3.get(0) != null){
             Split split = new Split();
 
@@ -282,7 +282,7 @@ public class No_3 extends AppCompatActivity {
                     } else if (checkradio3_3.equals("wrong")) {
                         get_EditText3 = edit3_3.getText() + "_ผิด";
                     }
-                    database.update_no3(patient_ID,get_EditText1,get_EditText2,get_EditText3,sumscore);
+                    database.update_no3(Patient_PK,get_EditText1,get_EditText2,get_EditText3,sumscore);
 
                     if (!patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")) {
                         switch (patient_model.getCalculate()) {

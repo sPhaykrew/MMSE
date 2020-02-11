@@ -75,7 +75,7 @@ public class No_2_2 extends AppCompatActivity {
         });
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
         radioGroup2_1 = findViewById(R.id.radiogroup2_2_1);
@@ -94,7 +94,7 @@ public class No_2_2 extends AppCompatActivity {
         before = findViewById(R.id.before);
 
         //ถ้าเคยทำไว้แล้วจะ set ตำคอบไว้กับปิดไม่ให้แก้ไข
-        ArrayList<String> get_no2 = database.get_no2(patient_ID);
+        ArrayList<String> get_no2 = database.get_no2(Patient_PK);
         if (get_no2.get(0) != null){
             Split split = new Split();
 
@@ -326,7 +326,7 @@ public class No_2_2 extends AppCompatActivity {
                         get_EditText5 = edit2_5.getText() + "_ผิด";
                     }
 
-                    database.update_no2(patient_ID,get_EditText1,get_EditText2,get_EditText3,get_EditText4,get_EditText5,sumscore);
+                    database.update_no2(Patient_PK,get_EditText1,get_EditText2,get_EditText3,get_EditText4,get_EditText5,sumscore);
 
                     Intent go_no3 = new Intent(getApplicationContext(),No_3.class);
                     startActivity(go_no3);

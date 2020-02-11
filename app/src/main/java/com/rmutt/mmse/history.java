@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.rmutt.mmse.Export_Import.Import_Export;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 
 public class history extends AppCompatActivity {
@@ -51,10 +53,13 @@ public class history extends AppCompatActivity {
         history_button = findViewById(R.id.history_button);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        String ID = sp.getString("Patient_PK", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
+
+        SharedPreferences mmse_sp = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
+        final String mmse_ID = mmse_sp.getString("mmse_ID", "null");
 
         Database database = new Database(getApplicationContext());
-        final Patient_Model patient = database.patient(ID);
+        final Patient_Model patient = database.patient(Patient_PK);
 
         patient_ID.setText("หมายเลขผู้ป่วย : " + patient.getPatient_ID());
         patient_name.setText("ชื่อ : " + patient.getName());
@@ -85,7 +90,13 @@ public class history extends AppCompatActivity {
                         finish();
                         break;
                     case "พร้อมส่ง" :
-                        Toast.makeText(getApplicationContext(),"ส่งแล้ว",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"ส่งแล้ว",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),Patient_PK,Toast.LENGTH_SHORT).show();
+//                        Import_Export import_export = new Import_Export(getApplicationContext());
+//                        import_export.export_test_data(Patient_PK);
+//                        import_export.export_patient_data(Patient_PK,mmse_ID);
+                        Intent intent = new Intent(getApplicationContext(),No_11.class);
+                        startActivity(intent);
                         break;
                 }
             }

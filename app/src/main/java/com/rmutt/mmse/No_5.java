@@ -77,7 +77,7 @@ public class No_5 extends AppCompatActivity {
         });
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
         radioGroup5_1 = findViewById(R.id.radiogroup3_1);
@@ -95,7 +95,7 @@ public class No_5 extends AppCompatActivity {
         next = findViewById(R.id.next);
         before = findViewById(R.id.before);
 
-        final Patient_Model patient_model = database.patient(patient_ID);
+        final Patient_Model patient_model = database.patient(Patient_PK);
         check_test = patient_model.getCheck_test();
 
         switch (check_test) {
@@ -120,7 +120,7 @@ public class No_5 extends AppCompatActivity {
 //        edit5_3.setFocusable(false);
 
         //ถ้าเคยทำไว้แล้วจะ set ตำคอบไว้กับปิดไม่ให้แก้ไข
-        ArrayList<String> get_no5 = database.get_no5(patient_ID);
+        ArrayList<String> get_no5 = database.get_no5(Patient_PK);
         if (get_no5.get(0) != null){
             Split split = new Split();
 
@@ -278,7 +278,7 @@ public class No_5 extends AppCompatActivity {
                         get_EditText3 = edit5_3.getText() + "_ผิด";
                     }
 
-                    database.update_no5(patient_ID,get_EditText1,get_EditText2,get_EditText3,sumscore);
+                    database.update_no5(Patient_PK,get_EditText1,get_EditText2,get_EditText3,sumscore);
 
                     Intent go_no6 = new Intent(getApplicationContext(),No_6.class);
                     startActivity(go_no6);

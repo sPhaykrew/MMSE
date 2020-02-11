@@ -66,7 +66,7 @@ public class No_4_1 extends AppCompatActivity {
         });
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
         edit4_1 = findViewById(R.id.edit1);
@@ -78,7 +78,7 @@ public class No_4_1 extends AppCompatActivity {
         next = findViewById(R.id.next);
         before = findViewById(R.id.before);
 
-        ArrayList<String> get_no4 = database.get_no4(patient_ID);
+        ArrayList<String> get_no4 = database.get_no4(Patient_PK);
         if (get_no4.get(0) != null){
             Split split = new Split();
 
@@ -157,7 +157,7 @@ public class No_4_1 extends AppCompatActivity {
                         get_EditText5 = get_EditText5 + "_ผิด";
                     }
 
-                    database.update_no4(patient_ID,get_EditText1,get_EditText2,get_EditText3,get_EditText4,get_EditText5,sumscore,null);
+                    database.update_no4(Patient_PK,get_EditText1,get_EditText2,get_EditText3,get_EditText4,get_EditText5,sumscore,null);
 
                     Intent go_no5 = new Intent(getApplicationContext(),No_5.class);
                     startActivity(go_no5);

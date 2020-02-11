@@ -87,10 +87,10 @@ public class No_9 extends AppCompatActivity {
         question = findViewById(R.id.question);
 
         SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-        final String patient_ID = sp.getString("Patient_ID", "null");
+        final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
-        Patient_Model patient_model = database.patient(patient_ID);
+        Patient_Model patient_model = database.patient(Patient_PK);
 
         question.setText("ต่อไปนี้เป็นคำสั่งที่เขียนเป็นตัวหนังสือต้องการให้คุณ "+patient_model.getName()+" อ่านแล้วทำตามโดยจะอ่านออกเสียงหรือในใจก็ได้");
 
@@ -102,7 +102,7 @@ public class No_9 extends AppCompatActivity {
             }
         });
 
-        ArrayList<String> get_no9 = database.get_no9(patient_ID);
+        ArrayList<String> get_no9 = database.get_no9(Patient_PK);
         if (get_no9.get(0) != null){
             Split split = new Split();
 
@@ -161,7 +161,7 @@ public class No_9 extends AppCompatActivity {
                         get_EditText1 = edit9_1.getText() + "_ผิด";
                     }
 
-                    database.update_no9(patient_ID,get_EditText1,sumscore);
+                    database.update_no9(Patient_PK,get_EditText1,sumscore);
 
                     Intent go_no10 = new Intent(getApplicationContext(),No_10.class);
                     startActivity(go_no10);

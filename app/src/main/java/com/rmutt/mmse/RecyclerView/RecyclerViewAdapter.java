@@ -57,9 +57,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<Recycler_ViewHolde
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                database.delete_patient(model.get(position).getPatient_PK());
-//                removeAt(position);
-                Toast.makeText(context,model.get(position).getPatient_PK(),Toast.LENGTH_SHORT).show();
+                database.delete_patient(model.get(position).getPatient_PK());
+                removeAt(position);
+//                Toast.makeText(context,model.get(position).getPatient_PK(),Toast.LENGTH_SHORT).show();
             }
         });
 

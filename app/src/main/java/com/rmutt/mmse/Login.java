@@ -27,11 +27,9 @@ public class Login extends AppCompatActivity {
         Button CF = findViewById(R.id.CF);
         final EditText mmse_ID = findViewById(R.id.mmse_id);
 
-        //isReadStoragePermissionGranted();
+        //final boolean ss = isWriteStoragePermissionGranted();
 
-        final boolean ss = isWriteStoragePermissionGranted();
-
-        SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sp.edit();
 
         editor.clear(); // clear data
