@@ -8,16 +8,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:gravity="center"
         android:background="#53B19D">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo3"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#B3000000"
             android:text="MMSE-Thai"
-            android:textSize="48dp">
+            android:textSize="44dp">
         </TextView>
 
     </LinearLayout>

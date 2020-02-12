@@ -14,7 +14,7 @@
     </item>
 
     <item android:id="@+id/google_drive"
-        android:title="ล็อคอินกูเกิลไดรฟ์">
+        android:title="เข้าสู่ระบบกูเกิลไดรฟ์">
     </item>
 
 </menu>

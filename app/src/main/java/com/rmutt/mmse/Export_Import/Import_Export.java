@@ -9,14 +9,19 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import com.rmutt.mmse.Database;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 import com.rmutt.mmse.Split;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Import_Export {
@@ -76,7 +81,7 @@ public class Import_Export {
             fileOutputStream.write(data.toString().getBytes());
             fileOutputStream.close();
             database.update_patient_data_path(patient_PK,file_name);
-            Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.d("error", e.toString());
         }
@@ -166,11 +171,18 @@ public class Import_Export {
         try {
             //String file_name = directory_path + test_ID +"_" +patientModel.getTime() + "_2" + ".csv";
             String file_name = directory_path + test_ID +"_" + "ผลการทำแบบทดสอบ" + ".csv";
-            FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
-            fileOutputStream.write(data.toString().getBytes());
-            fileOutputStream.close();
+//            FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
+//            fileOutputStream.write(data.toString().getBytes());
+//            fileOutputStream.close();
+
+            //Writer export = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_name), "Windows-874"));
+            Writer export = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_name), StandardCharsets.UTF_8));
+            export.write(data.toString());
+            export.close();
+
+
             database.update_test_data_path(patient_PK,file_name);
-            Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.d("error", e.toString());
         }

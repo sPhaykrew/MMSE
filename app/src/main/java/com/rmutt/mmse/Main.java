@@ -3,31 +3,50 @@ package com.rmutt.mmse;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Scope;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
 import com.rmutt.mmse.Export_Import.Import_Export;
+
+import java.util.Collections;
 
 public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-    int import_patient_code = 12;
     Import_Export Import;
     String mmse_ID;
     int pk_auto = 0;
     SharedPreferences sp_pk;
+    GoogleSignInAccount alreadyloggedAccount;
+    Drive googleDriveService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,12 +66,24 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
         Title.setText("หมายเลขอาสา "+mmse_ID);
         ImageView show_menu = toolbar.findViewById(R.id.show_menu);
 
+
         show_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                alreadyloggedAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
                 PopupMenu popupMenu = new PopupMenu(getApplicationContext(),v);
                 popupMenu.inflate(R.menu.menu_main);
                 popupMenu.setOnMenuItemClickListener(Main.this);
+
+                if (CheckInternet()){
+                    if (alreadyloggedAccount != null){
+                        popupMenu.getMenu().findItem(R.id.google_drive).setTitle("ออกจากระบบกูเกิลไดรฟ์");
+                    }
+                } else {
+                    popupMenu.getMenu().findItem(R.id.google_drive).setVisible(false); //ซ่อนเมนู
+                }
+
+
                 popupMenu.show();
             }
         });
@@ -110,7 +141,7 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 Intent import_patient = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 import_patient.addCategory(Intent.CATEGORY_OPENABLE);
                 import_patient.setType("text/*");
-                startActivityForResult(import_patient,import_patient_code);
+                startActivityForResult(import_patient,12);
 
                 return true;
 
@@ -126,9 +157,15 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 return true;
 
             case R.id.google_drive :
-//                Import_Export import_export = new Import_Export(getApplicationContext());
-//                import_export.export_test_data("6");
-//                import_export.export_patient_data("6",mmse_ID,"ssssss");
+
+                if (alreadyloggedAccount != null) {
+                    GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+                    GoogleSignInClient googleSignIn = GoogleSignIn.getClient(this,googleSignInOptions);
+                    googleSignIn.signOut();}
+                else {
+                    requestSignIn();
+                }
+
                 return true;
 
 
@@ -139,14 +176,65 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        assert data != null;
-        String path = String.valueOf(data.getData());
-        Log.e("Pathb", path);
-        pk_auto = pk_auto+1; //กำหนด pk เอง เวลาเพิ่มผู้ป่วยซ้ำจะได้ระบุ pk เองได้
-        Import.import_csv(Uri.parse(path), String.valueOf(pk_auto)); //ดูได้หน้า start test
-        final SharedPreferences.Editor editor_pk_auto = sp_pk.edit();
-        editor_pk_auto.putInt("PK_auto",pk_auto);
-        editor_pk_auto.apply();
+        switch (requestCode){
+            case 48 :
+                if (resultCode == RESULT_OK){
+                    handleSignInIntent(data);
+                }
+                break;
+            case 12 :
+                String path = String.valueOf(data.getData());
+                pk_auto = pk_auto+1; //กำหนด pk เอง เวลาเพิ่มผู้ป่วยซ้ำจะได้ระบุ pk เองได้
+                Import.import_csv(Uri.parse(path), String.valueOf(pk_auto)); //ดูได้หน้า start test
+                SharedPreferences.Editor editor_pk_auto = sp_pk.edit();
+                editor_pk_auto.putInt("PK_auto",pk_auto);
+                editor_pk_auto.apply();
+                break;
+        }
+    }
+
+    public void requestSignIn(){
+        GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail().requestScopes(new Scope(DriveScopes.DRIVE_FILE)).build();
+        GoogleSignInClient client = GoogleSignIn.getClient(this,signInOptions);
+        startActivityForResult(client.getSignInIntent(),48);
+    }
+
+    private void handleSignInIntent(Intent data) {
+        GoogleSignIn.getSignedInAccountFromIntent(data).addOnSuccessListener(new OnSuccessListener<GoogleSignInAccount>() {
+            @Override
+            public void onSuccess(GoogleSignInAccount googleSignInAccount) {
+                GoogleAccountCredential credential = GoogleAccountCredential.usingOAuth2(getApplicationContext(),
+                        Collections.singleton(DriveScopes.DRIVE_FILE));
+
+                credential.setSelectedAccount(googleSignInAccount.getAccount());
+
+                googleDriveService = new Drive.Builder(AndroidHttp.newCompatibleTransport(),new GsonFactory(),credential)
+                        .setApplicationName("MMSE Drive").build();
+
+//                driveServiceHelper = new DriveServiceHelper(googleDriveService);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
+
+    public boolean CheckInternet(){
+        boolean connected;
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            //we are connected to a network
+            connected = true;
+        }
+        else {
+            connected = false;
+        }
+        return connected;
     }
 
 }
