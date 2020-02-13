@@ -66,6 +66,21 @@
         <activity
             android:name=".No_11_show_message"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".Manual.Contents1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents5"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

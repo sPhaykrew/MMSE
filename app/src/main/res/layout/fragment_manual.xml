@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Manual">
+    tools:context=".Manual.Manual_main">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:id="@+id/test1"
+            android:id="@+id/contents1"
             android:orientation="vertical">
 
             <TextView
@@ -49,6 +49,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/contents2"
+            android:background="?android:attr/selectableItemBackground"
             android:orientation="vertical">
 
             <TextView
@@ -57,7 +59,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:textSize="16dp"
-                android:text="สาเหตุ" />
+                android:text="สาเหตุของโรคสมองเสื่อม" />
 
             <View
                 android:layout_width="match_parent"
@@ -70,6 +72,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/contents3"
+            android:background="?android:attr/selectableItemBackground"
             android:orientation="vertical">
 
             <TextView
@@ -78,7 +82,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:textSize="16dp"
-                android:text="อาการสำคัญ" />
+                android:text="อาการสำคัญของโรคสมองเสื่อม" />
 
             <View
                 android:layout_width="match_parent"
@@ -91,6 +95,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/contents4"
+            android:background="?android:attr/selectableItemBackground"
             android:orientation="vertical">
 
             <TextView
@@ -99,7 +105,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:textSize="16dp"
-                android:text="การป้องกัน" />
+                android:text="การป้องกันภาวะสมองเสื่อม" />
 
             <View
                 android:layout_width="match_parent"
@@ -112,6 +118,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/contents5"
+            android:background="?android:attr/selectableItemBackground"
             android:orientation="vertical">
 
             <TextView
@@ -120,7 +128,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:textSize="16dp"
-                android:text="ปัญหาที่พบในผู้ป่วย" />
+                android:text="การเตรียมความพร้อมในการดูแลผู้ป่วยสมองเสื่อม" />
 
             <View
                 android:layout_width="match_parent"

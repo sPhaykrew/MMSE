@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_sub" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="บทนำ"
+        android:textSize="20dp"
+        android:textColor="#53B19D"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="โรคสมองเสื่อมพบในผู้สูงอายุ เป็นกลุ่มอาการที่เกิดจากความผิดปกติของสมอง เป็นการสูญเสียหน้าที่ของสมองอย่างค่อยเป็นค่อยไปแต่เกิดขึ้นถาวร ทำให้เกิดผลกระทบต่อการดำเนินชีวิตประจำวันและการทำงาน สมองเสื่อมไม่ใช่ภาวะปกติในผู้สูงอายุ ผู้ป่วยสมองเสื่อมจะจำไม่ได้เลยว่าเคยทำอะไรหรือลืมอะไร เมื่อพบว่าญาติมีอาการที่น่าสงสัยว่าเป็นสมองเสื่อม ควรปรึกษาแพทย์เพื่อรับการตรวจเพิ่มเติม "
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:textColor="#CC000000"
+        android:layout_marginEnd="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom|right">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="2dp"
+            android:textSize="14dp"
+            android:theme="@style/Button_2"
+            android:id="@+id/next"
+            android:text="ถัดไป" />
+
+    </LinearLayout>
+
+</LinearLayout>

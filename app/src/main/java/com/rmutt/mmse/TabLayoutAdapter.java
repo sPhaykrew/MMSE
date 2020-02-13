@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.rmutt.mmse.Manual.Manual_main;
+
 public class TabLayoutAdapter extends FragmentPagerAdapter{
 
     private int numOfTabs;
@@ -23,7 +25,7 @@ public class TabLayoutAdapter extends FragmentPagerAdapter{
             case 0:
                 return new Patient_Data();
             case 1:
-                return new Manual();
+                return new Manual_main();
             default:
                 return null;
         }

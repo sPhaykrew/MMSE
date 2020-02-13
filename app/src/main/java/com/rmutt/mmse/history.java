@@ -33,8 +33,10 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.FileList;
 import com.google.api.services.drive.model.Permission;
 import com.rmutt.mmse.Export_Import.Import_Export;
+import com.rmutt.mmse.Export_Import.getFolder_model;
 import com.rmutt.mmse.Export_Import.uploadFile_model;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
 
@@ -55,6 +57,8 @@ public class history extends AppCompatActivity {
     String fileid;
     Database database;
     String patient_PK;
+    String mmse_ID;
+    ArrayList<getFolder_model> getFolder_models = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -86,7 +90,7 @@ public class history extends AppCompatActivity {
         patient_PK = sp.getString("Patient_PK", "null");
 
         SharedPreferences mmse_sp = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
-        final String mmse_ID = mmse_sp.getString("mmse_ID", "null");
+        mmse_ID = mmse_sp.getString("mmse_ID", "null");
 
         database = new Database(getApplicationContext());
         final Patient_Model patient = database.patient(patient_PK);
@@ -120,89 +124,128 @@ public class history extends AppCompatActivity {
                         finish();
                         break;
                     case "พร้อมส่ง" :
-
-                        if (CheckInternet()) {
-                            GoogleSignInAccount alreadyloggedAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-                            if (alreadyloggedAccount != null) {
-                                //Toast.makeText(getApplicationContext(), "Already Logged In", Toast.LENGTH_SHORT).show();
-
-                                GoogleAccountCredential credential = GoogleAccountCredential.usingOAuth2(getApplicationContext(), Collections.singleton(DriveScopes.DRIVE_FILE));
-                                credential.setSelectedAccount(alreadyloggedAccount.getAccount());
-                                googleDriveService = new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).setApplicationName("MMSE Drive").build();
-
-                                //export
-                                Import_Export import_export = new Import_Export(getApplicationContext());
-                                import_export.export_test_data(patient_PK);
-                                import_export.export_patient_data(patient_PK, mmse_ID);
-
-                                //upload google drive
-                                ProgressDialog progressDialog = new ProgressDialog(history.this);
-                                progressDialog.setTitle("กำลังส่งข้อมูล");
-                                progressDialog.setMessage("โปรดรอ...");
-                                progressDialog.setCancelable(false);
-                                progressDialog.setCanceledOnTouchOutside(false);
-                                progressDialog.show();
-
-                                create_folder().addOnSuccessListener(new OnSuccessListener<String>() {
-                                    @Override
-                                    public void onSuccess(String s) {
-                                        progressDialog.dismiss();
-                                        //Toast.makeText(getApplicationContext(),"Create successfully",Toast.LENGTH_SHORT).show();
-                                        wait_upload_file(v);
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        progressDialog.dismiss();
-                                        deleteFile(googleDriveService, folderId);
-                                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-
-                            } else {
-                                Toast.makeText(getApplicationContext(), "กรุณาล็อคอินกุเกิลไดรไดรฟ์ก่อนส่งข้อมูล", Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            Toast.makeText(getApplicationContext(), "กรุณาเชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_SHORT).show();
-                        }
+                        wait_upload();
                         break;
                 }
             }
         });
     }
 
-    public void wait_upload_file(View v){
+    public void wait_upload(){
+        if (CheckInternet()) {
+            GoogleSignInAccount alreadyloggedAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+            if (alreadyloggedAccount != null) {
+                //Toast.makeText(getApplicationContext(), "Already Logged In", Toast.LENGTH_SHORT).show();
 
-            ProgressDialog progressDialog = new ProgressDialog(history.this);
-            progressDialog.setTitle("กำลังส่งข้อมูล");
-            progressDialog.setMessage("โปรดรอ...");
-            progressDialog.setCancelable(false);
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
+                GoogleAccountCredential credential = GoogleAccountCredential.usingOAuth2(getApplicationContext(), Collections.singleton(DriveScopes.DRIVE_FILE));
+                credential.setSelectedAccount(alreadyloggedAccount.getAccount());
+                googleDriveService = new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).setApplicationName("MMSE Drive").build();
 
-            upload_file().addOnSuccessListener(new OnSuccessListener<String>() {
-                @Override
-                public void onSuccess(String s) {
-                    progressDialog.dismiss();
-                    shearfile();
-                    //database.delete_patient(patient_PK); ลบผู้ใช้งาน
-                    Toast.makeText(getApplicationContext(),"เสร็จสิ้น",Toast.LENGTH_SHORT).show();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    progressDialog.dismiss();
-                    deleteFile(googleDriveService,folderId);
-                    Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
-                }
-            });
+                //export
+                Import_Export import_export = new Import_Export(getApplicationContext());
+                import_export.export_test_data(patient_PK);
+                import_export.export_patient_data(patient_PK, mmse_ID);
+
+                String folderName = database.test_ID(patient_PK); //get test id
+
+                //upload google drive
+                ProgressDialog progressDialog = new ProgressDialog(history.this);
+                progressDialog.setTitle("กำลังส่งข้อมูล");
+                progressDialog.setMessage("โปรดรอ...");
+                progressDialog.setCancelable(false);
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.show();
+
+                find_folder().addOnSuccessListener(new OnSuccessListener<String>() { //ค้นหาโฟรเดอร์ทั้งหมดในกุเกิลไดร
+                    @Override
+                    public void onSuccess(String s) {
+                        progressDialog.dismiss();
+
+
+                        ProgressDialog progressDialog = new ProgressDialog(history.this);
+                        progressDialog.setTitle("กำลังส่งข้อมูล");
+                        progressDialog.setMessage("โปรดรอ...");
+                        progressDialog.setCancelable(false);
+                        progressDialog.setCanceledOnTouchOutside(false);
+                        progressDialog.show();
+                        searchFolder_andDelete(googleDriveService,getFolder_models,folderName).addOnSuccessListener(new OnSuccessListener<String>() { //ตรวจสอบว่ามีชื่อโฟรเดอร์ซ้ำกันก่อนหน้าไหม ถ้ามีจะลบโฟรเดอร์ออกก่อนเพื่อป้องกันไม่ให้สร้างโฟรเดอร์ซ้ำซ้อน
+                            @Override
+                            public void onSuccess(String s) {
+                                progressDialog.dismiss();
+
+                                ProgressDialog progressDialog = new ProgressDialog(history.this);
+                                progressDialog.setTitle("กำลังส่งข้อมูล");
+                                progressDialog.setMessage("โปรดรอ...");
+                                progressDialog.setCancelable(false);
+                                progressDialog.setCanceledOnTouchOutside(false);
+                                progressDialog.show();
+                                create_folder(folderName).addOnSuccessListener(new OnSuccessListener<String>() { //สร้างโฟรเดอร์
+                                    @Override
+                                    public void onSuccess(String s) {
+                                        progressDialog.dismiss();
+
+                                        ProgressDialog progressDialog = new ProgressDialog(history.this);
+                                        progressDialog.setTitle("กำลังส่งข้อมูล");
+                                        progressDialog.setMessage("โปรดรอ...");
+                                        progressDialog.setCancelable(false);
+                                        progressDialog.setCanceledOnTouchOutside(false);
+                                        progressDialog.show();
+
+                                        upload_file().addOnSuccessListener(new OnSuccessListener<String>() {
+                                            @Override
+                                            public void onSuccess(String s) {
+                                                progressDialog.dismiss();
+                                                shearfile();
+                                                database.delete_patient(patient_PK); //ลบผู้ใช้งาน
+                                                finish();
+                                                Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressDialog.dismiss();
+                                                deleteFolder(googleDriveService,folderId);
+                                                Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }); //upload file
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        progressDialog.dismiss();
+                                        deleteFolder(googleDriveService, folderId);
+                                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                progressDialog.dismiss();
+                                Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            } else {
+                Toast.makeText(getApplicationContext(), "กรุณาล็อคอินกุเกิลไดรไดรฟ์ก่อนส่งข้อมูล", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "กรุณาเชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public Task<String> create_folder() {
+    public Task<String> create_folder(String forlderName) {
         return Tasks.call(mExecutor,()-> {
-            String test_ID = database.test_ID(patient_PK); //get test id
             File fileMetadata = new File();
-            fileMetadata.setName(test_ID); //ตั่งชื่อ folder ใน google drive
+            fileMetadata.setName(forlderName); //ตั่งชื่อ folder ใน google drive
             fileMetadata.setMimeType("application/vnd.google-apps.folder");
             File file = null;
             try {
@@ -296,7 +339,7 @@ public class history extends AppCompatActivity {
         });
     }
 
-    public Task<String> deleteFile(Drive service, String fileId_) { //delete folder in google drive
+    public Task<String> deleteFolder(Drive service, String fileId_) { //delete folder in google drive
         return Tasks.call(mExecutor,()-> {
         try {
             service.files().delete(fileId_).execute();
@@ -304,6 +347,51 @@ public class history extends AppCompatActivity {
             System.out.println("An error occurred: " + e);
         }
         return "delete successfully";
+        });
+    }
+
+    public Task<String> searchFolder_andDelete(Drive service,ArrayList<getFolder_model> models,String folderUpload_Name) { //delete folder in google drive
+        return Tasks.call(mExecutor,()-> {
+            for (int i=0;i<models.size();i++) {
+                if (models.get(i).getFolder_name().equals(folderUpload_Name)){
+                    try {
+                        service.files().delete(models.get(i).getFolder_ID()).execute();
+                    } catch (IOException e) {
+                        System.out.println("An error occurred: " + e);
+                    }
+                } else {
+                }
+            }
+            return "delete successfully";
+        });
+    }
+
+    public Task<String> find_folder(){
+        return Tasks.call(mExecutor,()->{
+            String pageToken = null;
+            do {
+                FileList result = null;
+                try {
+                    result = googleDriveService.files().list()
+                            .setQ("mimeType='application/vnd.google-apps.folder'")
+                            .setSpaces("drive")
+                            .setFields("nextPageToken, files(id, name)")
+                            .setPageToken(pageToken)
+                            .execute();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                for (File file : result.getFiles()) {
+                    getFolder_model get_folder = new getFolder_model();
+                    Log.d("getname",file.getName());
+                    Log.d("getID",file.getId());
+                    get_folder.setFolder_name(file.getName());
+                    get_folder.setFolder_ID(file.getId());
+                    getFolder_models.add(get_folder);
+                }
+                pageToken = result.getNextPageToken();
+            } while (pageToken != null);
+            return "Find folder";
         });
     }
 
