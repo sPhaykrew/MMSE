@@ -180,7 +180,6 @@ public class Import_Export {
             export.write(data.toString());
             export.close();
 
-
             database.update_test_data_path(patient_PK,file_name);
             //Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {

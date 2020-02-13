@@ -58,6 +58,7 @@ public class history extends AppCompatActivity {
     Database database;
     String patient_PK;
     String mmse_ID;
+    ArrayList<uploadFile_model> uploadFile_models = new ArrayList<>();
     ArrayList<getFolder_model> getFolder_models = new ArrayList<>();
 
     @Override
@@ -191,14 +192,40 @@ public class history extends AppCompatActivity {
                                         progressDialog.setCanceledOnTouchOutside(false);
                                         progressDialog.show();
 
-                                        upload_file().addOnSuccessListener(new OnSuccessListener<String>() {
+                                        upload_file().addOnSuccessListener(new OnSuccessListener<String>() { //up load file
                                             @Override
                                             public void onSuccess(String s) {
                                                 progressDialog.dismiss();
-                                                shearfile();
-                                                database.delete_patient(patient_PK); //ลบผู้ใช้งาน
-                                                finish();
-                                                Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
+
+                                                ProgressDialog progressDialog = new ProgressDialog(history.this);
+                                                progressDialog.setTitle("กำลังส่งข้อมูล");
+                                                progressDialog.setMessage("โปรดรอ...");
+                                                progressDialog.setCancelable(false);
+                                                progressDialog.setCanceledOnTouchOutside(false);
+                                                progressDialog.show();
+
+                                                shearfile().addOnSuccessListener(new OnSuccessListener<String>() { //แชร์ข้อมูลไปให้ไดรหลัก
+                                                    @Override
+                                                    public void onSuccess(String s) {
+                                                        progressDialog.dismiss();
+
+                                                        for (int i=0;i<uploadFile_models.size();i++){
+                                                            java.io.File file = new java.io.File(uploadFile_models.get(i).getFile_path());
+                                                            file.delete();
+                                                        }
+
+                                                        database.delete_patient(patient_PK); //ลบผู้ใช้งาน
+                                                        finish();
+                                                        Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }).addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        progressDialog.dismiss();
+                                                        deleteFolder(googleDriveService,folderId);
+                                                        Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
+                                                    }
+                                                });
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
@@ -283,8 +310,6 @@ public class history extends AppCompatActivity {
             ArrayList no_10 = database.get_no10(patient_PK);
             ArrayList no_11 = database.get_no11(patient_PK);
             Split split = new Split();
-
-            ArrayList<uploadFile_model> uploadFile_models = new ArrayList<>();
 
             //get file patient data
             uploadFile_model getFile = new uploadFile_model();
