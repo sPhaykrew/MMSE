@@ -335,9 +335,7 @@ public class Question_list extends AppCompatActivity {
 
                 if (get_check_answer){
                     //Toast.makeText(getApplicationContext(),"ส่งข้อมูล",Toast.LENGTH_SHORT).show();
-                    Import_Export import_export = new Import_Export(getApplicationContext());
-                    import_export.export_test_data(patient_PK);
-                    import_export.export_patient_data(patient_PK,mmse_ID);
+                    wait_upload();
                 } else {
                     if (get_no1.get(0) == null) {
                         Intent go_no1 = new Intent(getApplicationContext(),No_1.class);
@@ -553,7 +551,6 @@ public class Question_list extends AppCompatActivity {
                                                             java.io.File file = new java.io.File(uploadFile_models.get(i).getFile_path());
                                                             file.delete();
                                                         }
-
                                                         database.delete_patient(patient_PK); //ลบผู้ใช้งาน
                                                         finish();
                                                         Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
