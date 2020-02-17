@@ -34,4 +34,9 @@ public class Split {
         String[] get_nameImage = pathImage.split("/");
         return get_nameImage[get_nameImage.length-1];
     }
+
+    public String get_FirstName(String FullName){
+        String[] get_FistName = FullName.split(" ");
+        return get_FistName[0];
+    }
 }

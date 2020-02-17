@@ -1,11 +1,10 @@
-package com.rmutt.mmse;
+package com.rmutt.mmse.Tests;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,19 +18,23 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.rmutt.mmse.Database;
+import com.rmutt.mmse.Question_list;
+import com.rmutt.mmse.R;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Split;
 
 import java.util.ArrayList;
 
-public class No_7 extends AppCompatActivity {
+public class No_9 extends AppCompatActivity {
 
-    RadioGroup radioGroup7_1;
-    EditText edit7_1;
-    Button next,before;
-    Dialog dialog_back;
+    RadioGroup radioGroup9_1;
+    EditText edit9_1;
+    Button next,before,show_message;
+    Dialog dialog_back,dialog_message;
     int sumscore = 0;
 
-    String checkradio7_1 = "";
+    String checkradio9_1 = "";
     String get_EditText1;
 
     TextView question;
@@ -39,9 +42,10 @@ public class No_7 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.no_7);
+        setContentView(R.layout.no_9);
 
         dialog_back = new Dialog(this);
+        dialog_message = new Dialog(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar_sub);
         TextView Title = toolbar.findViewById(R.id.title_sub);
@@ -58,7 +62,7 @@ public class No_7 extends AppCompatActivity {
                 cf.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(),Question_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
                         finish();
                     }
@@ -76,9 +80,10 @@ public class No_7 extends AppCompatActivity {
 
         next = findViewById(R.id.next);
         before = findViewById(R.id.before);
+        show_message = findViewById(R.id.show_message);
 
-        radioGroup7_1 = findViewById(R.id.radiogroup7_1);
-        edit7_1 = findViewById(R.id.edit7_1);
+        radioGroup9_1 = findViewById(R.id.radiogroup9_1);
+        edit9_1 = findViewById(R.id.edit9_1);
 
         question = findViewById(R.id.question);
 
@@ -87,53 +92,59 @@ public class No_7 extends AppCompatActivity {
         final Database database = new Database(getApplicationContext());
 
         Patient_Model patient_model = database.patient(Patient_PK);
+        Split split = new Split();
 
-        question.setText("ตั้งใจฟัง ผม/ดิฉัน เมื่อผม/ดิฉัน พูดข้อความนี้แล้วให้คุณ "+patient_model.getName()+" พูดตาม ผม/ดิฉัน จะบอกเพียงครั้งเดียว“ใครใคร่ขายไข่ไก่”");
+        question.setText("ต่อไปนี้เป็นคำสั่งที่เขียนเป็นตัวหนังสือต้องการให้คุณ "+split.get_FirstName(patient_model.getName())+" อ่านแล้วทำตามโดยจะอ่านออกเสียงหรือในใจก็ได้");
 
-        ArrayList<String> get_no7 = database.get_no7(Patient_PK);
-        if (get_no7.get(0) != null){
-            Split split = new Split();
+        show_message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go_show_message = new Intent(getApplicationContext(),No_9_show_message.class);
+                startActivity(go_show_message);
+            }
+        });
 
-            if (split.check_answer(get_no7.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
-                ((RadioButton)radioGroup7_1.getChildAt(0)).setChecked(true);
-                edit7_1.setText(split.get_answer(get_no7.get(0)));
+        ArrayList<String> get_no9 = database.get_no9(Patient_PK);
+        if (get_no9.get(0) != null){
+
+            if (split.check_answer(get_no9.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
+                ((RadioButton) radioGroup9_1.getChildAt(0)).setChecked(true);
+                edit9_1.setText(split.get_answer(get_no9.get(0)));
             } else {
-                ((RadioButton)radioGroup7_1.getChildAt(1)).setChecked(true);
-                edit7_1.setText(split.get_answer(get_no7.get(0)));
+                ((RadioButton) radioGroup9_1.getChildAt(1)).setChecked(true);
+                edit9_1.setText(split.get_answer(get_no9.get(0)));
             }
 
-            for (int i = 0; i < radioGroup7_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup7_1.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup9_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup9_1.getChildAt(i).setEnabled(false);
+//            }
 
-            //edit7_1.setFocusable(false); //ปิดไม่ให้แก้ไขได้
+            //edit9_1.setFocusable(false);
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
-            get_EditText1 = get_no7.get(0);
-            sumscore = Integer.parseInt(get_no7.get(1)); // get ค่า score
-
-
+            get_EditText1 = get_no9.get(0);
+            sumscore = Integer.parseInt(get_no9.get(1)); // get ค่า score
         }
 
-        radioGroup7_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        radioGroup9_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radio7_1_correct :
-                        checkradio7_1 = "correct";
-                        edit7_1.setText("ใครใคร่ขายไข่ไก่");
+                    case R.id.radio9_1_correct :
+                        checkradio9_1 = "correct";
+                        edit9_1.setText("หลับตาได้");
                         sumscore = sumscore + 1;
                         break;
-                    case R.id.radio7_1_wrong :
-                        if (checkradio7_1.equals("correct"))
+                    case R.id.radio9_1_wrong :
+                        if (checkradio9_1.equals("correct"))
                         {
                             sumscore = sumscore - 1;
                         }
 
-                        if (edit7_1.getText().toString().equals("ใครใคร่ขายไข่ไก่")){
-                            edit7_1.setText("");
+                        if (edit9_1.getText().toString().equals("หลับตาได้")){
+                            edit9_1.setText("");
                         }
-                        checkradio7_1 = "wrong";
+                        checkradio9_1 = "wrong";
                         break;
                 }
             }
@@ -142,20 +153,21 @@ public class No_7 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (radioGroup7_1.getCheckedRadioButtonId() == -1 || edit7_1.getText().toString().equals("") ) {
+                if (radioGroup9_1.getCheckedRadioButtonId() == -1 || edit9_1.getText().toString().equals("") ) {
                     Toast.makeText(getApplicationContext(), "กรุณากรอกข้อมูลให้ครบ", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (checkradio7_1.equals("correct")) {
-                        get_EditText1 = edit7_1.getText() + "_ถูก";
-                    } else if (checkradio7_1.equals("wrong")) {
-                        get_EditText1 = edit7_1.getText() + "_ผิด";
+                    if (checkradio9_1.equals("correct")) {
+                        get_EditText1 = edit9_1.getText() + "_ถูก";
+                    } else if (checkradio9_1.equals("wrong")) {
+                        get_EditText1 = edit9_1.getText() + "_ผิด";
                     }
 
-                    database.update_no7(Patient_PK,get_EditText1,sumscore);
+                    database.update_no9(Patient_PK,get_EditText1,sumscore);
 
-                    Intent go_no8 = new Intent(getApplicationContext(),No_8.class);
-                    startActivity(go_no8);
+                    Intent go_no10 = new Intent(getApplicationContext(),No_10.class);
+                    startActivity(go_no10);
                     finish();
+
                 }
             }
         });
@@ -163,8 +175,8 @@ public class No_7 extends AppCompatActivity {
         before.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent go_6 = new Intent(getApplicationContext(),No_6.class);
-                startActivity(go_6);
+                Intent go_8 = new Intent(getApplicationContext(),No_8.class);
+                startActivity(go_8);
                 finish();
             }
         });

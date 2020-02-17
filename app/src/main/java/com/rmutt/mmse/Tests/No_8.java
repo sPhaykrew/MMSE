@@ -1,11 +1,10 @@
-package com.rmutt.mmse;
+package com.rmutt.mmse.Tests;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Space;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +21,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.rmutt.mmse.Database;
+import com.rmutt.mmse.Question_list;
+import com.rmutt.mmse.R;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Split;
 
 import java.util.ArrayList;
 
@@ -70,7 +72,7 @@ public class No_8 extends AppCompatActivity {
                 cf.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(),Question_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
                         finish();
                     }
@@ -109,7 +111,9 @@ public class No_8 extends AppCompatActivity {
         ArrayAdapter adapter_place = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,place_list);
         spinner_place.setAdapter(adapter_place);
 
-        question.setText("ฟังดีๆนะเดี๋ยว ผม/ดิฉัน จะส่งกระดาษให้คุณ แล้วคุณ "+patient_model.getName()+" รับด้วยมือขวาพับครึ่งกระดาษ");
+        Split split = new Split();
+
+        question.setText("ฟังดีๆนะเดี๋ยว ผม/ดิฉัน จะส่งกระดาษให้คุณ แล้วคุณ "+split.get_FirstName(patient_model.getName())+" รับด้วยมือขวาพับครึ่งกระดาษ");
 
 //        edit8_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ถูก"
 //        edit8_2.setFocusable(false);
@@ -117,7 +121,6 @@ public class No_8 extends AppCompatActivity {
 
         ArrayList<String> get_no8 = database.get_no8(Patient_PK);
         if (get_no8.get(0) != null){
-            Split split = new Split();
 
             if (split.check_answer(get_no8.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup8_1.getChildAt(0)).setChecked(true);

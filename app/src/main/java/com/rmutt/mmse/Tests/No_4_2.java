@@ -1,4 +1,4 @@
-package com.rmutt.mmse;
+package com.rmutt.mmse.Tests;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +17,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.rmutt.mmse.Database;
+import com.rmutt.mmse.Question_list;
+import com.rmutt.mmse.R;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Split;
 
 import java.util.ArrayList;
 
@@ -53,7 +56,7 @@ public class No_4_2 extends AppCompatActivity {
                 cf.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(),Question_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
                         finish();
                     }
@@ -81,8 +84,8 @@ public class No_4_2 extends AppCompatActivity {
         edit1 = findViewById(R.id.edit1);
         question = findViewById(R.id.question);
 
-        question.setText("ผม/ดิฉัน จะสะกดคำว่า มะนาวให้คุณ "+patient_model.getName()+" ฟัง แล้วคุณ "+patient_model.getName()
-        +" สะกดถอยหลังจากพยัญชนะตัวหลังไปตัวแรก คำว่า มะนาว สะกดว่า มอม้า-สระอะ-นอหนู-สระอา-วอแหวน คุณ "+patient_model.getName()+" สะกดถอยหลังให้ฟัง");
+        question.setText("ผม/ดิฉัน จะสะกดคำว่า มะนาวให้คุณ "+split.get_FirstName(patient_model.getName())+" ฟัง แล้วคุณ "+split.get_FirstName(patient_model.getName())
+        +" สะกดถอยหลังจากพยัญชนะตัวหลังไปตัวแรก คำว่า มะนาว สะกดว่า มอม้า-สระอะ-นอหนู-สระอา-วอแหวน คุณ "+split.get_FirstName(patient_model.getName())+" สะกดถอยหลังให้ฟัง");
 
         ArrayList<String> get_no4 = database.get_no4(Patient_PK);
         if (get_no4.get(0) != null){

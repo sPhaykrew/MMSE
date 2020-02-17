@@ -8,7 +8,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,6 +43,19 @@ import com.rmutt.mmse.Export_Import.Import_Export;
 import com.rmutt.mmse.Export_Import.getFolder_model;
 import com.rmutt.mmse.Export_Import.uploadFile_model;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Tests.No_1;
+import com.rmutt.mmse.Tests.No_10;
+import com.rmutt.mmse.Tests.No_11;
+import com.rmutt.mmse.Tests.No_2_1;
+import com.rmutt.mmse.Tests.No_2_2;
+import com.rmutt.mmse.Tests.No_3;
+import com.rmutt.mmse.Tests.No_4_1;
+import com.rmutt.mmse.Tests.No_4_2;
+import com.rmutt.mmse.Tests.No_5;
+import com.rmutt.mmse.Tests.No_6;
+import com.rmutt.mmse.Tests.No_7;
+import com.rmutt.mmse.Tests.No_8;
+import com.rmutt.mmse.Tests.No_9;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -172,7 +184,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no1.get(0) != null) {
-                    Intent no1 = new Intent(getApplicationContext(),No_1.class);
+                    Intent no1 = new Intent(getApplicationContext(), No_1.class);
                     startActivity(no1);
                     finish();
                 } else {
@@ -187,12 +199,12 @@ public class Question_list extends AppCompatActivity {
                 if (get_no2.get(0) != null ){
                     switch (patient_model.getWhere()){
                         case "โรงพยาบาล" :
-                            Intent no_2_1 = new Intent(getApplicationContext(),No_2_1.class);
+                            Intent no_2_1 = new Intent(getApplicationContext(), No_2_1.class);
                             startActivity(no_2_1);
                             finish();
                             break;
                         case "บ้าน" :
-                            Intent no_2_2 = new Intent(getApplicationContext(),No_2_2.class);
+                            Intent no_2_2 = new Intent(getApplicationContext(), No_2_2.class);
                             startActivity(no_2_2);
                             finish();
                             break;
@@ -207,7 +219,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no3.get(0) != null) {
-                    Intent no3 = new Intent(getApplicationContext(),No_3.class);
+                    Intent no3 = new Intent(getApplicationContext(), No_3.class);
                     startActivity(no3);
                     finish();
                 } else {
@@ -222,12 +234,12 @@ public class Question_list extends AppCompatActivity {
                 if (get_no4.get(0) != null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
                     switch (patient_model.getCalculate()){
                         case "เป็น" :
-                            Intent no4_1 = new Intent(getApplicationContext(),No_4_1.class);
+                            Intent no4_1 = new Intent(getApplicationContext(), No_4_1.class);
                             startActivity(no4_1);
                             finish();
                             break;
                         case "ไม่เป็น" :
-                            Intent no4_2 = new Intent(getApplicationContext(),No_4_2.class);
+                            Intent no4_2 = new Intent(getApplicationContext(), No_4_2.class);
                             startActivity(no4_2);
                             finish();
                             break;
@@ -242,7 +254,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no5.get(0) != null) {
-                    Intent no5 = new Intent(getApplicationContext(),No_5.class);
+                    Intent no5 = new Intent(getApplicationContext(), No_5.class);
                     startActivity(no5);
                     finish();
                 } else {
@@ -255,7 +267,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no6.get(0) != null) {
-                    Intent no6 = new Intent(getApplicationContext(),No_6.class);
+                    Intent no6 = new Intent(getApplicationContext(), No_6.class);
                     startActivity(no6);
                     finish();
                 } else {
@@ -268,7 +280,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no7.get(0) != null) {
-                    Intent no7 = new Intent(getApplicationContext(),No_7.class);
+                    Intent no7 = new Intent(getApplicationContext(), No_7.class);
                     startActivity(no7);
                     finish();
                 } else {
@@ -281,7 +293,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no8.get(0) != null) {
-                    Intent no8 = new Intent(getApplicationContext(),No_8.class);
+                    Intent no8 = new Intent(getApplicationContext(), No_8.class);
                     startActivity(no8);
                     finish();
                 } else {
@@ -294,7 +306,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no9.get(0) == null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
-                    Intent no9 = new Intent(getApplicationContext(),No_9.class);
+                    Intent no9 = new Intent(getApplicationContext(), No_9.class);
                     startActivity(no9);
                     finish();
                 } else {
@@ -307,7 +319,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no10.get(0) == null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
-                    Intent no10 = new Intent(getApplicationContext(),No_10.class);
+                    Intent no10 = new Intent(getApplicationContext(), No_10.class);
                     startActivity(no10);
                     finish();
                 } else {
@@ -320,7 +332,7 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (get_no11.get(0) != null) {
-                    Intent no11 = new Intent(getApplicationContext(),No_11.class);
+                    Intent no11 = new Intent(getApplicationContext(), No_11.class);
                     startActivity(no11);
                     finish();
                 } else {

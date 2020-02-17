@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.util.Calendar;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Tests.No_1;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -251,7 +251,7 @@ public class Start_Test extends AppCompatActivity {
                         }
                     }
 
-                    Intent intent = new Intent(getApplicationContext(),No_1.class);
+                    Intent intent = new Intent(getApplicationContext(), No_1.class);
                     startActivity(intent);
                     finish();
                 }

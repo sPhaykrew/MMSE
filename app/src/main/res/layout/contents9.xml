@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_sub" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="การจัดสิ่งแวดล้อมภายในบ้านสำหรับผู้ป่วยโรคสมองเสื่อม"
+                android:textSize="20dp"
+                android:textColor="#53B19D"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="พื้นและวัสดุที่ใช้ในการปูพื้นต้องไม่ลื่น เลือกใช้พรมสีเรียบ และติดเทปกาวที่พรมเช็ดเท้าเพื่อป้องกันลื่นล้ม  "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="จัดวางสิ่งของเฉพาะที่จำเป็นให้สามารถหยิบใช้ได้ ควรจัดให้มีตู้เก็บของที่สามารถล็อคได้ สำหรับสิ่งของตามทางเดินไม่ให้กีดขวางทางเดิน เก็บสิ่งของที่อาจทำให้เกิดอันตรายต่อการลื่นล้ม วัตถุมีพิษที่มีลักษณะคล้ายผลิตภัณฑ์อาหาร เก็บของมีคมต่างๆให้เรียบร้อย "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="บันไดควรมีราวจับตลอดแนวตั้งแต่ขั้นแรกจนถึงขั้นสุดท้าย ไม่ใช้วัสดุที่ทำให้เกิดการลื่นได้ง่าย ติดตั้งแถบกันลื่นบริเวณขั้นบันได ใช้สีที่แตกต่างกับสีพื้นในขั้นแรกและขั้นสุดท้ายเพื่อช่วยในการรับรู้ความลึกของบันได "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ติดตั้งระบบล็อค สัญญาณเตือน กระดิ่งที่ประตูทางเข้า ประตูรั้ว หากมีรีโมทประตูให้เก็บทุกชิ้นให้พ้นจากผู้ป่วย ควรติดตั้งสัญญาณเตือนภัยหรือกระดิ่งที่จะดังเมื่อมีคนออกจากบ้าน ที่ล็อคประตูควรติดตั้งระดับใกล้เคียงกับพื้นเพื่อไม่ให้ผู้ป่วยสังเกตเห็นได้ง่าย กลอนประตูหุ้มวัสดุเพื่อไม่ให้สามารถเปิดได้โดยง่าย หน้าต่างควรมีราวกั้น"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="เฟอร์นิเจอร์ เคลื่อนย้ายที่ไม่จำเป็นออก จัดในตำแหน่งที่ไม่กีดขวางทางเดิน หรือทางเก้าอี้รถเข็น ไม่ควรเคลื่อนย้ายเฟอร์นิเจอร์ คำนึงถึงความเป็นระเบียบต่อการใช้งาน "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="เก้าอี้นั่งควรมีพนักแขน เพื่อช่วยในการลุกนั่ง ติดตั้งอุปกรณ์กันกระแทกตามมุมเฟอร์นิเจอร์ ตู้ลิ้นชัก ติดเทปกาวสะท้อนแสงตามเหลี่ยมคมของเฟอร์นิเจอร์"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ปกปิดวัสดุที่มีลักษณะมันวาวหรือกระจกสะท้อน เพราะอาจทำให้เพิ่มอาการสับสน อาการก้าวร้าว"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ติดตั้งไฟให้แสงสว่างในเวลากลางคืนบริเวณบันได และทางเดิน หลีกเลี่ยงแสงที่จ้าเกินไป ควรใช้แสงแบบอ้อม เช่น การติดไฟที่ผนัง ฯลฯ "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ติดตั้งสัญญาณจับควันไฟ"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ห้องนั่งเล่นหรือห้องทำงาน ควรจัดเฟอร์นิเจอร์ให้มีความเหมาะสม มีการติดตั้งรูปถ่ายหรือภาพ อดีต มีกระดาษบันทึกติดไว้ที่ผนังห้อง มีบอร์ดตารางแสดงวันนัดหมาย มีรูปภาพของผู้ที่จะไปติดต่อด้วย มีนาฬิกาที่บอกวัน เวลา มีเบอร์โทรฉุกเฉิน มีขนม เครื่องดื่มที่รับประทานเป็นประจำ"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ดูแลความสะอาดภายในบ้านและภายในห้องต่างๆ"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="พื้นที่ภายนอกควรจัดให้มีอากาศถ่ายเทได้สะดวก ดูแลเรื่องสภาพแวดล้อมเป็นประจำ ลดเสียงที่ดังและแสงที่จ้าเกินไปเพื่อลดความสับสน สร้างความสงบเพื่อส่งเสริมการพักพักผ่าน"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13.	ห้องครัวหรือพื้นที่สำหรับรับประทานอาหาร ควรลดการวางของบนเคาร์เตอร์ที่อาจทำให้เกิดความสับสนในการใช้งาน การใช้สวิตซ์ไฟที่มีระบบการตัดอัตโนมัติ มีที่วางน้ำที่สังเกตุได้ง่าย การใช้ตู้เก็บของเหนือเคาน์เตอร์แบบไม่มีบานปิดเพื่อป้องกันการรื้อค้นของผู้สูงอายุ  ควรมีการลบมุมเคาน์เตอร์และมุมโต๊ะอาหารเพื่อป้องกันการกระแทก"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ห้องน้ำและส่วนอาบน้ำ ควรจัดสิ่งของเครื่องใช้ให้มีความเป็นระเบียบเรียบร้อย มีตู้เก็บของใช้ในห้องน้ำ มีพรมเช็ดเท้า มีตะกร้าทิ้งกระดาษชำระหรือขยะ มีการยกระดับโถสุขภัณฑ์ มีเครื่องช่วยในการพยุงตัว มีสัญลักษณ์แสดงปุ่มกดน้ำทิ้ง สีของที่นั่งสุขภัณฑ์ตัดกับสีห้อง มีที่นั่งอาบน้ำ มีราวจับในส่วนอาบน้ำ มีแผ่นยางกันลื่นในห้องน้ำ มีแสดงสว่างที่เพียงพอ"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15. "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ห้องนอน ควรจัดโดยคำนึงถึงความปลอดภัยและความเงียบสงบเพื่อส่งเสริมการพักผ่อน  เตียงนอนควรมีความแข็งแรงถาวร ควรลบมุมของเฟอร์นิเจอร์ มีน้ำดื่มอยู่ภายใยห้องนอน มีทางที่สามารถเดินได้รอบเตียงนอน "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|start">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14dp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/before"
+                        android:text="ย้อนกลับ" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -13,12 +13,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.rmutt.mmse.R;
 
-public class Contents5 extends AppCompatActivity {
+public class Contents8 extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contents5);
+        setContentView(R.layout.contents8);
 
         Toolbar toolbar = findViewById(R.id.toolbar_sub);
         TextView Title = toolbar.findViewById(R.id.title_sub);
@@ -38,8 +38,8 @@ public class Contents5 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent content6 = new Intent(getApplicationContext(),Contents6.class);
-                startActivity(content6);
+                Intent content9 = new Intent(getApplicationContext(),Contents9.class);
+                startActivity(content9);
                 finish();
             }
         });
@@ -47,8 +47,8 @@ public class Contents5 extends AppCompatActivity {
         before.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent content4 = new Intent(getApplicationContext(),Contents4.class);
-                startActivity(content4);
+                Intent content7 = new Intent(getApplicationContext(),Contents7.class);
+                startActivity(content7);
                 finish();
             }
         });

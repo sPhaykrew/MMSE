@@ -6,22 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".Manual.Manual_main">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical">
 
         <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:layout_width="wrap_content"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="#53B19D"-->
+<!--            android:textSize="16dp"-->
+<!--            android:text="คู่มือการดูแลผู้ป่วยสมองเสื่อมสำหรับญาติและผู้ดูแล" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="#53B19D"
-            android:textSize="20dp"
-            android:text="สารบัญ" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#53B19D"
+                android:textSize="16dp"
+                android:text="คู่มือการดูแลผู้ป่วยสมองเสื่อมสำหรับญาติและผู้ดูแล" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -138,6 +161,121 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="#53B19D"
+                android:textSize="16dp"
+                android:text="ปัญหาที่พบในผู้ป่วยสมองเสื่อมและแนวทางการช่วยเหลือ" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contents6"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16dp"
+                android:text="1. ปัญหาเกี่ยวกับการสูญเสียความสามารถในการปฏิบัติกิจวัตรประจำวัน" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contents7"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16dp"
+                android:text="2. ปัญหาเกี่ยวกับการหลงลืม" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contents8"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16dp"
+                android:text="3. ปัญหาเกี่ยวกับพฤติกรรม" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contents9"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16dp"
+                android:text="การจัดสิ่งแวดล้อมภายในบ้านสำหรับผู้ป่วยโรคสมองเสื่อม" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
     </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

@@ -1,11 +1,10 @@
-package com.rmutt.mmse;
+package com.rmutt.mmse.Tests;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +18,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.rmutt.mmse.Database;
+import com.rmutt.mmse.Question_list;
+import com.rmutt.mmse.R;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Split;
 
 import java.util.ArrayList;
 
@@ -61,7 +64,7 @@ public class No_3 extends AppCompatActivity {
                 cf.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(),Question_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
                         finish();
                     }
@@ -100,7 +103,9 @@ public class No_3 extends AppCompatActivity {
         final Patient_Model patient_model = database.patient(Patient_PK);
         check_test = patient_model.getCheck_test();
 
-        question.setText("ขอให้คุณ "+ patient_model.getName() + " โปรดตั้งใจฟังให้ดีเพราะจะบอกเพียงครั่งเดียวไม่มีการบอกซ้ำอีกเมื่อ ผม/ดิฉันพูดจบให้คุณ " + patient_model.getName()
+        Split split = new Split();
+
+        question.setText("ขอให้คุณ "+ split.get_FirstName(patient_model.getName()) + " โปรดตั้งใจฟังให้ดีเพราะจะบอกเพียงครั่งเดียวไม่มีการบอกซ้ำอีกเมื่อ ผม/ดิฉันพูดจบให้คุณ " + split.get_FirstName(patient_model.getName())
         + " พูดทบทวนตามที่ได้ยิน ให้ครบทั้ง 3 ชื่อแล้วพยายามจำไว้ให้ดีเดี่ยว ผม/ดิฉัน จะถามซ้ำ");
 
         switch (check_test) {
@@ -127,7 +132,6 @@ public class No_3 extends AppCompatActivity {
         //ถ้าเคยทำไว้แล้วจะ set ตำคอบไว้กับปิดไม่ให้แก้ไข
         ArrayList<String> get_no3 = database.get_no3(Patient_PK);
         if (get_no3.get(0) != null){
-            Split split = new Split();
 
             if (split.check_answer(get_no3.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup3_1.getChildAt(0)).setChecked(true);

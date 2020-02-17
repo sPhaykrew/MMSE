@@ -1,4 +1,4 @@
-package com.rmutt.mmse;
+package com.rmutt.mmse.Tests;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,9 +18,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.rmutt.mmse.Database;
+import com.rmutt.mmse.Question_list;
+import com.rmutt.mmse.R;
+import com.rmutt.mmse.Split;
+
 import java.util.ArrayList;
 
-public class No_2_1 extends AppCompatActivity {
+public class No_2_2 extends AppCompatActivity {
 
     RadioGroup radioGroup2_1,radioGroup2_2,radioGroup2_3,radioGroup2_4,radioGroup2_5;
     EditText edit2_1,edit2_2,edit2_3,edit2_4,edit2_5;
@@ -39,7 +44,7 @@ public class No_2_1 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.no_2_1);
+        setContentView(R.layout.no_2_2);
 
         dialog_back = new Dialog(this);
 
@@ -58,7 +63,7 @@ public class No_2_1 extends AppCompatActivity {
                 cf.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(),Question_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
                         finish();
                     }
@@ -78,17 +83,17 @@ public class No_2_1 extends AppCompatActivity {
         final String Patient_PK = sp.getString("Patient_PK", "null");
         final Database database = new Database(getApplicationContext());
 
-        radioGroup2_1 = findViewById(R.id.radiogroup2_1_1);
-        radioGroup2_2 = findViewById(R.id.radiogroup2_1_2);
-        radioGroup2_3 = findViewById(R.id.radiogroup2_1_3);
-        radioGroup2_4 = findViewById(R.id.radiogroup2_1_4);
-        radioGroup2_5 = findViewById(R.id.radiogroup2_1_5);
+        radioGroup2_1 = findViewById(R.id.radiogroup2_2_1);
+        radioGroup2_2 = findViewById(R.id.radiogroup2_2_2);
+        radioGroup2_3 = findViewById(R.id.radiogroup2_2_3);
+        radioGroup2_4 = findViewById(R.id.radiogroup2_2_4);
+        radioGroup2_5 = findViewById(R.id.radiogroup2_2_5);
 
-        edit2_1 = findViewById(R.id.edit2_1_1);
-        edit2_2 = findViewById(R.id.edit2_1_2);
-        edit2_3 = findViewById(R.id.edit2_1_3);
-        edit2_4 = findViewById(R.id.edit2_1_4);
-        edit2_5 = findViewById(R.id.edit2_1_5);
+        edit2_1 = findViewById(R.id.edit2_2_1);
+        edit2_2 = findViewById(R.id.edit2_2_2);
+        edit2_3 = findViewById(R.id.edit2_2_3);
+        edit2_4 = findViewById(R.id.edit2_2_4);
+        edit2_5 = findViewById(R.id.edit2_2_5);
 
         next = findViewById(R.id.next);
         before = findViewById(R.id.before);
@@ -178,11 +183,11 @@ public class No_2_1 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radio2_1_1_correct :
+                    case R.id.radio2_2_1_correct :
                         checkradio2_1 = "correct";
                         sumscore = sumscore + 1;
                         break;
-                    case R.id.radio2_1_1_wrong :
+                    case R.id.radio2_2_1_wrong :
                         if (checkradio2_1.equals("correct"))
                         {
                             sumscore = sumscore - 1;
@@ -197,11 +202,11 @@ public class No_2_1 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radio2_1_2_correct :
+                    case R.id.radio2_2_2_correct :
                         checkradio2_2 = "correct";
                         sumscore = sumscore + 1;
                         break;
-                    case R.id.radio2_1_2_wrong :
+                    case R.id.radio2_2_2_wrong :
                         if (checkradio2_2.equals("correct"))
                         {
                             sumscore = sumscore - 1;
@@ -216,11 +221,11 @@ public class No_2_1 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radio2_1_3_correct :
+                    case R.id.radio2_2_3_correct :
                         checkradio2_3 = "correct";
                         sumscore = sumscore + 1;
                         break;
-                    case R.id.radio2_1_3_wrong :
+                    case R.id.radio2_2_3_wrong :
                         if (checkradio2_3.equals("correct"))
                         {
                             sumscore = sumscore - 1;
@@ -235,11 +240,11 @@ public class No_2_1 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radio2_1_4_correct :
+                    case R.id.radio2_2_4_correct :
                         checkradio2_4 = "correct";
                         sumscore = sumscore + 1;
                         break;
-                    case R.id.radio2_1_4_wrong :
+                    case R.id.radio2_2_4_wrong :
                         if (checkradio2_4.equals("correct"))
                         {
                             sumscore = sumscore - 1;
@@ -254,11 +259,11 @@ public class No_2_1 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radio2_1_5_correct :
+                    case R.id.radio2_2_5_correct :
                         checkradio2_5 = "correct";
                         sumscore = sumscore + 1;
                         break;
-                    case R.id.radio2_1_5_wrong :
+                    case R.id.radio2_2_5_wrong :
                         if (checkradio2_5.equals("correct"))
                         {
                             sumscore = sumscore - 1;
@@ -280,9 +285,9 @@ public class No_2_1 extends AppCompatActivity {
 //                get_EditText5 = edit2_5.getText().toString();
 
                 if (edit2_1.getText().toString().equals("") || edit2_2.getText().toString().equals("") || edit2_3.getText().toString().equals("") ||
-                edit2_4.getText().toString().equals("") || edit2_5.getText().toString().equals("") || radioGroup2_1.getCheckedRadioButtonId() == -1
-                || radioGroup2_2.getCheckedRadioButtonId() == -1 || radioGroup2_3.getCheckedRadioButtonId() == -1
-                || radioGroup2_4.getCheckedRadioButtonId() == -1 || radioGroup2_5.getCheckedRadioButtonId() == -1) {
+                        edit2_4.getText().toString().equals("") || edit2_5.getText().toString().equals("") || radioGroup2_1.getCheckedRadioButtonId() == -1
+                        || radioGroup2_2.getCheckedRadioButtonId() == -1 || radioGroup2_3.getCheckedRadioButtonId() == -1
+                        || radioGroup2_4.getCheckedRadioButtonId() == -1 || radioGroup2_5.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(getApplicationContext(),"กรุณากรอกข้อมูลให้ครบ",Toast.LENGTH_SHORT).show();
                 } else {
 

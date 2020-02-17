@@ -21,7 +21,7 @@ import com.rmutt.mmse.R;
  */
 public class Manual_main extends Fragment {
 
-    LinearLayout contents1,contents2,contents3,contents4,contents5,contents6,contents7,contents8;
+    LinearLayout contents1,contents2,contents3,contents4,contents5,contents6,contents7,contents8,contents9;
 
 
     public Manual_main() {
@@ -77,6 +77,42 @@ public class Manual_main extends Fragment {
             public void onClick(View v) {
                 Intent content5 = new Intent(getContext(),Contents5.class);
                 startActivity(content5);
+            }
+        });
+
+        contents6 = view.findViewById(R.id.contents6);
+        contents6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent content6 = new Intent(getContext(),Contents6.class);
+                startActivity(content6);
+            }
+        });
+
+        contents7 = view.findViewById(R.id.contents7);
+        contents7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent content7 = new Intent(getContext(),Contents7.class);
+                startActivity(content7);
+            }
+        });
+
+        contents8 = view.findViewById(R.id.contents8);
+        contents8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent content8 = new Intent(getContext(),Contents8.class);
+                startActivity(content8);
+            }
+        });
+
+        contents9 = view.findViewById(R.id.contents9);
+        contents9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent content9 = new Intent(getContext(),Contents9.class);
+                startActivity(content9);
             }
         });
 

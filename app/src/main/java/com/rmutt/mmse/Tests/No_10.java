@@ -1,4 +1,4 @@
-package com.rmutt.mmse;
+package com.rmutt.mmse.Tests;
 
 import android.Manifest;
 import android.app.Activity;
@@ -30,12 +30,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
+import com.rmutt.mmse.Database;
+import com.rmutt.mmse.Question_list;
+import com.rmutt.mmse.R;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
+import com.rmutt.mmse.Split;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -78,7 +81,7 @@ public class No_10 extends AppCompatActivity {
                 cf.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(),Question_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
                         finish();
                     }
@@ -109,11 +112,12 @@ public class No_10 extends AppCompatActivity {
         final Database database = new Database(getApplicationContext());
         Patient_Model patient_model = database.patient(Patient_PK);
 
-        question.setText("คุณ "+patient_model.getName()+" เขียนข้อความอะไรก็ได้ที่อ่านแล้วรู้เรื่อง หรือมีความหมายมา 1 ประโยค");
+        Split split = new Split();
+
+        question.setText("คุณ "+split.get_FirstName(patient_model.getName())+" เขียนข้อความอะไรก็ได้ที่อ่านแล้วรู้เรื่อง หรือมีความหมายมา 1 ประโยค");
 
         final ArrayList<String> get_no10 = database.get_no10(Patient_PK);
         if (get_no10.get(0) != null){
-            Split split = new Split();
 
             if (get_no10.get(0).equals("ถูก")){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup10_1.getChildAt(0)).setChecked(true);

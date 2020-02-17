@@ -33,38 +33,38 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Question_list"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_1"
+        <activity android:name=".Tests.No_1"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_2_1"
+        <activity android:name=".Tests.No_2_1"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_2_2"
+        <activity android:name=".Tests.No_2_2"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_3"
+        <activity android:name=".Tests.No_3"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_4_1"
+        <activity android:name=".Tests.No_4_1"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_4_2"
+        <activity android:name=".Tests.No_4_2"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_5"
+        <activity android:name=".Tests.No_5"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_6"
+        <activity android:name=".Tests.No_6"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_7"
+        <activity android:name=".Tests.No_7"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_8"
+        <activity android:name=".Tests.No_8"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_9"
+        <activity android:name=".Tests.No_9"
             android:screenOrientation="portrait"/>
-        <activity android:name=".No_9_show_message"
+        <activity android:name=".Tests.No_9_show_message"
             android:screenOrientation="landscape" />
-        <activity android:name=".No_10"
+        <activity android:name=".Tests.No_10"
             android:screenOrientation="portrait"
             android:requestLegacyExternalStorage="true"/>
-        <activity android:name=".No_11"
+        <activity android:name=".Tests.No_11"
             android:screenOrientation="portrait"
             android:requestLegacyExternalStorage="true"/>
         <activity
-            android:name=".No_11_show_message"
+            android:name=".Tests.No_11_show_message"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Manual.Contents1"
@@ -80,6 +80,18 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Manual.Contents5"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents6"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents7"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents8"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Manual.Contents9"
             android:screenOrientation="portrait" />
     </application>
 

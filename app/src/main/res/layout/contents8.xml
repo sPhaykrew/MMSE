@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_sub" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. ปัญหาเกี่ยวกับพฤติกรรม"
+                android:textSize="20dp"
+                android:textColor="#53B19D"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1) "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ความผิดปกติทางพฤติกรรม "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="ได้แก่ พฤติกรรมก้าวร้าว กลั้นปัสสาวะอุจจาระไม่อยู่ เปลื้องผ้าในที่สาธารณะ ฯลฯ ซึ่งปัญหานี้จะพบในผู้ป่วยบางรายเท่านั้น"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16dp"
+                android:text="แนวทางการจัดการกับปัญหา"
+                android:textColor="#CC000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="1.	พยายามทำความเข้าใจสาเหตุของพฤติกรรมดังกล่าว และพยายามดูแลผู้ป่วยด้วยความเคารพ และพยายามสงบสติอารมณ์"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="2.	ผู้ป่วยที่ชอบเปลื้องผ้าในที่สาธารณะให้ค้นหาสาเหตุและค่อยๆ เบนความสนใจพร้อมกับช่วยใส่เสื้อผ้า ซักถามสิ่งที่ผู้ป่วยต้องการ และอธิบายสิ่งที่ผู้ป่วยเข้าใจผิด ไม่ตำหนิให้ผู้ป่วยอับอาย"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2) "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="พฤติกรรมก้าวร้าว "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="ผู้ป่วยที่มีปัญหาด้านความจำ การตัดสินใจ และความสามารถในการแก้ปัญหา ทำให้ทำกิจกรรมต่างๆไม่ได้ ทำให้เกิดความรู้สึกทางลบ และแสดงออกมาเป็นพฤติกรรมก้าวร้าวเมื่อมีเหตุการณ์กระตุ้น เช่นระแวงว่ามีคนปองร้าย ระแวงว่ามีคนขโมยของ ฯลฯ"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16dp"
+                android:text="แนวทางการจัดการกับปัญหา"
+                android:textColor="#CC000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="1.	ยอมรับอาการของผู้ป่วย ไม่ควรแสดงความไม่พอใจหรือต่อปากต่อคำกับผู้ป่วย"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="2.	จัดสิ่งของเครื่องใช้ผู้ป่วยไว้ที่เดิม หลีกเลี่ยงการย้ายตำแหน่ง เพราะผู้ป่วยอาจมีอารมณ์โมโหเมื่อหาสิ่งของไม่พบ"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="3.	ผู้ดูแลอธิบายสิ่งที่เกิดขึ้นอย่างค่อยเป็นค่อยไป และเบี่ยงเบนความสนใจไปเรื่องอื่น ชักชวนผู้ป่วยออกจากสถานที่ที่ทำให้แสดงความก้าวร้าว"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3) "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="การไม่อยู่ในโลกของความเป็นจริง "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="ผู้ป่วยมักจะจำเรื่องที่เกิดขึ้นใหม่ได้ แต่จำเรื่องที่ผ่านมาในอดีตไม่ได้ เมื่ออาการรุนแรงมากขึ้นผู้ป่วยอาจจำชื่อบุตร คู่สมรสไม่ได้ และจำเหตุการณ์ในอดีตของชีวิตได้ดี"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16dp"
+                android:text="แนวทางการจัดการกับปัญหา"
+                android:textColor="#CC000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="1.	การเล่าประสบการณ์ในอดีตให้กับผู้ป่วยฟังโดยเฉพาะเหตุการณ์ที่ภาคภูมิใจ และค่อยๆลำดับเหตุการณ์จากอดีตมาจนถึงปัจจุบัน เพื่อช่วยฟื้นความจำของผู้สูงอายุ"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="2.	สามารถให้เด็กๆ เข้าร่วมกิจกรรมด้วยได้ เพราะเด็กชอบฟังเรื่องที่เล่าซ้ำไปมา"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4) "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="อาการหูแว่วประสาทหลอน"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="16dp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="ผู้ป่วยบางคนจะมีอาการหูแว่ว ประสาทหลอน อาการเหล่านี้เกิดจากการทำงานที่ผิดปกติของสมอง ยาบางชนิด หรือภาวะแทรกซ้อนบางอย่าง"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16dp"
+                android:text="แนวทางการจัดการกับปัญหา"
+                android:textColor="#CC000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="1.	แจ้งแพทย์เมื่อพาผู้ป่วยมาพบแพทย์ตามนัดเพื่อประเมินสาเหตุ และอธิบายให้ผู้ป่วยเข้าใจสิ่งที่เกิดขึ้น"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="2.	ผู้ดูแลควรปลอบโยนผู้ป่วยว่าไม่ต้องตกใจกับสิ่งที่เกิดขึ้น"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="3.	เบี่ยงเบนความสนใจ ชวนผู้ป่วยคุยเรื่องอื่นเพื่อให้เลิกหมกมุ่นกับอาการเหล่านี้"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5) "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ปัญหาการหลงทาง"
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="16dp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="ผู้ป่วยตั้งแต่ระดับปานกลางจะเริ่มจำบ้านตนเองไม่ได้ ผู้ป่วยจึงกลับบ้านตนเองไม่ได้ หาห้องน้ำไม่เจอ เดินหลงเข้าไปในบ้านผู้อื่น"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="16dp"
+                android:text="แนวทางการจัดการกับปัญหา"
+                android:textColor="#CC000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="1.	ภายในบ้านควรมีป้ายชื่อ เครื่องหมายหรือสัญลักษณ์บอกทิศทางเกี่ยวกับห้องน้ำ ห้องนอน ห้องครัว และควรมีโคมไฟหรือแสงสว่างให้เพียงพอ"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    "
+                    android:textSize="16dp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#808080"
+                    android:text="2.	ผู้ป่วยที่แข็งแรง สามารถออกไปทำกิจกรรมนอกบ้านได้ ควรมีบัตร บอกชื่อ ที่อยู่ เบอร์โทรศัพท์ ข้อมูลเกี่ยวกับการเจ็บป่วย "
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|start">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14dp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/before"
+                        android:text="ย้อนกลับ" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|right">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14dp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/next"
+                        android:text="ถัดไป" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
