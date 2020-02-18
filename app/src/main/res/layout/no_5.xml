@@ -10,7 +10,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,13 +25,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="5. ทดสอบความจำระยะสั้นของชื่อสิ่งของ 3 อย่างที่ให้จำไว้แล้ว"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="อธิบายให้ผู้ป่วยฟัง : " />
 
             <TextView
@@ -38,21 +39,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="เมื่อสักครู่ที่ให้จำของ 3 อย่าง จำได้ไหมมีอะไรบ้าง" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="คำสั่ง : " />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="การบอกชื่อแต่ละคำให้ห่างกันประมาณหนึ่งวินาที ต้องไม่ช้าหรือเร็วเกินไป" />
 
             <LinearLayout
@@ -62,10 +63,10 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:id="@+id/textview1"
                     android:text="ดอกไม้" />
 
@@ -100,10 +101,10 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:id="@+id/textview2"
                     android:text="แม่น้ำ" />
 
@@ -139,11 +140,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/textview3"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="รถไฟ" />
 
                 <RadioGroup
@@ -177,7 +178,7 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/edit3_1"
                 android:inputType="text"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:backgroundTint="#53B19D"
                 android:hint="พิมพ์คำกรณีตอบไม่ตรง" />
 
@@ -187,7 +188,7 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/edit3_2"
                 android:inputType="text"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:backgroundTint="#53B19D"
                 android:hint="พิมพ์คำกรณีตอบไม่ตรง" />
 
@@ -197,7 +198,7 @@
                 android:layout_marginTop="20dp"
                 android:inputType="text"
                 android:id="@+id/edit3_3"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:backgroundTint="#53B19D"
                 android:hint="พิมพ์คำกรณีตอบไม่ตรง" />
 
@@ -218,7 +219,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/before"
                         android:text="ก่อนหน้า" />
@@ -236,7 +237,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/next"
                         android:text="ถัดไป" />

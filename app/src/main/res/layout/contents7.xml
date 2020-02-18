@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2. ปัญหาเกี่ยวกับการหลงลืม"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#53B19D"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
@@ -38,14 +38,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ปัญหาการลืมรับประทานยา "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยมักลืมว่ารับประทานยาไปแล้วหรือยัง ทำให้มีปัญหาเรื่องการขาดยา รับประทานยาเกินขนาด"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -95,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	การจัดกล่องยาเพื่อใช้ในการกำหนดเวลาการรับประทานยา โดยบรรจุยาตามเวลา เป็นวันหรืออาทิตย์ตามระดับความจำของผู้ป่วย และผู้ดูแลคอยตรวจสอบปริมาณของยาจากกล่อง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -118,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	การใช้นาฬิกาปลุกเพื่อช่วยเตือนความจำของผู้ป่วย"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -142,14 +142,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="การถามคำถามซ้ำ "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -165,7 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -173,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยมักจะถามเรื่องเดิมซํ้า อาจเนื่องจากจำไม่ได้ ว่าได้รับคำตอบว่าอะไร หรือจำไม่ได้ว่าได้ถามไปแล้ว เกิดจากความสามารถในการจำลดลง หรือการมีความวิตกกังวลเกี่ยวกับเรื่องหรือเหตุการณ์นั้นๆ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -183,7 +183,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -199,7 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -207,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	พยายามเบี่ยงเบนความสนใจ ชวนคุยเรื่องอื่น ไม่วกกลับมาย้ำ หรือทบทวนในเรื่องนั้นอีก"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -222,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -230,7 +230,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	หากผู้ป่วยยังสามารถอ่านหนังสือ และเข้าใจได้ ให้ผู้ดูแลเขียนข้อความ หรือคำตอบให้กับผู้ป่วยเก็บไว้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -245,7 +245,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -253,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	การพูดคุยปลอบโยน สร้างความมั่นใจแก่ผู้ป่วย"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -269,14 +269,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="การลืมสิ่งของ "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -292,7 +292,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -300,7 +300,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ปัญหาที่พบบ่อย คือ การซ่อนของ การชอบกล่าวหาผู้อื่นว่าขโมย"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -310,7 +310,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -326,7 +326,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -334,7 +334,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	ควรมีของสำรอง เช่น กุญแจ ตรวจถังขยะก่อนนำไปทิ้ง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -349,7 +349,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -357,7 +357,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	ไม่ควรเถียงผู้สูงอายุเรื่องของหาย ควรเบี่ยงเบนความสนใจไปยังเรื่องอื่น"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -373,14 +373,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="การลืมการนัดหมายและสถานที่คุ้นเคย"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -396,7 +396,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#000000"/>
 
                 <TextView
@@ -404,7 +404,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="จำเรื่องต่างๆ ที่เกิดขึ้นใหม่ๆ ไม่ได้ ลืมนัดหมาย เนื่องจากลืมง่ายว่าได้ยิน ได้พูด ได้ทำอะไรลงไปบ้างจำสถานที่คุ้นเคยและบุคคลต่างๆ ไม่ได้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -414,7 +414,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -430,7 +430,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -438,7 +438,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	ใช้ปฏิทินขนาดใหญ่ติดไว้ในที่ที่มองเห็นชัดเจน กากบาททับตัวเลขวันที่ของแต่ละวันที่ผ่านไป"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -453,7 +453,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -461,7 +461,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	ควรกระตุ้นให้ผู้สูงอายุสมองเสื่อมได้ทำด้วยตนเองหรือช่วยทำคอยย้ำให้ทราบว่า วันนี้เป็นวันอะไร เดือนอะไร และปีอะไร หรืออาจจะแนะนำให้ใช้สมุดพกเพื่อบันทึกการนัดหมายและเหตุการณ์ต่างๆ เอาไว้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -477,14 +477,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ปัญหาเรื่องการสับสนเรื่องเวลาและสถานที่"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -500,7 +500,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#000000"/>
 
                 <TextView
@@ -508,7 +508,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยที่มีความสับสนเรื่องเวลาและสถานที่ ทำให้ผู้ป่วยตื่นตอนกลางคืนและแต่งตัวออกไปซื้อของ ไปทำงาน หรือคิดว่าโรงพยาบาล คือ บ้านตนเอง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -518,7 +518,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -534,7 +534,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -542,7 +542,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	ทำป้ายบอกเวลากลางวันกลางคืน วางไว้ข้างเตียงนอนในตำแหน่งที่สามารถมองเห็นได้ง่าย "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -557,7 +557,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -565,7 +565,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	ผู้ดูแลคอยพลิกป้ายให้ถูกต้องตรงตามเวลา"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -580,7 +580,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -588,7 +588,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	จัดข้าวของเครื่องใช้ภายในบ้านให้อยู่ในสภาพเดิมเสมอ เพื่อช่วยให้ผู้ป่วยจำได้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -604,14 +604,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ปัญหาด้านการสื่อสาร"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -627,7 +627,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#000000"/>
 
                 <TextView
@@ -635,7 +635,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยจะมีปัญหาด้านการสื่อสาร โดยเริ่มจากการเสียทักษะการสื่อสารกับบุคคลอื่น การจำชื่อคน สิ่งของ และสถานที่ต่างๆไม่ได้ จนเมื่ออาการรุนแรงมากขึ้นอาจพูดได้แค่ 2-3 คำ หรือพูดคำใดคำหนึ่งซ้ำไปมา"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -645,7 +645,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -661,7 +661,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -669,7 +669,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	สังเกตสีหน้าท่าทาง การแสดงออกของผู้ป่วย และช่วยพูดแทนในสิ่งที่ผู้ป่วยต้องการสื่อสาร"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -684,7 +684,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -692,7 +692,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	ผู้ป่วยบางรายอาจมีอาการหูตึง หรือมีปัญหาเรื่องการได้ยิน จึงต้องประเมินการได้ยินของผู้ป่วยว่าได้ยินชัดเจนหรือไม่ รวมถึงกำจัดเสียงรบกวนต่างๆ ขณะที่พูดคุยกับผู้ป่วย "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -707,7 +707,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -715,7 +715,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	ผู้ป่วยที่ใส่ฟันปลอม ต้องตรวจสอบว่าฟันปลอมอยู่ในสภาพที่กระชับ "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -730,7 +730,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -738,7 +738,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4.	สื่อสารกับผู้ป่วยด้วยประโยคง่ายๆ ชัดเจน กระชับ และควรมีความอดทนในการให้เวลากับผู้ป่วยในการโต้ตอบ และควรมีภาษาทางกาย เช่น การสบตา การจับมือ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -753,7 +753,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -761,7 +761,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5.	กรณีที่ผู้ป่วยมีอาการรุนแรงจนไม่สามารถจำใครได้ การเข้าพบหรือพูดคุยกับผู้ป่วยต้องมีการแนะนำตัวพร้อมกับเรียกชื่อผู้ป่วยทุกครั้ง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -784,7 +784,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/before"
                         android:text="ย้อนกลับ" />
@@ -804,7 +804,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/next"
                         android:text="ถัดไป" />

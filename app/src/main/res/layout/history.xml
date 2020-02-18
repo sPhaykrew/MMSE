@@ -33,7 +33,7 @@
                     android:layout_marginTop="10dp"
                     android:textColor="#53B19D"
                     android:text="ประวัติผู้ป่วย"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                     android:id="@+id/patient_ID"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="หมายเลขผู้ป่วย : 77" />
 
                 <TextView
@@ -50,7 +50,7 @@
                     android:id="@+id/patient_name"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="ชื่อ : ประลอง สมุติ" />
 
                 <TextView
@@ -59,7 +59,7 @@
                     android:id="@+id/patient_age"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="อายุ : 77" />
 
                 <TextView
@@ -68,7 +68,7 @@
                     android:id="@+id/patient_education"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="ระดับการศึกษา : ประถมศึกษา" />
 
                 <TextView
@@ -77,7 +77,7 @@
                     android:id="@+id/time"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="วันที่ทำ : -" />
 
                 <TextView
@@ -87,7 +87,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="สถานะ : พร้อมส่ง" />
 
             </LinearLayout>
@@ -117,7 +117,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="2dp"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:theme="@style/Button_1"
             android:id="@+id/history_button"
             android:text="ส่งข้อมูล" />

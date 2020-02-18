@@ -8,11 +8,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -35,7 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#53B19D"
-                android:textSize="16dp"
+                android:textSize="16sp"
+                android:layout_marginStart="20dp"
                 android:text="คู่มือการดูแลผู้ป่วยสมองเสื่อมสำหรับญาติและผู้ดูแล" />
 
             <View
@@ -58,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="บทนำ" />
 
             <View
@@ -81,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="สาเหตุของโรคสมองเสื่อม" />
 
             <View
@@ -104,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="อาการสำคัญของโรคสมองเสื่อม" />
 
             <View
@@ -127,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="การป้องกันภาวะสมองเสื่อม" />
 
             <View
@@ -150,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="การเตรียมความพร้อมในการดูแลผู้ป่วยสมองเสื่อม" />
 
             <View
@@ -171,7 +173,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:textColor="#53B19D"
-                android:textSize="16dp"
+                android:textSize="16sp"
+                android:layout_marginStart="20dp"
                 android:text="ปัญหาที่พบในผู้ป่วยสมองเสื่อมและแนวทางการช่วยเหลือ" />
 
             <View
@@ -194,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="1. ปัญหาเกี่ยวกับการสูญเสียความสามารถในการปฏิบัติกิจวัตรประจำวัน" />
 
             <View
@@ -217,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="2. ปัญหาเกี่ยวกับการหลงลืม" />
 
             <View
@@ -240,7 +243,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="3. ปัญหาเกี่ยวกับพฤติกรรม" />
 
             <View
@@ -254,6 +257,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:id="@+id/contents9"
             android:background="?android:attr/selectableItemBackground"
             android:orientation="vertical">
@@ -263,7 +267,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="การจัดสิ่งแวดล้อมภายในบ้านสำหรับผู้ป่วยโรคสมองเสื่อม" />
 
             <View

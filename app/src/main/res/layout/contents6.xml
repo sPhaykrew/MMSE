@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1. ปัญหาเกี่ยวกับการสูญเสียความสามารถในการปฏิบัติกิจวัตรประจำวัน"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#53B19D"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
@@ -38,14 +38,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ปัญหาการสูญเสียทักษะการปฏิบัติกิจวัตรประจำวัน "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="เช่น การลืมเปิดแก๊สทิ้งไว้  สูญเสียความสามารถในอาบน้ำแต่งตัว การทำอาหาร กินอาหาร"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -95,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1. ถ้าผู้ป่วยชอบทำงานหรือทำกิจกรรมใด ควรปล่อยให้ทำ แต่หากประเมินว่างานที่ผู้ป่วยสนใจทำให้เกิดอันตรายต่อผู้ป่วย หรือผู้ดูแล ต้องคอยระวังดูแลและเอาใจใส่"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -118,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2. ให้เวลาผู้สูงอายุทำกิจวัตรประจำวันต่างๆ เช่น ล้างจาน จัดโต๊ะอาหาร"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -141,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -149,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3. ติดป้ายชื่อ วิธีใช้ และข้อควรระวังสำหรับสิ่งของที่ผู้ป่วยใช้บ่อยๆ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -172,7 +172,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4. จัดสถานที่อยู่อาศัยของผู้ป่วยให้มีแสงสว่างเพียงพอ ไม่มีคนพลุกพล่าน พื้นห้องไม่ลื่น"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -187,7 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5. การจัดห้องน้ำต้องดูแลให้แห้งอยู่เสมอ "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -210,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -218,7 +218,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="6. ผู้ป่วยบางรายที่คุ้นเคยกับการใช้โทรศัพท์ควรสนับสนุนให้มีการใช้และรับโทรศัพท์ต่อไป เพียงแต่อาจต้องมีปากกา สมุดบันทึก เบอร์โทรศัพท์ที่สำคัญและจำเป็นสำหรับผู้ป่วย เช่น เบอร์สมาชิกในครอบครัว แพทย์ประจำตัว โรงพยาบาลไว้ใกล้เครื่องรับโทรศัพท์"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -234,14 +234,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="การแต่งตัว"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -257,7 +257,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -265,7 +265,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยมักจำไม่ได้ว่าเก็บเสื้อผ้าไว้ที่ไหน ไม่ทราบว่าจะต้องใส่อะไรก่อน-หลัง ไม่ทราบวิธีการใส่ ไม่รู้ว่าเสื้อผ้ามีเอาไว้ทำอะไร เป็นต้น"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -275,7 +275,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -291,7 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -299,7 +299,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1. ช่วยเตรียมเสื้อผ้าไว้ให้ใส่อย่างเป็นลำดับ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -314,7 +314,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -322,7 +322,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2. บอกหรือช่วยแต่งตัวเป็นลำดับทุกครั้ง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -337,7 +337,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -345,7 +345,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3. สถานที่แต่งตัวให้เป็นตำแหน่งเดิมทุกครั้ง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -360,7 +360,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -368,7 +368,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4. ถ้าผู้สูงอายุแต่งตัวเองได้ ควรให้เวลาไม่ต้องเร่งรีบ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -383,7 +383,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -391,7 +391,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5. พยายามเลือกเสื้อผ้าที่ใส่สบายและง่าย"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -407,14 +407,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="การอาบนํ้า "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -430,7 +430,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -438,7 +438,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยมักจะลืมที่จะอาบนํ้า ลืมวิธีอาบนํ้า หรือผู้ป่วยรู้สึกกลัวการอาบน้ำ จนทำให้เกิดพฤติกรรมการต่อต้าน และไม่ยอมอาบน้ำ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -448,7 +448,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -464,7 +464,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -472,7 +472,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1. พยายามให้อาบน้ำเวลาเดิม เช่น เคยอาบนํ้าตอนเช้า ก็ควรคงเวลาเดิมไว้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -487,7 +487,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -495,7 +495,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2. ถ้าผู้สูงอายุไม่ยอมอาบนํ้า อาจเลื่อนเวลาออกไปเล็กน้อยหลังจากอารมณ์ดีขึ้น"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -510,7 +510,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -518,7 +518,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3. แจ้งผู้ล่วงหน้าว่ากำลังจะเริ่มอาบน้ำ จัดบรรยากาศในการอาบน้ำให้เป็นเรื่องง่ายๆ หลีกเลี่ยงการบังคับ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -533,7 +533,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -541,7 +541,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4. การอาบนํ้าโดยใช้ฝักบัวจะเป็นวิธีที่สะดวก ทำความคุ้นเคย และค่อยๆอาบน้ำให้แก่ผู้ป่วย  "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -556,7 +556,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -564,7 +564,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5. ระวังความปลอดภัย เช่น ควรมีราวเหล็กข้างผนังไว้สำหรับยึดเพื่อกันหกล้ม ผ้ายางรองพื้นชนิดกันลื่น"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -579,7 +579,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -587,7 +587,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="6. อาจมีเก้าอี้ไว้นั่งอาบนํ้าและควรดูแลอุณหภูมิของนํ้าไม่ให้ร้อนหรือเย็นเกินไป"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -602,7 +602,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -610,7 +610,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="7. ถ้าจำเป็นอาจต้องช่วยอาบนํ้าให้ ผู้สูงอายุบางรายอาจรู้สึกอายในการช่วยอาบนํ้า อาจใช้ผ้าปิดปัง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -626,14 +626,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="การขับถ่าย "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -649,7 +649,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -657,7 +657,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยมักจะไม่รู้ว่าเมื่อไหร่จึงจะใช้ห้องนํ้า การหาห้องน้ำไม่พบ เข้าไปในห้องนํ้าแล้วไม่รู้ว่าจะทำอย่างไร การเข้าใจผิดว่าเข้ามาในห้องน้ำแล้ว การกลั้นปัสสาวะหรืออุจจาระไม่ได้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -667,7 +667,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -683,7 +683,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -691,7 +691,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	พยายามจัดเวลาการขับถ่ายให้เป็นเวลา หรือใกล้เคียงกับเวลาเดิม ดูแลให้ผู้ป่วยเข้าห้องน้ำเป็นเวลาโดยเฉพาะหลังรับประทานอาหาร"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -706,7 +706,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -714,7 +714,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	ดูแลเรื่องการดื่มน้ำ ควรดื่มในปริมาณที่พอเหมาะ ประมาณ 6-8แก้ว จำกัดเครื่องดื่มเมื่อใกล้เวลาเข้านอน ไม่ดื่มนํ้ามากเมื่อใกล้เวลาเข้านอน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -729,7 +729,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -737,7 +737,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	จดบันทึกเวลาขับถ่ายของผู้ป่วย เพื่อประมาณเวลาที่จะพาไปห้องน้ำ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -752,7 +752,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -760,7 +760,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4.	เปิดไฟไว้ในห้องนํ้า และทางเดินไปห้องนํ้า ทำเครื่องหมาย สัญลักษณ์ ป้ายบอกทางไปห้องน้ำให้เห็นได้ชัดเจน ติดสัญลักษณ์แสดงว่าเป็นห้องนํ้าไว้ชัดเจน หน้าห้องนํ้าควรมีป้ายและไฟสว่าง ทำให้มองเห็นได้ชัดในเวลากลางคืน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -775,7 +775,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -783,7 +783,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5.	ดูแลพื้นห้องน้ำให้แห้ง ไม่ให้พื้นห้องน้ำลื่น"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -798,7 +798,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -806,7 +806,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="6.	การจัดห้องนอนสำหรับผู้ป่วยอยู่ชั้นล่าง และใกล้ห้องน้ำ ทางเดินไปห้องน้ำไม่วกวน ไม่มีสิ่งกีดขวาง มีไฟเปิดสว่างตลอดเวลา "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -821,7 +821,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -829,7 +829,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="7.	เสื้อผ้าที่สวมใส่ควรเป็นชุดที่ถอดออกง่าย เช่น ใช้สวมเอวยางยืดดีกว่าติดกระดุมหรือผูกเชือก"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -844,7 +844,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -852,7 +852,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="8.	ชนิดของอาหารควรเป็นชนิดที่ย่อยง่าย มีกากใยช่วยในการขับถ่าย"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -867,7 +867,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -875,7 +875,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="9.	หากมีความจำเป็น เตรียมกระโถนปัสสาวะไว้ใกล้ๆ ที่นอน  หรือใช้ผ้าอ้อมสำหรับผู้สูงอายุ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -891,14 +891,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="พฤติกรรมการไม่รับประทานอาหาร "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -914,7 +914,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -922,7 +922,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ผู้ป่วยไม่สามารถจำวิธีการรับประทานอาหาร การใช้ช้อนหรือส้อม ความสามารถในการกลืน การเคี้ยวลดลง หรืออาจจำไม่ได้ว่าสิ่งที่อยู่ตรงหน้า คือ อาหาร"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -932,7 +932,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -948,7 +948,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -956,7 +956,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	ปรึกษาแพทย์เพื่อหาสาเหตุของการไม่รับประทานอาหาร รวมถึงการพาผู้ป่วยไปพบทันตแพทย์เพื่อตรวจและรักษาสุขภาพในช่องปาก"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -971,7 +971,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -979,7 +979,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	จัดบรรยากาศ เวลา สถานที่ ในการรับประทานอาหารให้เหมือนเดิมสม่ำเสมอ สังเกตชนิดของอาหารที่ผู้ป่วยชอบรับประทาน การจัดอาหารประเภทเดิมๆที่ผู้ป่วยคุ้นเคย"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -994,7 +994,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1002,7 +1002,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	จัดอาหารให้เป็นเวลา"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1017,7 +1017,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1025,7 +1025,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4.	จัดอาหารที่มีประโยชน์ มีเนื้อสัมผัส สีสัน และส่วนประกอบของเครื่องปรุงหลากหลาย และจัดอาหารให้ดูน่ารับประทาน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1040,7 +1040,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1048,7 +1048,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5.	จัดอาหารให้รับประทานได้ง่าย เช่น หั่นเป็นชิ้นพอดีคำ แกะก้างปลาออก อาหารอ่อนที่เคี้ยวและกลืนง่ายไม่ควรจัดอาหารที่เหนียวหรืออาหารกรอบ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1063,7 +1063,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1071,7 +1071,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="6.	จัดสถานที่ให้เหมาะสม ไม่ควรมีสิ่งใดเปลี่ยนความสนใจจากการรับประทานอาหาร ได้แก่ สัตว์เลี้ยง เสียงทีวี หรือกลิ่นรบกวน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1086,7 +1086,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1094,7 +1094,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="7.	รับประทานอาหารพร้อมกับผู้ป่วย และให้กำลังใจ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1109,7 +1109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1117,7 +1117,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="8.	จัดอาหารมื้อเล็กๆ หลายมื้อ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1132,7 +1132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1140,7 +1140,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="9.	ตักอาหารทีละอย่างใส่จาน "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1155,7 +1155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1163,7 +1163,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="10.	อาหารบนโต๊ะไม่ควรมีหลายอย่างพร้อมกัน เพราะอาจทำให้สับสน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1178,7 +1178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1186,7 +1186,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="11.	หลีกเลี่ยงการใช้จาน ชาม ผ้าปูโต๊ะที่มีลวดลาย ซึ่งอาจทำให้ผู้ป่วยสับสน ควรใช้จานสีเรียบที่สีตัดกับผ้าปูโต๊ะ และสีอาหารควรตัดกับสีจาน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1201,7 +1201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1209,7 +1209,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="12.	เลือกช้อน ส้อม มีดที่จับสะดวก ด้ามใหญ่"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1224,7 +1224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1232,7 +1232,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="13.	ปรับเวลาในการรับประทานอาหารให้เหมาะสมกับกิจวัตรประจำวัน หรือการนอนหลับ รวมจึงจัดเวลาให้เพียงพอในการรับประทานอาหาร"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1247,7 +1247,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1255,7 +1255,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="14.	ผู้ป่วยอาจรับประทานอาหารหก เลอะเทอะ ผู้ดูแลควรลดความใส่ใจกับวิธีการรับประทานอาหาร หากผู้ป่วยไม่สามารถใช้ช้อนส้อม อาจต้องป้อน หรือจัดอาหารให้สามารถหยิบรับประทานได้สะดวก"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1270,7 +1270,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1278,7 +1278,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="15.	ประเมินอารมณ์ของผู้ป่วยเรื่องการรับประทานอาหาร สามารถยืดหยุ่นเรื่องเวลาในการรับประทานอาหารได้ ถ้าผู้ป่วยมีปฏิกิริยาต่อต้านการกินอาหาร ให้เปลี่ยนกิจกรรมและค่อยกลับมากินอีกครั้ง"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1293,7 +1293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1301,7 +1301,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="16.	ใช้สิ่งที่เตือนความจำในเวลากินอาหาร เช่น นาฬิกาที่มีตัวเลขใหญ่ๆ นาฬิกาปลุก"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1316,7 +1316,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1324,7 +1324,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="17.	ปรึกษาแพทย์เกี่ยวกับการจัดอาหารเสริมให้แก่ผู้ป่วยเพื่อให้ได้คุณค่าทางอาหารครบถ้วน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1340,14 +1340,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="พฤติกรรมไม่ยอมนอนในเวลากลางคืน "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -1363,7 +1363,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="     "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1371,7 +1371,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="ปัญหาเรื่องการนอนพบได้บ่อยในผู้ป่วยสมองเสื่อม "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1381,7 +1381,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -1397,7 +1397,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1405,7 +1405,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1. ดูแลให้ผู้ป่วยหลับและตื่นเป็นเวลา"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1420,7 +1420,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1428,7 +1428,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	พาไปออกกำลังกาย หรือพาไปเดินเล่นตอนเช้าหรือตอนเย็นเป็นประจำ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1443,7 +1443,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1451,7 +1451,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	พาผู้ป่วยออกจากห้องไปในสถานที่ที่มีแสงสว่าง หลีกเลี่ยงไม่ให้ผู้ป่วยอยู่แต่ในห้อง หรือสถานที่มืดเกินไป เพราะจะทำให้ผู้ป่วยไม่ทราบว่าเป็นเวลากลางวันหรือกลางคืน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1466,7 +1466,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1474,7 +1474,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4.	หลีกเลี่ยงไม่ให้ผู้ป่วยนอนหลับในเวลากลางวัน "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1489,7 +1489,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1497,7 +1497,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5.	หลีกเลี่ยงอาหารและเครื่องดื่มที่มีคาเฟอีน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1512,7 +1512,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1520,7 +1520,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="6.	เตือนผู้ป่วยเป็นระยะเมื่อถึงเวลาใกล้เข้านอน เพื่อให้ผู้ป่วยเตรียมตัวและจำได้ว่าถึงเวลานอน"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1535,7 +1535,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1543,7 +1543,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="7.	หลีกเลี่ยงการทำกิจกรรมที่ตื่นเต้น หรือการพาไปในสถานที่ที่มีคนมากๆในช่วงเย็นและค่ำ"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1558,7 +1558,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1566,7 +1566,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="8. ผู้ดูแลต้องใจเย็น และใช้เวลาในการแก้ปัญหาการนอนหลับ เพราะเป็นเรื่องที่ต้องใช้เวลาในการเปลี่ยนแปลง และบางครั้งการนอนหลับอาจดีคงที่ได้ระยะหนึ่งสลับกับบางวันที่มีปัญหา"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1582,14 +1582,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7) "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ปัญหาการเข้าร่วมกิจกรรม"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
             </LinearLayout>
@@ -1600,7 +1600,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="แนวทางการจัดการกับปัญหา"
                 android:textColor="#CC000000" />
 
@@ -1616,7 +1616,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1624,7 +1624,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="1.	กรณีสมองเสื่อมยังไม่รุนแรง สามารถให้ร่วมดูรายการโทรทัศน์กับครอบครัวได้ แต่ต้องแน่ใจว่าผู้ป่วยสามารถติดตามเรื่องราวต่างๆได้"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1639,7 +1639,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1647,7 +1647,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="2.	เมื่อผู้ป่วยเล่าถึงความหลังควรปล่อยให้เล่าไปเรื่อยๆ ไม่ควรขัดจังหวะ หรือขัดแย้ง "
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1662,7 +1662,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1670,7 +1670,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="3.	พาผู้ป่วยออกนอกบ้าน เช่น การพาไปเยี่ยมเพื่อน หรือญาติพี่น้อง จะช่วยให้มีความสุขและลืมเรื่องที่กังวล พาไปวัด ฟังเทศน์ ทำบุญ หรือหากผู้ป่วยมีความสนใจในการทำกิจกรรมอะไร ควรให้การสนับสนุนและมีส่วนร่วม"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1685,7 +1685,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1693,7 +1693,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="4.	พาไปร่วมงานเพื่อนบ้าน หรือพาไปเที่ยวพักผ่อนนอกบ้าน โดยเฉพาะสถานที่ที่ผู้สูงอายุสมองเสื่อมชอบหรือเคยไปเพื่อช่วยผ่อนคลายความรู้สึกคับข้องใจที่ต้องอยู่แต่ในบ้านตลอดเวลา"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1708,7 +1708,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="    "
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
                 <TextView
@@ -1716,7 +1716,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
                     android:text="5.	เส้นทางการเดินทางควรใช้เส้นทางเดิม บางครั้งผู้สูงอายุสมองเสื่อมไม่ต้องการให้เลี้ยว หรือหันหลังกลับเพื่อกลับบ้าน ควรพากลับโดยใช้เส้นทางอ้อมกลับบ้านแทนเพื่อไม่ให้รู้สึกอึดอัด"
-                    android:textSize="16dp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -1739,7 +1739,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/before"
                         android:text="ย้อนกลับ" />
@@ -1759,7 +1759,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/next"
                         android:text="ถัดไป" />

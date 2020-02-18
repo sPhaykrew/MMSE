@@ -14,14 +14,14 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="4. ทดสอบสมาธิ"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="อธิบายให้ผู้ป่วยฟัง : " />
 
     <TextView
@@ -30,19 +30,19 @@
         android:layout_marginStart="70dp"
         android:layout_marginEnd="20dp"
         android:id="@+id/question"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="ผม/ดิฉัน จะสะกดคำว่า มะนาวให้คุณ...ฟัง แล้วคุณ... สะกดถอยหลังจากพยัญชนะตัวหลังไปตัวแรก คำว่า มะนาว สะกดว่า มอม้า-สระอะ-นอหนู-สระอา-วอแหวน คุณ... สะกดถอยหลังให้ฟัง">
 
     </TextView>
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:id="@+id/edit1"
         android:inputType="text"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:backgroundTint="#53B19D"
         android:hint="ตัวอย่าง วานะม" />
 
@@ -64,7 +64,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/before"
                 android:text="ก่อนหน้า" />
@@ -84,7 +84,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/next"
                 android:text="ถัดไป" />

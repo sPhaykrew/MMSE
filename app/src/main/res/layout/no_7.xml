@@ -18,20 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="7. ทดสอบการพูดซ้ำคำที่ได้ยิน" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_marginTop="10dp"
             android:text="อธิบายให้ผู้ป่วยฟัง : " />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_marginStart="50dp"
             android:id="@+id/question"
             android:text="ตั้งใจฟัง ผม/ดิฉัน เมื่อผม/ดิฉัน พูดข้อความนี้แล้วให้คุณ... พูดตาม ผม/ดิฉัน จะบอกเพียงครั้งเดียว“ใครใคร่ขายไข่ไก่”" />
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/edit7_1"
             android:inputType="text"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:backgroundTint="#53B19D"
             android:hint="พิมพ์ข้อความที่ผู้ทดสอบพูด" />
 
@@ -87,7 +87,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/before"
                 android:text="ก่อนหน้า" />
@@ -107,7 +107,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/next"
                 android:text="ถัดไป" />

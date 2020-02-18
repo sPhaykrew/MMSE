@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="สาเหตุของโรคสมองเสื่อม"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="#53B19D"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="สาเหตุของโรคสมองเสื่อมที่พบบ่อย ได้แก่"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:layout_marginTop="5dp"
         android:layout_marginStart="20dp"
         android:textColor="#CC000000"
@@ -39,14 +39,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1. "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="การเสื่อมของเซลล์สมอง "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
     </LinearLayout>
@@ -63,14 +63,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2. "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="การขาดสารอาหาร โดยเฉพาะวิตามินบี 1 หรือวิตามินบี 12 "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
     </LinearLayout>
@@ -87,14 +87,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3. "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="การติดเชื้อในสมอง"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
     </LinearLayout>
@@ -111,14 +111,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4. "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ศีรษะถูกกระทบกระแทกอยู่เสมอ "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000" />
 
     </LinearLayout>
@@ -135,14 +135,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5. "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="เนื้องอกในสมอง"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
     </LinearLayout>
@@ -159,14 +159,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="6. "
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ยาหรือสารที่เป็นพิษ"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="#CC000000"/>
 
     </LinearLayout>
@@ -189,7 +189,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/before"
                 android:text="ย้อนกลับ" />
@@ -209,7 +209,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/next"
                 android:text="ถัดไป" />

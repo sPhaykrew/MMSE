@@ -305,7 +305,7 @@ public class Question_list extends AppCompatActivity {
         question_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (get_no9.get(0) == null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+                if (get_no9.get(0) != null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
                     Intent no9 = new Intent(getApplicationContext(), No_9.class);
                     startActivity(no9);
                     finish();
@@ -318,7 +318,7 @@ public class Question_list extends AppCompatActivity {
         question_10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (get_no10.get(0) == null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+                if (get_no10.get(0) != null && !patient_model.getEducation().equals("ไม่ได้เรียนหนังสือ")){
                     Intent no10 = new Intent(getApplicationContext(), No_10.class);
                     startActivity(no10);
                     finish();

@@ -43,7 +43,7 @@
             android:layout_marginEnd="80dp"
             android:id="@+id/mmse_id"
             app:backgroundTint="#53B19D"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:inputType="text"
             android:hint="พิมพ์รหัสอาสา">
         </EditText>

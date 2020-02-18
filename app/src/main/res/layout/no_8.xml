@@ -9,9 +9,10 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <LinearLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -27,20 +28,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:text="8. ทดสอบการเข้าใจความหมายและทำตามคำสั่ง" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_marginTop="10dp"
                     android:text="อธิบายให้ผู้ป่วยฟัง :" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_marginStart="50dp"
                     android:id="@+id/question"
                     android:text="“ฟังดีๆนะเดี๋ยว ผม/ดิฉัน จะส่งกระดาษให้คุณ แล้วคุณ... รับด้วยมือขวาพับครึ่งกระดาษ" />
@@ -54,7 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:text="แล้ววางไว้ที่" />
 
                     <Spinner
@@ -69,13 +70,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="คำสั่ง : " />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_marginStart="50dp"
                     android:text="ผู้ทดสอบแสดงกระดาษเปล่าขนาด A4 ไม่มีรอยพับให้ผู้ทดสอบ" />
 
@@ -83,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="รับด้วยมือขวา" />
 
                 <LinearLayout
@@ -120,7 +121,7 @@
                         android:id="@+id/edit8_1"
                         android:layout_marginStart="20dp"
                         android:inputType="text"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         app:backgroundTint="#53B19D"
                         android:hint="พิมพ์กรณีผิด" />
 
@@ -130,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="พับครึ่ง" />
 
                 <LinearLayout
@@ -167,7 +168,7 @@
                         android:id="@+id/edit8_2"
                         android:layout_marginStart="20dp"
                         android:inputType="text"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         app:backgroundTint="#53B19D"
                         android:hint="พิมพ์กรณีผิด" />
 
@@ -177,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:id="@+id/question3"
                     android:text="วางไว้ที่" />
 
@@ -215,7 +216,7 @@
                         android:id="@+id/edit8_3"
                         android:layout_marginStart="20dp"
                         android:inputType="text"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         app:backgroundTint="#53B19D"
                         android:hint="พิมพ์กรณีผิด" />
 
@@ -242,7 +243,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/before"
                         android:text="ก่อนหน้า" />
@@ -262,7 +263,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="2dp"
-                        android:textSize="14dp"
+                        android:textSize="14sp"
                         android:theme="@style/Button_2"
                         android:id="@+id/next"
                         android:text="ถัดไป" />

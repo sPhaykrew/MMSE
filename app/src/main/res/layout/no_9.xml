@@ -18,20 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="9. ทดสอบการอ่านการเข้าใจความหมาย สามารถทำตามได้" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_marginTop="10dp"
             android:text="อธิบายให้ผู้ป่วยฟัง : " />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_marginStart="50dp"
             android:id="@+id/question"
             android:text="ต่อไปนี้เป็นคำสั่งที่เขียนเป็นตัวหนังสือต้องการให้คุณ... อ่านแล้วทำตามโดยจะอ่านออกเสียงหรือในใจก็ได้" />
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:theme="@style/Button_3"
             android:id="@+id/show_message"
             android:text="แสดงข้อความ" />
@@ -54,7 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:text="สามารถทำตามได้"
             android:layout_marginTop="20dp" />
 
@@ -84,7 +84,7 @@
                 android:id="@+id/edit9_1"
                 android:inputType="text"
                 android:layout_marginStart="20dp"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:backgroundTint="#53B19D"
                 android:hint="พิมพ์กรณีผิด" />
 
@@ -110,7 +110,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/before"
                 android:text="ก่อนหน้า" />
@@ -130,7 +130,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/next"
                 android:text="ถัดไป" />

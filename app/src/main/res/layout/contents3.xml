@@ -7,205 +7,221 @@
 
     <include layout="@layout/toolbar_sub" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="อาการสำคัญของโรคสมองเสื่อม"
-        android:textSize="20dp"
-        android:textColor="#53B19D"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="จำเรื่องที่เพิ่งเกิดขึ้นไม่ได้ ไม่สามารถเรียนรู้สิ่งใหม่ๆได้ เมื่อมีอาการรุนแรงมากขึ้นจะจำเรื่องในอดีตไม่ได้ ไม่สามารถทำสิ่งที่เคยทำได้ ไม่สามารถช่วยเหลือตัวเองในการทำกิจวัตรประจำวัน"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2. "
-            android:textSize="16dp"
-            android:textColor="#CC000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="การเรียกชื่อสิ่งของไม่ถูก พูดซ้ำๆ พูดไม่รู้เรื่อง การเรียกชื่อคนผิดพลาด"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="การหลงทาง กลับบ้านตัวเองไม่ถูก  การวางของผิดที่ เช่น การเอากระเป๋าไปวางในตู้เย็น การเอาโทรศัพท์มือถือใส่ในเหยือกน้ำ ฯลฯ"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4. "
-            android:textSize="16dp"
-            android:textColor="#CC000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="มีอารมณ์เปลี่ยนแปลงง่ายและรวดเร็ว"
-            android:textSize="16dp"
-            android:textColor="#CC000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="คิดเรื่องยากๆ คิดแก้ปัญหาไม่ได้ ตัดสินใจผิดพลาดมากขึ้น"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="บุคลิกภาพเปลี่ยนแปลงไป เช่น มีบุคลิกภาพที่เป็นเด็กอีกครั้ง ไม่สนใจสิ่งแวดล้อม "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="bottom|start">
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="2dp"
-                android:textSize="14dp"
-                android:theme="@style/Button_2"
-                android:id="@+id/before"
-                android:text="ย้อนกลับ" />
+                android:text="อาการสำคัญของโรคสมองเสื่อม"
+                android:textSize="20sp"
+                android:textColor="#53B19D"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="จำเรื่องที่เพิ่งเกิดขึ้นไม่ได้ ไม่สามารถเรียนรู้สิ่งใหม่ๆได้ เมื่อมีอาการรุนแรงมากขึ้นจะจำเรื่องในอดีตไม่ได้ ไม่สามารถทำสิ่งที่เคยทำได้ ไม่สามารถช่วยเหลือตัวเองในการทำกิจวัตรประจำวัน"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="การเรียกชื่อสิ่งของไม่ถูก พูดซ้ำๆ พูดไม่รู้เรื่อง การเรียกชื่อคนผิดพลาด"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="การหลงทาง กลับบ้านตัวเองไม่ถูก  การวางของผิดที่ เช่น การเอากระเป๋าไปวางในตู้เย็น การเอาโทรศัพท์มือถือใส่ในเหยือกน้ำ ฯลฯ"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="มีอารมณ์เปลี่ยนแปลงง่ายและรวดเร็ว"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="คิดเรื่องยากๆ คิดแก้ปัญหาไม่ได้ ตัดสินใจผิดพลาดมากขึ้น"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="บุคลิกภาพเปลี่ยนแปลงไป เช่น มีบุคลิกภาพที่เป็นเด็กอีกครั้ง ไม่สนใจสิ่งแวดล้อม "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|start">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14sp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/before"
+                        android:text="ย้อนกลับ" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|right">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14sp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/next"
+                        android:text="ถัดไป" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="bottom|right">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="2dp"
-                android:textSize="14dp"
-                android:theme="@style/Button_2"
-                android:id="@+id/next"
-                android:text="ถัดไป" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

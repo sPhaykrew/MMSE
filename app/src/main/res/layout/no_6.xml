@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:text="6. ทดสอบการบอกชื่อสิ่งของทีไ่ด้เห็น" />
 
     <LinearLayout
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:text="6.1 ยื่นดินสอให้ผู้ถูกทดสอบแล้วถามว่า “ของสิ่งนี้เรียกว่าอะไร” " />
 
         <LinearLayout
@@ -39,14 +39,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="ดินสอ" />
 
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:id="@+id/radiogroup6_1">
 
                 <RadioButton
@@ -67,10 +67,10 @@
             <EditText
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:id="@+id/edit6_1"
                 android:inputType="text"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:backgroundTint="#53B19D"
                 android:hint="พิมพ์กรณีผิด" />
 
@@ -89,7 +89,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:text="6.2 ชี้นาฬิกาข้อมือให้ผู้ถูกทดสอบแล้วถามว่า “ของสิ่งนี้เรียกว่าอะไร”" />
 
         <LinearLayout
@@ -102,14 +102,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:text="นาฬิกา" />
 
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:id="@+id/radiogroup6_2">
 
                 <RadioButton
@@ -130,10 +130,10 @@
             <EditText
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:id="@+id/edit6_2"
                 android:inputType="text"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:backgroundTint="#53B19D"
                 android:hint="พิมพ์กรณีผิด" />
 
@@ -159,7 +159,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/before"
                 android:text="ก่อนหน้า" />
@@ -179,7 +179,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:theme="@style/Button_2"
                 android:id="@+id/next"
                 android:text="ถัดไป" />

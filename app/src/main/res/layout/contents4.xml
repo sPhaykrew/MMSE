@@ -7,277 +7,292 @@
 
     <include layout="@layout/toolbar_sub" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="การป้องกันภาวะสมองเสื่อม"
-        android:textSize="20dp"
-        android:textColor="#53B19D"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="รับประทานอาหารครบ 5 หมู่ รับประทานให้เป็นเวลา ไม่งดอาหารเช้า หลีกเลี่ยงอาหารที่มีไขมันสูง"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2. "
-            android:textSize="16dp"
-            android:textColor="#CC000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="นอนหลับพักผ่อนให้เพียงพอ"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ควบคุมน้ำหนักตัวไม่ให้เกินเกณฑ์"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4. "
-            android:textSize="16dp"
-            android:textColor="#CC000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="หลีกเลี่ยงการดื่มกาแฟ  เครื่องดื่มที่มีคาเฟอีนสูง เครื่องดื่มแอลกอฮอล์ ไม่สูบบุหรี่ "
-            android:textSize="16dp"
-            android:textColor="#CC000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="บริหารสมองโดยฝึกให้คิดบ่อยๆ เช่น อ่านและเขียนหนังสือ เล่นเกมส์ตอบปัญหา นับเลขถอยหลัง"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ออกกำลังกายสม่ำเสมอ สัปดาห์ละ 3-5 ครั้ง"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="7. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="การทำกิจกรรมต่างๆ เช่น เข้าชมรมผู้สูงอายุ เป็นจิตอาสาในโรงพยาบาล"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ตรวจสุขภาพประจำปี หากมีโรคประจำตัวต้องดูแลสุขภาพเพื่อควบคุมอาการของโรคและรับประทานยาตามคำสั่งแพทย์"
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="9. "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ระมัดระวังการเกิดอุบัติเหตุต่อสมอง "
-            android:textSize="16dp"
-            android:textColor="#CC000000"/>
-
-    </LinearLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="bottom|start">
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="2dp"
-                android:textSize="14dp"
-                android:theme="@style/Button_2"
-                android:id="@+id/before"
-                android:text="ย้อนกลับ" />
+                android:text="การป้องกันภาวะสมองเสื่อม"
+                android:textSize="20sp"
+                android:textColor="#53B19D"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="รับประทานอาหารครบ 5 หมู่ รับประทานให้เป็นเวลา ไม่งดอาหารเช้า หลีกเลี่ยงอาหารที่มีไขมันสูง"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นอนหลับพักผ่อนให้เพียงพอ"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ควบคุมน้ำหนักตัวไม่ให้เกินเกณฑ์"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="หลีกเลี่ยงการดื่มกาแฟ  เครื่องดื่มที่มีคาเฟอีนสูง เครื่องดื่มแอลกอฮอล์ ไม่สูบบุหรี่ "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="บริหารสมองโดยฝึกให้คิดบ่อยๆ เช่น อ่านและเขียนหนังสือ เล่นเกมส์ตอบปัญหา นับเลขถอยหลัง"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ออกกำลังกายสม่ำเสมอ สัปดาห์ละ 3-5 ครั้ง"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="การทำกิจกรรมต่างๆ เช่น เข้าชมรมผู้สูงอายุ เป็นจิตอาสาในโรงพยาบาล"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ตรวจสุขภาพประจำปี หากมีโรคประจำตัวต้องดูแลสุขภาพเพื่อควบคุมอาการของโรคและรับประทานยาตามคำสั่งแพทย์"
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9. "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ระมัดระวังการเกิดอุบัติเหตุต่อสมอง "
+                    android:textSize="16sp"
+                    android:textColor="#CC000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|start">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14sp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/before"
+                        android:text="ย้อนกลับ" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="bottom|right">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14sp"
+                        android:theme="@style/Button_2"
+                        android:id="@+id/next"
+                        android:text="ถัดไป" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="bottom|right">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="2dp"
-                android:textSize="14dp"
-                android:theme="@style/Button_2"
-                android:id="@+id/next"
-                android:text="ถัดไป" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
