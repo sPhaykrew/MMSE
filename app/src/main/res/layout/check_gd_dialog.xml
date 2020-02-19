@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ออกจากแบบทดสอบ ?"
+            android:text="ไม่พบการล็อคอินกูเกิลไดรฟ์"
             android:textSize="20sp"
             android:textColor="#000000"
             android:layout_gravity="start|top"
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ต้องการออกจากแบบทดสอบใช่หรือไม่ แบบทดสอบหน้าปัจจุบันจะไม่ถูกบันทึก\n"
+            android:text="โปรดทำก่อนล็อคอินกูเกิลไดรฟ์ก่อนทำการส่งข้อมูล\n"
             android:textSize="16sp"
             android:layout_gravity="start|top"
             android:layout_marginStart="16dp"
@@ -46,14 +46,7 @@
             android:theme="@style/Back_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ยกเลิก"
-            android:id="@+id/cancel"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:theme="@style/Back_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ยืนยัน"
+            android:text="ตกลง"
             android:id="@+id/cf"/>
 
     </LinearLayout>

@@ -15,18 +15,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ออกจากแบบทดสอบ ?"
+            android:text="ส่งข้อมูลสำเร็จ"
             android:textSize="20sp"
-            android:textColor="#000000"
             android:layout_gravity="start|top"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ต้องการออกจากแบบทดสอบใช่หรือไม่ แบบทดสอบหน้าปัจจุบันจะไม่ถูกบันทึก\n"
+            android:text=""
             android:textSize="16sp"
             android:layout_gravity="start|top"
             android:layout_marginStart="16dp"
@@ -46,14 +45,7 @@
             android:theme="@style/Back_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ยกเลิก"
-            android:id="@+id/cancel"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:theme="@style/Back_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ยืนยัน"
+            android:text="ตกลง"
             android:id="@+id/cf"/>
 
     </LinearLayout>

@@ -1,5 +1,6 @@
 package com.rmutt.mmse;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -81,11 +82,54 @@ public class Question_list extends AppCompatActivity {
     String patient_PK;
     ArrayList<uploadFile_model> uploadFile_models = new ArrayList<>();
     ArrayList<getFolder_model> getFolder_models = new ArrayList<>();
+    Dialog check_internet,check_GD,upload_error,finish_upload;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_list);
+
+        check_internet = new Dialog(this);
+        check_internet.setContentView(R.layout.check_internet_dialog);
+        Button cf_internet = check_internet.findViewById(R.id.cf);
+        cf_internet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                check_internet.dismiss();
+            }
+        });
+
+
+        check_GD = new Dialog(this);
+        check_GD.setContentView(R.layout.check_gd_dialog);
+        Button cf_GD = check_GD.findViewById(R.id.cf);
+        cf_GD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                check_GD.dismiss();
+            }
+        });
+
+        upload_error = new Dialog(this);
+        upload_error.setContentView(R.layout.upload_error_dialog);
+        Button cf_upload_error = upload_error.findViewById(R.id.cf);
+        cf_upload_error.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upload_error.dismiss();
+            }
+        });
+
+        finish_upload = new Dialog(this);
+        finish_upload.setContentView(R.layout.finish_uplod_dialog);
+        Button cf_finish_upload = finish_upload.findViewById(R.id.cf);
+        cf_finish_upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish_upload.dismiss();
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar_sub);
         TextView Title = toolbar.findViewById(R.id.title_sub);
@@ -565,14 +609,16 @@ public class Question_list extends AppCompatActivity {
                                                         }
                                                         database.delete_patient(patient_PK); //ลบผู้ใช้งาน
                                                         finish();
-                                                        Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
+                                                        finish_upload.show();
+//                                                        Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
                                                     }
                                                 }).addOnFailureListener(new OnFailureListener() {
                                                     @Override
                                                     public void onFailure(@NonNull Exception e) {
                                                         progressDialog.dismiss();
                                                         deleteFolder(googleDriveService,folderId);
-                                                        Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
+                                                        upload_error.show();
+//                                                        Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
                                             }
@@ -581,7 +627,8 @@ public class Question_list extends AppCompatActivity {
                                             public void onFailure(@NonNull Exception e) {
                                                 progressDialog.dismiss();
                                                 deleteFolder(googleDriveService,folderId);
-                                                Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
+                                                upload_error.show();
+//                                                Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
                                             }
                                         }); //upload file
                                     }
@@ -590,7 +637,8 @@ public class Question_list extends AppCompatActivity {
                                     public void onFailure(@NonNull Exception e) {
                                         progressDialog.dismiss();
                                         deleteFolder(googleDriveService, folderId);
-                                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
+                                        upload_error.show();
+//                                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }
@@ -598,7 +646,8 @@ public class Question_list extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 progressDialog.dismiss();
-                                Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
+                                upload_error.show();
+//                                Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -606,15 +655,18 @@ public class Question_list extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
+                        upload_error.show();
+//                        Toast.makeText(getApplicationContext(), "เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่", Toast.LENGTH_SHORT).show();
                     }
                 });
 
             } else {
-                Toast.makeText(getApplicationContext(), "กรุณาล็อคอินกุเกิลไดรไดรฟ์ก่อนส่งข้อมูล", Toast.LENGTH_SHORT).show();
+                check_GD.show();
+//                Toast.makeText(getApplicationContext(), "กรุณาล็อคอินกุเกิลไดรไดรฟ์ก่อนส่งข้อมูล", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "กรุณาเชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_SHORT).show();
+            check_internet.show();
+//            Toast.makeText(getApplicationContext(), "กรุณาเชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_SHORT).show();
         }
     }
 
