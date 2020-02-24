@@ -58,6 +58,7 @@ public class No_10 extends AppCompatActivity {
     String answer;
     String mmse_ID;
     String Patient_PK;
+    Database database;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -109,7 +110,7 @@ public class No_10 extends AppCompatActivity {
         SharedPreferences sp_mmse = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
         mmse_ID = sp_mmse.getString("mmse_ID", "null");
 
-        final Database database = new Database(getApplicationContext());
+        database = new Database(getApplicationContext());
         Patient_Model patient_model = database.patient(Patient_PK);
 
         Split split = new Split();
@@ -252,7 +253,7 @@ public class No_10 extends AppCompatActivity {
             file.canExecute();
         }
         try {
-            file_name = directory_path  + mmse_ID+"_"+Patient_PK+"_10" + ".jpeg";
+            file_name = directory_path  + database.test_ID(Patient_PK) + "_10" + ".jpeg";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data);
             fileOutputStream.close();
@@ -329,9 +330,13 @@ public class No_10 extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) { //เอาทำงานต่อเลยหลังจากกดยอมรับ permission
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        Toast.makeText(getApplicationContext(),String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
         switch(requestCode) {
-            case 2 : openCamera(); break;
+            case 2 :
+                if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    openCamera();
+                }
+            break;
         }
     }
 }

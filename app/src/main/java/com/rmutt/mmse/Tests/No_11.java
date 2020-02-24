@@ -268,7 +268,7 @@ public class No_11 extends AppCompatActivity {
             file.canExecute();
         }
         try {
-            file_name = directory_path  + mmse_ID+"_"+Patient_PK+"_11" + ".jpeg";
+            file_name = directory_path  + database.test_ID(Patient_PK) + "_11" + ".jpeg";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
             fileOutputStream.write(data);
             fileOutputStream.close();
@@ -384,9 +384,13 @@ public class No_11 extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) { //เอาทำงานต่อเลยหลังจากกดยอมรับ permission
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        Toast.makeText(getApplicationContext(),String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
         switch(requestCode) {
-            case 2 : openCamera(); break;
+            case 2 :
+                if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    openCamera();
+                }
+            break;
         }
     }
 

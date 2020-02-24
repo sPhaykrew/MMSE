@@ -58,9 +58,9 @@ public class Login extends AppCompatActivity {
 
         if (CheckInternet()){
             requestSignIn();
-            Log.d("dddddddddddddddd","true");
+            Log.d("check_internet","true");
         } else {
-            Log.d("dddddddddddddddd","fail");
+            Log.d("check_internet","fail");
         }
 
 

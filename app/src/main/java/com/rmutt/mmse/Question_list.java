@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -58,6 +59,7 @@ import com.rmutt.mmse.Tests.No_7;
 import com.rmutt.mmse.Tests.No_8;
 import com.rmutt.mmse.Tests.No_9;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -123,10 +125,13 @@ public class Question_list extends AppCompatActivity {
 
         finish_upload = new Dialog(this);
         finish_upload.setContentView(R.layout.finish_uplod_dialog);
+        finish_upload.setCancelable(false);
         Button cf_finish_upload = finish_upload.findViewById(R.id.cf);
         cf_finish_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                database.delete_patient(patient_PK); //ลบผู้ใช้งาน
+                finish();
                 finish_upload.dismiss();
             }
         });
@@ -590,37 +595,13 @@ public class Question_list extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(String s) {
                                                 progressDialog.dismiss();
+                                                for (int i=0;i<uploadFile_models.size();i++){
+                                                    java.io.File file = new java.io.File(uploadFile_models.get(i).getFile_path());
+                                                    file.delete();
+                                                }
+                                                finish_upload.show();
+//                                              Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
 
-                                                ProgressDialog progressDialog = new ProgressDialog(Question_list.this);
-                                                progressDialog.setTitle("กำลังส่งข้อมูล");
-                                                progressDialog.setMessage("โปรดรอ...");
-                                                progressDialog.setCancelable(false);
-                                                progressDialog.setCanceledOnTouchOutside(false);
-                                                progressDialog.show();
-
-                                                shearfile().addOnSuccessListener(new OnSuccessListener<String>() { //แชร์ข้อมูลไปให้ไดรหลัก
-                                                    @Override
-                                                    public void onSuccess(String s) {
-                                                        progressDialog.dismiss();
-
-                                                        for (int i=0;i<uploadFile_models.size();i++){
-                                                            java.io.File file = new java.io.File(uploadFile_models.get(i).getFile_path());
-                                                            file.delete();
-                                                        }
-                                                        database.delete_patient(patient_PK); //ลบผู้ใช้งาน
-                                                        finish();
-                                                        finish_upload.show();
-//                                                        Toast.makeText(getApplicationContext(),"ส่งข้อมูลเสร็จสิ้น",Toast.LENGTH_SHORT).show();
-                                                    }
-                                                }).addOnFailureListener(new OnFailureListener() {
-                                                    @Override
-                                                    public void onFailure(@NonNull Exception e) {
-                                                        progressDialog.dismiss();
-                                                        deleteFolder(googleDriveService,folderId);
-                                                        upload_error.show();
-//                                                        Toast.makeText(getApplicationContext(),"เกิดข้อผิดพลาด กรุณากดส่งข้อมูลใหม่",Toast.LENGTH_SHORT).show();
-                                                    }
-                                                });
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
@@ -661,18 +642,19 @@ public class Question_list extends AppCompatActivity {
                 });
 
             } else {
-                check_GD.show();
 //                Toast.makeText(getApplicationContext(), "กรุณาล็อคอินกุเกิลไดรไดรฟ์ก่อนส่งข้อมูล", Toast.LENGTH_SHORT).show();
+                check_GD.show();
             }
         } else {
-            check_internet.show();
 //            Toast.makeText(getApplicationContext(), "กรุณาเชื่อมต่ออินเตอร์เน็ต", Toast.LENGTH_SHORT).show();
+            check_internet.show();
         }
     }
 
     public Task<String> create_folder(String forlderName) {
         return Tasks.call(mExecutor,()-> {
             File fileMetadata = new File();
+            fileMetadata.setParents(Collections.singletonList("1CLJHId_4X_BTp1aHbVAESWCfaAsJ4Dqm"));
             fileMetadata.setName(forlderName); //ตั่งชื่อ folder ใน google drive
             fileMetadata.setMimeType("application/vnd.google-apps.folder");
             File file = null;
@@ -715,14 +697,14 @@ public class Question_list extends AppCompatActivity {
             //get file patient data
             uploadFile_model getFile = new uploadFile_model();
             getFile.setFile_path(database.get_patient_data_path(patient_PK));
-            getFile.setFile_name(test_ID +"_" + "ข้อมูลผู้ป่วย" + ".csv");
+            getFile.setFile_name(test_ID +"_P"  + ".csv");
             getFile.setType("text/csv");
             uploadFile_models.add(getFile);
 
             //get file test data
             getFile = new uploadFile_model();
             getFile.setFile_path(database.get_test_data_path(patient_PK));
-            getFile.setFile_name(test_ID +"_" + "ผลการทำแบบทดสอบ" + ".csv");
+            getFile.setFile_name(test_ID +"_R"  + ".csv");
             getFile.setType("text/csv");
             uploadFile_models.add(getFile);
 
@@ -776,7 +758,7 @@ public class Question_list extends AppCompatActivity {
         });
     }
 
-    public Task<String> searchFolder_andDelete(Drive service, ArrayList<getFolder_model> models, String folderUpload_Name) { //delete folder in google drive
+    public Task<String> searchFolder_andDelete(Drive service,ArrayList<getFolder_model> models,String folderUpload_Name) { //delete folder in google drive
         return Tasks.call(mExecutor,()-> {
             for (int i=0;i<models.size();i++) {
                 if (models.get(i).getFolder_name().equals(folderUpload_Name)){
@@ -785,7 +767,6 @@ public class Question_list extends AppCompatActivity {
                     } catch (IOException e) {
                         System.out.println("An error occurred: " + e);
                     }
-                } else {
                 }
             }
             return "delete successfully";
@@ -801,6 +782,7 @@ public class Question_list extends AppCompatActivity {
                     result = googleDriveService.files().list()
                             .setQ("mimeType='application/vnd.google-apps.folder'")
                             .setSpaces("drive")
+                            //.setCorpora("user ")
                             .setFields("nextPageToken, files(id, name)")
                             .setPageToken(pageToken)
                             .execute();
@@ -818,6 +800,23 @@ public class Question_list extends AppCompatActivity {
                 pageToken = result.getNextPageToken();
             } while (pageToken != null);
             return "Find folder";
+        });
+    }
+
+    public Task<String> download_file_test_googleDrive(){ //can't dowload file shear
+        return Tasks.call(mExecutor,()->{
+            try {
+                String fileId = "1MSbKDDm7zUJv8pMg4HrZvZ7UK-2A3Hya";
+                String directory_path = Environment.getExternalStorageDirectory().getPath() + "/MMSE/patient.csv";
+                // Retrieve the metadata as a File object.
+                FileOutputStream outputStream = new FileOutputStream(new java.io.File(directory_path));
+                googleDriveService.files().get(fileId).executeMediaAndDownloadTo(outputStream);
+                return null;
+            } catch (Exception e){
+                Log.d("aaaaaaaaaaaaaa",e.toString());
+            }
+
+            return "download";
         });
     }
 

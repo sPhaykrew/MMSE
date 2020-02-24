@@ -16,6 +16,7 @@ import com.rmutt.mmse.Split;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,24 +34,28 @@ public class Import_Export {
         this.context = context;
     }
 
-    public void import_csv(Uri uri,String PK_auto){
+    public void import_csv(String PK_auto,String mmse_ID){
 
         database = new Database(context);
 
             try {
-                // ContentValues cv = new ContentValues();
-                InputStream inputStream = context.getContentResolver().openInputStream(uri);
+                InputStream inputStream = new FileInputStream(Environment.getExternalStorageDirectory().getPath() + "/MMSE/patient.csv");
                 InputStreamReader isr = new InputStreamReader(inputStream);
                 CSVReader dataRead = new CSVReader(isr);
 
                 String[] get_CSV;
                 dataRead.readNext(); //ข้าม topic ไป คือข้ามบรรทัดแรก
                 while ((get_CSV = dataRead.readNext()) != null) { //get data from csv and insert in db
-                    String pk_auto_sum = get_CSV[0]+"_"+PK_auto;
-                    database.insert_patient(get_CSV[0],get_CSV[1],Integer.parseInt(get_CSV[2]),null,null,null
-                    ,null,null,"เริ่มทำ",pk_auto_sum);
-                    database.insert_patient_id_test(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+                    if (get_CSV[0].equals(mmse_ID)) {
+                        String pk_auto_sum = get_CSV[1] + "_" + PK_auto;
+                        database.insert_patient(get_CSV[1], get_CSV[2], Integer.parseInt(get_CSV[3]), null, null, null
+                                , null, null, "เริ่มทำ", pk_auto_sum);
+                        database.import_patient(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+                    }
                 }
+                //delete file after success import patient
+                java.io.File file = new java.io.File(Environment.getExternalStorageDirectory().getPath() + "/MMSE/patient.csv");
+                file.delete();
             } catch (Exception e) {
                 Log.d("error",e.toString());
             }
@@ -77,9 +82,15 @@ public class Import_Export {
         try {
 //            String file_name = directory_path + test_ID +"_" +patientModel.getTime() + "_1" + ".csv";
             String file_name = directory_path + test_ID +"_" + "ข้อมูลผู้ป่วย" + ".csv";
-            FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
-            fileOutputStream.write(data.toString().getBytes());
-            fileOutputStream.close();
+//            FileOutputStream fileOutputStream = new FileOutputStream(new File(file_name));
+//            fileOutputStream.write(data.toString().getBytes());
+//            fileOutputStream.close();
+
+            //Writer export = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_name), "Windows-874"));
+            Writer export = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_name), StandardCharsets.UTF_8));
+            export.write(data.toString());
+            export.close();
+
             database.update_patient_data_path(patient_PK,file_name);
             //Toast.makeText(context, "นำออกข้อมูลเสร็จสิ้น", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {

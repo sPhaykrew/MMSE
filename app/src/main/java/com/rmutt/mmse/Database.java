@@ -22,9 +22,26 @@ public class Database extends SQLiteAssetHelper {
         super.onUpgrade(db, oldVersion, newVersion);
     }
 
-    public void insert_patient_id_test(String patient_PK){
+    public void import_patient(String patient_PK){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues Val = new ContentValues();
+        Val.put("Patient_PK",patient_PK);
+        db.insert("Test",null, Val);
+        db.close();
+    }
+
+    public void update_test_ID (String patient_PK,String test_ID){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues Val = new ContentValues();
+        Val.put("test_ID",test_ID);
+        db.update("Test",Val, "patient_PK='" + patient_PK +"'", null);
+        db.close();
+    }
+
+    public void insert_patient_id_test(String patient_PK,String test_ID){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues Val = new ContentValues();
+        Val.put("test_ID",test_ID);
         Val.put("Patient_PK",patient_PK);
         db.insert("Test",null, Val);
         db.close();

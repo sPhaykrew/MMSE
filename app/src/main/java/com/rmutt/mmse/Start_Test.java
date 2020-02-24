@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,6 +44,8 @@ public class Start_Test extends AppCompatActivity {
     int where_position = 0;
     int pk_auto = 0;
     Patient_Model patient;
+    ArrayList<String> get_date_time = new ArrayList<>();
+    String mmse_ID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,6 +70,9 @@ public class Start_Test extends AppCompatActivity {
 
         final SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
         final String patient_PK = sp.getString("Patient_PK", "null");
+
+        SharedPreferences sp_mmse_ID = getSharedPreferences("MMSE", Context.MODE_PRIVATE);
+        mmse_ID = sp_mmse_ID.getString("mmse_ID", "null");
 
         final Database database = new Database(this);
         patient = database.patient(patient_PK);
@@ -97,8 +103,9 @@ public class Start_Test extends AppCompatActivity {
         final Patient_Model patient_model = database.patient(patient_PK);
 
         String sum_date_time;
+        get_date_time = date_time(); //get real date_time
+
         if (patient.getTime() == null) {
-            ArrayList<String> get_date_time = date_time(); //get real date_time
              sum_date_time = get_date_time.get(0)+"/"+get_date_time.get(5)+"/"+get_date_time.get(3)+" "+get_date_time.get(4);
         } else {
             sum_date_time = patient.getTime(); //get old date_time
@@ -231,7 +238,10 @@ public class Start_Test extends AppCompatActivity {
                                 Integer.parseInt(edit_age.getText().toString()),education,calculate,checktest
                                 ,where, finalSum_date_time,"ทำต่อ",pk_auto_sum);
 
-                        database.insert_patient_id_test(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+                        //set test_ID mmse_yymmddhhmm
+                        String test_ID = mmse_ID+"_"+get_date_time.get(3)+get_date_time.get(5)+get_date_time.get(0)+get_date_time.get(6);
+
+                        database.insert_patient_id_test(pk_auto_sum,test_ID); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
 
                         //เวลาเพิ่มผู้ป่วยเอง หน้าต่อไปจะหา patient_id ไม่เจอเลยต้องเคลียแล้วรับค่าจาก edit_id แทนแล้วเซฟใหม่
                         SharedPreferences.Editor editor = sp.edit();
@@ -245,6 +255,12 @@ public class Start_Test extends AppCompatActivity {
                     } else {
                         database.update_patient(patient_PK,edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),
                                 education,calculate,checktest,where, finalSum_date_time);
+
+                        String test_ID = database.test_ID(patient_PK);
+                        String update_test_ID = mmse_ID+"_"+get_date_time.get(3)+get_date_time.get(5)+get_date_time.get(0)+get_date_time.get(6);
+                        if (test_ID == null){
+                            database.update_test_ID(patient_PK,update_test_ID);
+                        }
 
                         if (patient_model.getStatus().equals("เริ่มทำ")){
                             database.update_patient_status(patient_PK,"ทำต่อ");
@@ -265,8 +281,9 @@ public class Start_Test extends AppCompatActivity {
         // index1 name of day
         // index2 name of month
         // index3 year
-        // index4 time
+        // index4 time HH:mm
         // index5 month
+        // index6 time HHmm
 
         final String[] MONTH_array= { "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม",
                 "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน",
@@ -285,13 +302,15 @@ public class Start_Test extends AppCompatActivity {
         Day = cal.get(Calendar.DAY_OF_MONTH);
         String day = new SimpleDateFormat("u").format(cal.getTime());
         SimpleDateFormat time = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        SimpleDateFormat time_2 = new SimpleDateFormat("HHmm", Locale.getDefault());
 
         date_time.add(String.valueOf(Day)); //get day
         date_time.add(DAY_array[Integer.parseInt(day)-1]); //get name of day
         date_time.add(MONTH_array[Month]); //get name of month
         date_time.add(String.valueOf(Year)); //get year
-        date_time.add(time.format(new Date())); //get time
+        date_time.add(time.format(new Date())); //get time HH:mm
         date_time.add(String.valueOf(Month+1)); //get month
+        date_time.add(time_2.format(new Date())); //get time HHmm
 
         return date_time;
     }

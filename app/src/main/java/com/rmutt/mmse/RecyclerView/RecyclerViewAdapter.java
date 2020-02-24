@@ -97,4 +97,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<Recycler_ViewHolde
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, model.size());
     }
+
+    public void refreshItem(int position) {
+        notifyItemChanged(position);
+    }
 }
