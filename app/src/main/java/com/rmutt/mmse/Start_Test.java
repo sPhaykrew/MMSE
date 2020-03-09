@@ -32,10 +32,10 @@ public class Start_Test extends AppCompatActivity {
 
     Spinner spinner_education,spinner_calculate,spinner_checktest,spiner_where;
     EditText edit_id,edit_name,edit_age;
-    String[] education_list = {"","ไม่ได้เรียนหนังสือ","ประถมศึกษา","สูงกว่าประถมศึกษา"};
-    String[] calculate_list = {"","เป็น","ไม่เป็น"};
-    String[] checktest_list = {"","ใช่","ไม่ใช่"};
-    String[] where_list = {"","โรงพยาบาล","บ้าน"};
+    String[] education_list = {"--เลือก--","ไม่ได้เรียนหนังสือ","ประถมศึกษา","สูงกว่าประถมศึกษา"};
+    String[] calculate_list = {"--เลือก--","เป็น","ไม่เป็น"};
+    String[] checktest_list = {"--เลือก--","ใช่","ไม่ใช่"};
+    String[] where_list = {"--เลือก--","โรงพยาบาล","บ้าน"};
     String education,calculate,checktest,where;
     Button next;
     int education_position = 0;
@@ -113,7 +113,11 @@ public class Start_Test extends AppCompatActivity {
 
         if (!patient_PK.equals("null")){
             edit_id.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            edit_name.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
+            edit_age.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
         }
+
+
 
         if (patient.getEducation() != null) {
             switch (patient.getEducation()) {
@@ -221,8 +225,8 @@ public class Start_Test extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (edit_id.getText().toString().equals("") || edit_name.getText().toString().equals("") || //ตรวจว่ากรอกข้อมูลครบหรือไม่
-                        edit_age.getText().toString().equals("0") || education.equals("") || calculate.equals("") ||
-                        checktest.equals("") || where.equals("")){
+                        edit_age.getText().toString().equals("0") || education.equals("--เลือก--") || calculate.equals("--เลือก--") ||
+                        checktest.equals("--เลือก--") || where.equals("--เลือก--")){
                     Toast.makeText(getApplicationContext(),"กรุณากรอกข้อมูลให้ครบ",Toast.LENGTH_SHORT).show();
                 } else {
 
@@ -236,7 +240,7 @@ public class Start_Test extends AppCompatActivity {
 
                         database.insert_patient(edit_id.getText().toString(),edit_name.getText().toString(),
                                 Integer.parseInt(edit_age.getText().toString()),education,calculate,checktest
-                                ,where, finalSum_date_time,"ทำต่อ",pk_auto_sum);
+                                ,where, finalSum_date_time,"ทำต่อ",pk_auto_sum,mmse_ID);
 
                         //set test_ID mmse_yymmddhhmm
                         String test_ID = mmse_ID+"_"+get_date_time.get(3)+get_date_time.get(5)+get_date_time.get(0)+get_date_time.get(6);
@@ -297,7 +301,7 @@ public class Start_Test extends AppCompatActivity {
         ArrayList<String> date_time = new ArrayList<>();
 
         Calendar cal = Calendar.getInstance();
-        Year = cal.get(Calendar.YEAR);
+        Year = cal.get(Calendar.YEAR) + 543;
         Month = cal.get(Calendar.MONTH);
         Day = cal.get(Calendar.DAY_OF_MONTH);
         String day = new SimpleDateFormat("u").format(cal.getTime());

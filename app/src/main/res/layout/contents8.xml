@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3. ปัญหาเกี่ยวกับพฤติกรรม"
+                android:text="- ปัญหาเกี่ยวกับพฤติกรรม"
                 android:textSize="20sp"
                 android:textColor="#53B19D"
                 android:layout_marginEnd="20dp"
@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="2.	ผู้ป่วยที่ชอบเปลื้องผ้าในที่สาธารณะให้ค้นหาสาเหตุและค่อยๆ เบนความสนใจพร้อมกับช่วยใส่เสื้อผ้า ซักถามสิ่งที่ผู้ป่วยต้องการ และอธิบายสิ่งที่ผู้ป่วยเข้าใจผิด ไม่ตำหนิให้ผู้ป่วยอับอาย"
+                    android:text="2.	ผู้ป่วยที่ชอบเปลื้องผ้าในที่สาธารณะให้ค้นหาสาเหตุและค่อย ๆ เบนความสนใจพร้อมกับช่วยใส่เสื้อผ้า ซักถามสิ่งที่ผู้ป่วยต้องการ และอธิบายสิ่งที่ผู้ป่วยเข้าใจผิด ไม่ตำหนิให้ผู้ป่วยอับอาย"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="ผู้ป่วยที่มีปัญหาด้านความจำ การตัดสินใจ และความสามารถในการแก้ปัญหา ทำให้ทำกิจกรรมต่างๆไม่ได้ ทำให้เกิดความรู้สึกทางลบ และแสดงออกมาเป็นพฤติกรรมก้าวร้าวเมื่อมีเหตุการณ์กระตุ้น เช่นระแวงว่ามีคนปองร้าย ระแวงว่ามีคนขโมยของ ฯลฯ"
+                    android:text="ผู้ป่วยที่มีปัญหาด้านความจำ การตัดสินใจ และความสามารถในการแก้ปัญหา ทำให้ทำกิจกรรมต่าง ๆ ไม่ได้ ทำให้เกิดความรู้สึกทางลบ และแสดงออกมาเป็นพฤติกรรมก้าวร้าวเมื่อมีเหตุการณ์กระตุ้น เช่นระแวงว่ามีคนปองร้าย ระแวงว่ามีคนขโมยของ ฯลฯ"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -356,7 +356,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="2.	สามารถให้เด็กๆ เข้าร่วมกิจกรรมด้วยได้ เพราะเด็กชอบฟังเรื่องที่เล่าซ้ำไปมา"
+                    android:text="2.	สามารถให้เด็ก ๆ เข้าร่วมกิจกรรมด้วยได้ เพราะเด็กชอบฟังเรื่องที่เล่าซ้ำไปมา"
                     android:textSize="16sp"/>
 
             </LinearLayout>

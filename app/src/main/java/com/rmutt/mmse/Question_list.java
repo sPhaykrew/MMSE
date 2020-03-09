@@ -131,8 +131,8 @@ public class Question_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 database.delete_patient(patient_PK); //ลบผู้ใช้งาน
-                finish();
                 finish_upload.dismiss();
+                finish();
             }
         });
 
@@ -208,19 +208,22 @@ public class Question_list extends AppCompatActivity {
 
             no4_text_1.setTextColor(Color.parseColor("#808080"));
             no4_text_2.setTextColor(Color.parseColor("#808080"));
-            no4_text_2.setText("ทดสอบสมาธิ(ยกเว้น)");
+            no4_text_2.setText("ทดสอบสมาธิ (ยกเว้น)");
             CompoundButtonCompat.setButtonTintList(no4, new ColorStateList(states, colors));
 
             no9_text_1.setTextColor(Color.parseColor("#808080"));
             no9_text_2.setTextColor(Color.parseColor("#808080"));
-            no9_text_2.setText("ทดสอบการอ่านการเข้าใจความหมาย สามารถทำตามได้(ยกเว้น)");
+            no9_text_2.setText("ทดสอบการอ่านการเข้าใจความหมาย สามารถทำตามได้ (ยกเว้น)");
             CompoundButtonCompat.setButtonTintList(no9, new ColorStateList(states, colors));
 
             no10_text_1.setTextColor(Color.parseColor("#808080"));
             no10_text_2.setTextColor(Color.parseColor("#808080"));
-            no10_text_2.setText("ทดสอบการเขียนภาษาอย่างมีความหมาย(ยกเว้น)");
+            no10_text_2.setText("ทดสอบการเขียนภาษาอย่างมีความหมาย (ยกเว้น)");
             CompoundButtonCompat.setButtonTintList(no10, new ColorStateList(states, colors));
 
+            question_4.setEnabled(false);
+            question_9.setEnabled(false);
+            question_10.setEnabled(false);
 
         }
 

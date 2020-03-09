@@ -45,7 +45,7 @@
             app:backgroundTint="#53B19D"
             android:textSize="16sp"
             android:inputType="text"
-            android:hint="พิมพ์รหัสอาสา">
+            android:hint="พิมพ์รหัสอาสาสมัคร">
         </EditText>
 
         <androidx.appcompat.widget.AppCompatButton

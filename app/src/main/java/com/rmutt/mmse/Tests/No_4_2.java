@@ -58,6 +58,7 @@ public class No_4_2 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -127,7 +128,7 @@ public class No_4_2 extends AppCompatActivity {
 
                     int index = 5-segment.size();
                     for (int i=0;i<index;i++){
-                        segment.add("null");
+                        segment.add("");
                         Log.d("loop", String.valueOf(i));
                     }
 
@@ -198,6 +199,7 @@ public class No_4_2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

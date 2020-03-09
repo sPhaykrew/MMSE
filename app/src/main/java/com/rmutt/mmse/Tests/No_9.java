@@ -64,6 +64,7 @@ public class No_9 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -110,9 +111,11 @@ public class No_9 extends AppCompatActivity {
             if (split.check_answer(get_no9.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup9_1.getChildAt(0)).setChecked(true);
                 edit9_1.setText(split.get_answer(get_no9.get(0)));
+                checkradio9_1 = "correct";
             } else {
                 ((RadioButton) radioGroup9_1.getChildAt(1)).setChecked(true);
                 edit9_1.setText(split.get_answer(get_no9.get(0)));
+                checkradio9_1 = "wrong";
             }
 
 //            for (int i = 0; i < radioGroup9_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
@@ -194,6 +197,7 @@ public class No_9 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

@@ -65,6 +65,7 @@ public class No_2_1 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -105,32 +106,42 @@ public class No_2_1 extends AppCompatActivity {
 
             if (split.check_answer(get_no2.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup2_1.getChildAt(0)).setChecked(true);
+                checkradio2_1 = "correct";
             } else {
                 ((RadioButton)radioGroup2_1.getChildAt(1)).setChecked(true);
+                checkradio2_1 = "wrong";
             }
 
             if (split.check_answer(get_no2.get(1))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup2_2.getChildAt(0)).setChecked(true);
+                checkradio2_2 = "correct";
             } else {
                 ((RadioButton)radioGroup2_2.getChildAt(1)).setChecked(true);
+                checkradio2_2 = "wrong";
             }
 
             if (split.check_answer(get_no2.get(2))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup2_3.getChildAt(0)).setChecked(true);
+                checkradio2_3 = "correct";
             } else {
                 ((RadioButton)radioGroup2_3.getChildAt(1)).setChecked(true);
+                checkradio2_3 = "wrong";
             }
 
             if (split.check_answer(get_no2.get(3))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup2_4.getChildAt(0)).setChecked(true);
+                checkradio2_4 = "correct";
             } else {
                 ((RadioButton)radioGroup2_4.getChildAt(1)).setChecked(true);
+                checkradio2_4 = "wrong";
             }
 
             if (split.check_answer(get_no2.get(4))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup2_5.getChildAt(0)).setChecked(true);
+                checkradio2_5 = "correct";
             } else {
                 ((RadioButton)radioGroup2_5.getChildAt(1)).setChecked(true);
+                checkradio2_5 = "wrong";
             }
 
 //            for (int i = 0; i < radioGroup2_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
@@ -165,7 +176,7 @@ public class No_2_1 extends AppCompatActivity {
             edit2_4.setText(split.get_answer(get_no2.get(3)));
             //edit2_4.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
-            edit2_5.setText(split.get_answer(get_no2.get(3)));
+            edit2_5.setText(split.get_answer(get_no2.get(4)));
             //edit2_5.setFocusable(false); // ปิดไม่ได้ผู้ใช้แก้ไข edit text ได้
 
             //รับค่าเดิมของแต่ละข้อโดยไม่ตัดคำเลย
@@ -362,6 +373,7 @@ public class No_2_1 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

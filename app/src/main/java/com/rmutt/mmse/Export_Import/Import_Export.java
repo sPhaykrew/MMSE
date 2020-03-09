@@ -1,6 +1,7 @@
 package com.rmutt.mmse.Export_Import;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
@@ -29,14 +30,24 @@ public class Import_Export {
 
     Database database;
     static Context context;
+    int pk_auto = 0;
 
     public Import_Export(Context context){
         this.context = context;
     }
 
-    public void import_csv(String PK_auto,String mmse_ID){
+    public void import_csv(String mmse_ID){
 
         database = new Database(context);
+
+        SharedPreferences sp_pk = context.getSharedPreferences("Patient_PK_auto", Context.MODE_PRIVATE);
+        pk_auto = sp_pk.getInt("PK_auto", 0); //โหลดค่า pk_auto
+
+        ArrayList<Patient_Model> patient_all = database.patient_all(mmse_ID);
+        for (int i=0;i<patient_all.size();i++){
+            if (patient_all.get(i).getStatus().equals("เริ่มทำ"))
+            database.delete_patient(patient_all.get(i).getPatient_PK());
+        }
 
             try {
                 InputStream inputStream = new FileInputStream(Environment.getExternalStorageDirectory().getPath() + "/MMSE/patient.csv");
@@ -47,15 +58,33 @@ public class Import_Export {
                 dataRead.readNext(); //ข้าม topic ไป คือข้ามบรรทัดแรก
                 while ((get_CSV = dataRead.readNext()) != null) { //get data from csv and insert in db
                     if (get_CSV[0].equals(mmse_ID)) {
-                        String pk_auto_sum = get_CSV[1] + "_" + PK_auto;
-                        database.insert_patient(get_CSV[1], get_CSV[2], Integer.parseInt(get_CSV[3]), null, null, null
-                                , null, null, "เริ่มทำ", pk_auto_sum);
-                        database.import_patient(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+
+                        boolean check_patient = false;
+                        pk_auto = pk_auto+1; //กำหนด pk เอง เวลาเพิ่มผู้ป่วยซ้ำจะได้ระบุ pk เองได้
+
+                        for (int i=0;i<patient_all.size();i++){ // ตรวจสอบว่า ผู้ป่วยที่นำเข้าต้องไม่ซ้ำกับผู้ป่วยที่มีอยู่ ที่มีสถาะ ทำต่อกับพร้อมส่ง
+                            if (!patient_all.get(i).getStatus().equals("เริ่มทำ") && patient_all.get(i).getPatient_ID().equals(get_CSV[1])){
+                                check_patient = true;
+                                break;
+                            }
+                        }
+
+                        if (!check_patient) {
+                            String pk_auto_sum = get_CSV[1] + "_" + pk_auto;
+                            database.insert_patient(get_CSV[1], get_CSV[2], Integer.parseInt(get_CSV[3]), null, null, null
+                                    , null, null, "เริ่มทำ", pk_auto_sum,mmse_ID);
+                            database.import_patient(pk_auto_sum); //เพิ่ม id ที่หน้า table test ไม่งั้นจะ error
+                        }
                     }
                 }
                 //delete file after success import patient
                 java.io.File file = new java.io.File(Environment.getExternalStorageDirectory().getPath() + "/MMSE/patient.csv");
                 file.delete();
+
+                SharedPreferences.Editor editor_pk_auto = sp_pk.edit(); //บันทึกค่า pk_auto
+                editor_pk_auto.putInt("PK_auto",pk_auto);
+                editor_pk_auto.apply();
+
             } catch (Exception e) {
                 Log.d("error",e.toString());
             }
@@ -68,10 +97,18 @@ public class Import_Export {
         String test_ID = database.test_ID(patient_PK);
         int get_result_score = database.get_result_score(patient_PK);
 
+        int full_score; //คะแนนเต็ม
+
+        if (patientModel.getEducation().equals("ไม่ได้เรียนหนังสือ")){
+            full_score = 23;
+        } else {
+            full_score = 30;
+        }
+
         StringBuilder data = new StringBuilder();
-        data.append("รหัสการทำแบบทดสอบ,รหัสอาสาสมัคร,รหัสผู้ป่วย,วันที่ทำแบบทดสอบ,ระดับการศึกษา,สถานที่ทำแบบทดสอบ,ทำแบบทดสอบภายใน 2 เดือนหรือไม่,ผลประเมิน\n");
+        data.append("รหัสการทำแบบทดสอบ,รหัสอาสาสมัคร,รหัสผู้ป่วย,วันที่ทำแบบทดสอบ,ระดับการศึกษา,คิดเลขในใจเป็นไหม,สถานที่ทำแบบทดสอบ,ทำแบบทดสอบภายใน 2 เดือนหรือไม่,ผลประเมิน,คะแนนเต็ม\n");
         data.append(test_ID+","+mmse_ID+","+patientModel.getPatient_ID()+","+patientModel.getTime()+","+patientModel.getEducation()+","+
-                patientModel.getWhere()+","+patientModel.getCheck_test()+","+get_result_score);
+                patientModel.getCalculate()+","+patientModel.getWhere()+","+patientModel.getCheck_test()+","+get_result_score+","+full_score);
 
         String directory_path = Environment.getExternalStorageDirectory().getPath() + "/MMSE/";
         File file = new File(directory_path);

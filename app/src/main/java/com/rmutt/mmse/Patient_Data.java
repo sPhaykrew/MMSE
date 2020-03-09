@@ -1,17 +1,17 @@
 package com.rmutt.mmse;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.rmutt.mmse.RecyclerView.RecyclerViewAdapter;
 import com.rmutt.mmse.RecyclerView.Patient_Model;
@@ -26,6 +26,7 @@ public class Patient_Data extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
+    String mmse_ID;
 
     public Patient_Data() {
         // Required empty public constructor
@@ -40,6 +41,9 @@ public class Patient_Data extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewMain);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        SharedPreferences sp = this.getActivity().getSharedPreferences("MMSE", Context.MODE_PRIVATE);
+        mmse_ID = sp.getString("mmse_ID", "null");
+
         return view;
     }
 
@@ -53,7 +57,7 @@ public class Patient_Data extends Fragment {
     private ArrayList<Patient_Model> prepare_data(){
         Database database = new Database(getContext());
         ArrayList<Patient_Model> model;
-        model = database.Patient_all();
+        model = database.patient_all(mmse_ID);
         return model;
     }
 

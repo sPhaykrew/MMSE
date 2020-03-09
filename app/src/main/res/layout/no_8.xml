@@ -58,11 +58,20 @@
                         android:textSize="16sp"
                         android:text="แล้ววางไว้ที่" />
 
-                    <Spinner
-                        android:layout_width="100dp"
-                        android:layout_marginStart="10dp"
+                    <FrameLayout
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/spinner_place"/>
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/spinner_background">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#53B19D"
+                            android:id="@+id/spinner_place" >
+                        </androidx.appcompat.widget.AppCompatSpinner>
+
+                    </FrameLayout>
 
                 </LinearLayout>
 

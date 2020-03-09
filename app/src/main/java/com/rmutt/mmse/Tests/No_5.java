@@ -66,6 +66,7 @@ public class No_5 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -131,25 +132,31 @@ public class No_5 extends AppCompatActivity {
             if (split.check_answer(get_no5.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup5_1.getChildAt(0)).setChecked(true);
                 edit5_1.setText(split.get_answer(get_no5.get(0)));
+                checkradio5_1 = "correct";
             } else {
                 ((RadioButton) radioGroup5_1.getChildAt(1)).setChecked(true);
                 edit5_1.setText(split.get_answer(get_no5.get(0)));
+                checkradio5_1 = "wrong";
             }
 
             if (split.check_answer(get_no5.get(1))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup5_2.getChildAt(0)).setChecked(true);
                 edit5_2.setText(split.get_answer(get_no5.get(1)));
+                checkradio5_2 = "correct";
             } else {
                 ((RadioButton) radioGroup5_2.getChildAt(1)).setChecked(true);
                 edit5_2.setText(split.get_answer(get_no5.get(1)));
+                checkradio5_2 = "wrong";
             }
 
             if (split.check_answer(get_no5.get(2))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton) radioGroup5_3.getChildAt(0)).setChecked(true);
                 edit5_3.setText(split.get_answer(get_no5.get(2)));
+                checkradio5_3 = "correct";
             } else {
                 ((RadioButton) radioGroup5_3.getChildAt(1)).setChecked(true);
                 edit5_3.setText(split.get_answer(get_no5.get(2)));
+                checkradio5_3 = "wrong";
             }
 
 //            for (int i = 0; i < radioGroup5_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
@@ -328,6 +335,7 @@ public class No_5 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

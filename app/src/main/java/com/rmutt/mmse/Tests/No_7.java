@@ -63,6 +63,7 @@ public class No_7 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -92,7 +93,7 @@ public class No_7 extends AppCompatActivity {
         Patient_Model patient_model = database.patient(Patient_PK);
         Split split = new Split();
 
-        question.setText("ตั้งใจฟัง ผม/ดิฉัน เมื่อผม/ดิฉัน พูดข้อความนี้แล้วให้คุณ "+split.get_FirstName(patient_model.getName())+" พูดตาม ผม/ดิฉัน จะบอกเพียงครั้งเดียว“ใครใคร่ขายไข่ไก่”");
+        question.setText("ตั้งใจฟัง ผม/ดิฉัน เมื่อผม/ดิฉัน พูดข้อความนี้แล้วให้คุณ "+split.get_FirstName(patient_model.getName())+" พูดตาม ผม/ดิฉัน จะบอกเพียงครั้งเดียว “ใครใคร่ขายไข่ไก่”");
 
         ArrayList<String> get_no7 = database.get_no7(Patient_PK);
         if (get_no7.get(0) != null){
@@ -100,14 +101,16 @@ public class No_7 extends AppCompatActivity {
             if (split.check_answer(get_no7.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup7_1.getChildAt(0)).setChecked(true);
                 edit7_1.setText(split.get_answer(get_no7.get(0)));
+                checkradio7_1 = "correct";
             } else {
                 ((RadioButton)radioGroup7_1.getChildAt(1)).setChecked(true);
                 edit7_1.setText(split.get_answer(get_no7.get(0)));
+                checkradio7_1 = "wrong";
             }
 
-            for (int i = 0; i < radioGroup7_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
-                radioGroup7_1.getChildAt(i).setEnabled(false);
-            }
+//            for (int i = 0; i < radioGroup7_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
+//                radioGroup7_1.getChildAt(i).setEnabled(false);
+//            }
 
             //edit7_1.setFocusable(false); //ปิดไม่ให้แก้ไขได้
 
@@ -185,6 +188,7 @@ public class No_7 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

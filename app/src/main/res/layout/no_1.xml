@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -123,15 +124,21 @@
 
                         </RadioGroup>
 
-                        <EditText
-                            android:layout_width="160dp"
+                        <FrameLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="3dp"
-                            android:inputType="text"
-                            android:textSize="16sp"
-                            android:id="@+id/edit1_2"
-                            app:backgroundTint="#53B19D" />
+                            android:background="@drawable/spinner_background"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginStart="30dp">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#53B19D"
+                                android:id="@+id/spinner_day" >
+                            </androidx.appcompat.widget.AppCompatSpinner>
+
+                        </FrameLayout>
 
                     </LinearLayout>
 
@@ -176,15 +183,21 @@
 
                         </RadioGroup>
 
-                        <EditText
-                            android:layout_width="160dp"
+                        <FrameLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="3dp"
-                            android:inputType="text"
-                            android:textSize="16sp"
-                            android:id="@+id/edit1_3"
-                            app:backgroundTint="#53B19D" />
+                            android:background="@drawable/spinner_background"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginStart="30dp">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#53B19D"
+                                android:id="@+id/spinner_month" >
+                            </androidx.appcompat.widget.AppCompatSpinner>
+
+                        </FrameLayout>
 
                     </LinearLayout>
 
@@ -199,7 +212,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1.4 ปีนี้ปีอะไร"
+                        android:text="1.4 ปีนี้ปี พ.ศ. อะไร"
                         android:textSize="16sp" />
 
                     <LinearLayout
@@ -282,14 +295,21 @@
 
                         </RadioGroup>
 
-                        <Spinner
-                            android:layout_width="150dp"
+                        <FrameLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="3dp"
-                            android:backgroundTint="#53B19D"
-                            android:id="@+id/spinner_season">
-                        </Spinner>
+                            android:background="@drawable/spinner_background"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginStart="30dp">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#53B19D"
+                                android:id="@+id/spinner_season" >
+                            </androidx.appcompat.widget.AppCompatSpinner>
+
+                        </FrameLayout>
 
                     </LinearLayout>
 
@@ -321,4 +341,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

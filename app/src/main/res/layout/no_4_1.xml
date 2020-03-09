@@ -40,7 +40,7 @@
                 android:layout_marginStart="70dp"
                 android:layout_marginEnd="20dp"
                 android:textSize="16sp"
-                android:text="คิดเลขในใจเอา 100 ตั้ง ลบออกทีละ 7 ไปเรื่อยๆ ได้ผลเท่าไหรบอกมา " />
+                android:text="คิดเลขในใจเอา 100 ตั้ง ลบออกทีละ 7 ไปเรื่อย ๆ ได้ผลเท่าไหร่บอกมา " />
 
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -141,7 +141,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="บริหารสมองโดยฝึกให้คิดบ่อยๆ เช่น อ่านและเขียนหนังสือ เล่นเกมส์ตอบปัญหา นับเลขถอยหลัง"
+                    android:text="บริหารสมองโดยฝึกให้คิดบ่อย ๆ เช่น อ่านและเขียนหนังสือ เล่นเกมส์ตอบปัญหา นับเลขถอยหลัง"
                     android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
@@ -189,7 +189,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="การทำกิจกรรมต่างๆ เช่น เข้าชมรมผู้สูงอายุ เป็นจิตอาสาในโรงพยาบาล"
+                    android:text="การทำกิจกรรมต่าง ๆ เช่น เข้าชมรมผู้สูงอายุ เป็นจิตอาสาในโรงพยาบาล"
                     android:textSize="16sp"
                     android:textColor="#CC000000"/>
 

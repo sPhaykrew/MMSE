@@ -103,7 +103,7 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
 
         Toolbar toolbar = findViewById(R.id.toolbar_main);
         TextView Title = toolbar.findViewById(R.id.title);
-        Title.setText("หมายเลขอาสา "+mmse_ID);
+        Title.setText("รหัส อสม. "+mmse_ID);
         ImageView show_menu = toolbar.findViewById(R.id.show_menu);
 
 
@@ -122,7 +122,6 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                 } else {
                     popupMenu.getMenu().findItem(R.id.google_drive).setVisible(false); //ซ่อนเมนู
                 }
-
 
                 popupMenu.show();
             }
@@ -173,8 +172,8 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
 
             case R.id.logout :
                 Intent logout = new Intent(getApplicationContext(),Login.class);
-                startActivity(logout);
                 finish();
+                startActivity(logout);
                 return true;
 
             case R.id.import_patient :
@@ -192,16 +191,16 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
 
                 return true;
 
-            case R.id.add_patient :
-                SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
-
-                editor.clear(); // clear data
-                editor.apply();
-
-                Intent intent = new Intent(this,Start_Test.class);
-                startActivity(intent);
-                return true;
+//            case R.id.add_patient :
+//                SharedPreferences sp = getSharedPreferences("Patient", Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sp.edit();
+//
+//                editor.clear(); // clear data
+//                editor.apply();
+//
+//                Intent intent = new Intent(this,Start_Test.class);
+//                startActivity(intent);
+//                return true;
 
             case R.id.google_drive :
 
@@ -407,11 +406,12 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
             pDialog.dismiss();
 
             pk_auto = pk_auto+1; //กำหนด pk เอง เวลาเพิ่มผู้ป่วยซ้ำจะได้ระบุ pk เองได้
-            Import.import_csv(String.valueOf(pk_auto),mmse_ID); //ดูได้หน้า start test
             SharedPreferences.Editor editor_pk_auto = sp_pk.edit();
             editor_pk_auto.putInt("PK_auto",pk_auto);
             editor_pk_auto.apply();
 
+//            Import.import_csv(String.valueOf(pk_auto),mmse_ID); //ดูได้หน้า start test
+            Import.import_csv(mmse_ID); //ดูได้หน้า start test
             ViewPager.setAdapter(pageAdapter); //reload tablayout
         }
 

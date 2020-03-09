@@ -109,8 +109,8 @@ public class history extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 database.delete_patient(patient_PK); //ลบผู้ใช้งาน
-                finish();
                 finish_upload.dismiss();
+                finish();
             }
         });
 
@@ -143,6 +143,14 @@ public class history extends AppCompatActivity {
 
         database = new Database(getApplicationContext());
         final Patient_Model patient = database.patient(patient_PK);
+
+        if (patient.getTime() == null){
+            patient.setTime("-");
+        }
+
+        if (patient.getEducation() == null){
+            patient.setEducation("-");
+        }
 
         patient_ID.setText("หมายเลขผู้ป่วย : " + patient.getPatient_ID());
         patient_name.setText("ชื่อ : " + patient.getName());

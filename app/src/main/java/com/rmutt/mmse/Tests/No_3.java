@@ -66,6 +66,7 @@ public class No_3 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -105,8 +106,8 @@ public class No_3 extends AppCompatActivity {
 
         Split split = new Split();
 
-        question.setText("ขอให้คุณ "+ split.get_FirstName(patient_model.getName()) + " โปรดตั้งใจฟังให้ดีเพราะจะบอกเพียงครั่งเดียวไม่มีการบอกซ้ำอีกเมื่อ ผม/ดิฉันพูดจบให้คุณ " + split.get_FirstName(patient_model.getName())
-        + " พูดทบทวนตามที่ได้ยิน ให้ครบทั้ง 3 ชื่อแล้วพยายามจำไว้ให้ดีเดี่ยว ผม/ดิฉัน จะถามซ้ำ");
+        question.setText("ขอให้คุณ "+ split.get_FirstName(patient_model.getName()) + " โปรดตั้งใจฟังให้ดีเพราะจะบอกเพียงครั้งเดียวไม่มีการบอกซ้ำอีกเมื่อ ผม/ดิฉัน พูดจบให้คุณ " + split.get_FirstName(patient_model.getName())
+        + " พูดทบทวนตามที่ได้ยิน ให้ครบทั้ง 3 ชื่อแล้วพยายามจำไว้ให้ดี เดี๋ยว ผม/ดิฉัน จะถามซ้ำ");
 
         switch (check_test) {
             case "ใช่" :
@@ -136,25 +137,31 @@ public class No_3 extends AppCompatActivity {
             if (split.check_answer(get_no3.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup3_1.getChildAt(0)).setChecked(true);
                 edit3_1.setText(split.get_answer(get_no3.get(0)));
+                checkradio3_1 = "correct";
             } else {
                 ((RadioButton)radioGroup3_1.getChildAt(1)).setChecked(true);
                 edit3_1.setText(split.get_answer(get_no3.get(0)));
+                checkradio3_1 = "wrong";
             }
 
             if (split.check_answer(get_no3.get(1))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup3_2.getChildAt(0)).setChecked(true);
                 edit3_2.setText(split.get_answer(get_no3.get(1)));
+                checkradio3_2 = "correct";
             } else {
                 ((RadioButton)radioGroup3_2.getChildAt(1)).setChecked(true);
                 edit3_2.setText(split.get_answer(get_no3.get(1)));
+                checkradio3_2 = "wrong";
             }
 
             if (split.check_answer(get_no3.get(2))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup3_3.getChildAt(0)).setChecked(true);
                 edit3_3.setText(split.get_answer(get_no3.get(2)));
+                checkradio3_3 = "correct";
             } else {
                 ((RadioButton)radioGroup3_3.getChildAt(1)).setChecked(true);
                 edit3_3.setText(split.get_answer(get_no3.get(2)));
+                checkradio3_3 = "wrong";
             }
 
 //            for (int i = 0; i < radioGroup3_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
@@ -339,6 +346,7 @@ public class No_3 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="การเรียกชื่อสิ่งของไม่ถูก พูดซ้ำๆ พูดไม่รู้เรื่อง การเรียกชื่อคนผิดพลาด"
+                    android:text="การเรียกชื่อสิ่งของไม่ถูก พูดซ้ำ ๆ พูดไม่รู้เรื่อง การเรียกชื่อคนผิดพลาด"
                     android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
@@ -141,7 +141,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="คิดเรื่องยากๆ คิดแก้ปัญหาไม่ได้ ตัดสินใจผิดพลาดมากขึ้น"
+                    android:text="คิดเรื่องยาก ๆ คิดแก้ปัญหาไม่ได้ ตัดสินใจผิดพลาดมากขึ้น"
                     android:textSize="16sp"
                     android:textColor="#CC000000"/>
 

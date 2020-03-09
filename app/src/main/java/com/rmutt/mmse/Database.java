@@ -47,12 +47,12 @@ public class Database extends SQLiteAssetHelper {
         db.close();
     }
 
-    public ArrayList<Patient_Model> Patient_all(){ //query all patient
+    public ArrayList<Patient_Model> patient_all(String mmse_ID){ //query all patient
         ArrayList<Patient_Model> patient_models = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select patient_ID,name,age,education,calculate,check_test,status,where_,time,patient_PK " +
-                "from patient",null);
+                "from patient where mmse_ID = '" + mmse_ID + "'",null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             Patient_Model model = new Patient_Model();
@@ -140,7 +140,7 @@ public class Database extends SQLiteAssetHelper {
     }
 
     public void insert_patient (String patient_ID,String name,int age,String education,String calculate,String check_test
-    ,String where,String time,String status,String patient_PK_auto){
+    ,String where,String time,String status,String patient_PK_auto,String mmse_ID){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues Val = new ContentValues();
         Val.put("Patient_PK",patient_PK_auto);
@@ -153,6 +153,7 @@ public class Database extends SQLiteAssetHelper {
         Val.put("status",status);
         Val.put("where_",where);
         Val.put("time",time);
+        Val.put("mmse_ID",mmse_ID);
         db.insert("Patient", null, Val);
         db.close();
     }

@@ -131,7 +131,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ผู้ดูแลต้องจัดแบ่งเวลาให้กับตนเองและบุคคลอื่นๆ ในครอบครัว เช่น สามี ลูก ฯลฯ"
+            android:text="ผู้ดูแลต้องจัดแบ่งเวลาให้กับตนเองและบุคคลอื่น ๆ ในครอบครัว เช่น สามี ลูก ฯลฯ"
             android:textSize="16sp"
             android:textColor="#CC000000"/>
 

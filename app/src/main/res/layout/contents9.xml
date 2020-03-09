@@ -283,7 +283,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ดูแลความสะอาดภายในบ้านและภายในห้องต่างๆ"
+                    android:text="ดูแลความสะอาดภายในบ้านและภายในห้องต่าง ๆ"
                     android:textSize="16sp"
                     android:textColor="#CC000000"/>
 
@@ -388,6 +388,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <LinearLayout

@@ -46,7 +46,7 @@ public class No_8 extends AppCompatActivity {
     String get_EditText1,get_EditText2,get_EditText3;
 
     Spinner spinner_place;
-    String[] place_list = {"","พื้น","โต๊ะ","เตียง"};
+    String[] place_list = {"--เลือก--","พื้น","โต๊ะ","เตียง"};
 
     String check_spinner = "";
 
@@ -74,6 +74,7 @@ public class No_8 extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), Question_list.class);
                         startActivity(intent);
+                        dialog_back.dismiss();
                         finish();
                     }
                 });
@@ -113,7 +114,7 @@ public class No_8 extends AppCompatActivity {
 
         Split split = new Split();
 
-        question.setText("ฟังดีๆนะเดี๋ยว ผม/ดิฉัน จะส่งกระดาษให้คุณ แล้วคุณ "+split.get_FirstName(patient_model.getName())+" รับด้วยมือขวาพับครึ่งกระดาษ");
+        question.setText("ฟังดี ๆ นะเดี๋ยว ผม/ดิฉัน จะส่งกระดาษให้คุณ แล้วคุณ "+split.get_FirstName(patient_model.getName())+" รับด้วยมือขวาพับครึ่งกระดาษ");
 
 //        edit8_1.setFocusable(false); // ปิดไว้ไม่ให้พิมพ์ได้ จะพิมพ์ได้ตัวเมื่อเลือก"ถูก"
 //        edit8_2.setFocusable(false);
@@ -125,25 +126,31 @@ public class No_8 extends AppCompatActivity {
             if (split.check_answer(get_no8.get(0))){ //สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup8_1.getChildAt(0)).setChecked(true);
                 edit8_1.setText(split.get_answer(get_no8.get(0)));
+                checkradio8_1 = "correct";
             } else {
                 ((RadioButton)radioGroup8_1.getChildAt(1)).setChecked(true);
                 edit8_1.setText(split.get_answer(get_no8.get(0)));
+                checkradio8_1 = "wrong";
             }
 
             if (split.check_answer(get_no8.get(1))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup8_2.getChildAt(0)).setChecked(true);
                 edit8_2.setText(split.get_answer(get_no8.get(1)));
+                checkradio8_2 = "correct";
             } else {
                 ((RadioButton)radioGroup8_2.getChildAt(1)).setChecked(true);
                 edit8_2.setText(split.get_answer(get_no8.get(1)));
+                checkradio8_2 = "wrong";
             }
 
             if (split.check_answer(get_no8.get(1))){//สั้งให้ radiogroup เช็คคำตอบ
                 ((RadioButton)radioGroup8_3.getChildAt(0)).setChecked(true);
                 edit8_3.setText(split.get_answer(get_no8.get(2)));
+                checkradio8_3 = "correct";
             } else {
                 ((RadioButton)radioGroup8_3.getChildAt(1)).setChecked(true);
                 edit8_3.setText(split.get_answer(get_no8.get(2)));
+                checkradio8_3 = "wrong";
             }
 
 //            for (int i = 0; i < radioGroup8_1.getChildCount(); i++) { // สั่งให้ radiogroup เช็คไม่ได้
@@ -254,21 +261,34 @@ public class No_8 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.radio8_3_correct :
-                        checkradio8_3 = "correct";
-                        edit8_3.setText(question3.getText().toString());
-                        sumscore = sumscore + 1;
+
+                        if (check_spinner.equals("--เลือก--")){
+                            Toast.makeText(getApplicationContext(),"กรุณาเลือกสถานที่",Toast.LENGTH_SHORT).show();
+                            ((RadioButton)radioGroup8_3.getChildAt(0)).setChecked(false);
+                        } else {
+                            checkradio8_3 = "correct";
+                            edit8_3.setText(question3.getText().toString());
+                            sumscore = sumscore + 1;
+                        }
                         break;
                     case R.id.radio8_3_wrong :
 //                        edit8_3.setFocusableInTouchMode(true); //เปิดให้แก้ไข edittext
-                        if (checkradio8_3.equals("correct"))
-                        {
-                            sumscore = sumscore - 1;
+
+                        if (check_spinner.equals("--เลือก--")){
+                            Toast.makeText(getApplicationContext(),"กรุณาเลือกสถานที่",Toast.LENGTH_SHORT).show();
+                            ((RadioButton)radioGroup8_3.getChildAt(1)).setChecked(false);
+                        } else {
+                            if (checkradio8_3.equals("correct"))
+                            {
+                                sumscore = sumscore - 1;
+                            }
+
+                            if (edit8_3.getText().toString().equals(question3.getText().toString())){
+                                edit8_3.setText("");
+                            }
+                            checkradio8_3 = "wrong";
                         }
 
-                        if (edit8_3.getText().toString().equals(question3.getText().toString())){
-                            edit8_3.setText("");
-                        }
-                        checkradio8_3 = "wrong";
                         break;
                 }
             }
@@ -278,7 +298,7 @@ public class No_8 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (radioGroup8_1.getCheckedRadioButtonId() == -1 || radioGroup8_2.getCheckedRadioButtonId() == -1 ||
-                radioGroup8_3.getCheckedRadioButtonId() == -1 || check_spinner.equals("")) {
+                radioGroup8_3.getCheckedRadioButtonId() == -1 || check_spinner.equals("--เลือก--")) {
                     Toast.makeText(getApplicationContext(), "กรุณากรอกข้อมูลให้ครบ", Toast.LENGTH_SHORT).show();
                 } else if (checkradio8_1.equals("wrong") && edit8_1.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "กรุณากรอกข้อมูลให้ครบ", Toast.LENGTH_SHORT).show();
@@ -342,6 +362,7 @@ public class No_8 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Question_list.class);
                 startActivity(intent);
+                dialog_back.dismiss();
                 finish();
             }
         });

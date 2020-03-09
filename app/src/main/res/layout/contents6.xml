@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1. ปัญหาเกี่ยวกับการสูญเสียความสามารถในการปฏิบัติกิจวัตรประจำวัน"
+                android:text="- ปัญหาเกี่ยวกับการสูญเสียความสามารถในการปฏิบัติกิจวัตรประจำวัน"
                 android:textSize="20sp"
                 android:textColor="#53B19D"
                 android:layout_marginEnd="20dp"
@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="2. ให้เวลาผู้สูงอายุทำกิจวัตรประจำวันต่างๆ เช่น ล้างจาน จัดโต๊ะอาหาร"
+                    android:text="2. ให้เวลาผู้สูงอายุทำกิจวัตรประจำวันต่าง ๆ เช่น ล้างจาน จัดโต๊ะอาหาร"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -517,7 +517,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="3. แจ้งผู้ล่วงหน้าว่ากำลังจะเริ่มอาบน้ำ จัดบรรยากาศในการอาบน้ำให้เป็นเรื่องง่ายๆ หลีกเลี่ยงการบังคับ"
+                    android:text="3. แจ้งผู้ล่วงหน้าว่ากำลังจะเริ่มอาบน้ำ จัดบรรยากาศในการอาบน้ำให้เป็นเรื่องง่าย ๆ หลีกเลี่ยงการบังคับ"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -540,7 +540,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="4. การอาบนํ้าโดยใช้ฝักบัวจะเป็นวิธีที่สะดวก ทำความคุ้นเคย และค่อยๆอาบน้ำให้แก่ผู้ป่วย  "
+                    android:text="4. การอาบนํ้าโดยใช้ฝักบัวจะเป็นวิธีที่สะดวก ทำความคุ้นเคย และค่อย ๆ อาบน้ำให้แก่ผู้ป่วย  "
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -874,7 +874,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="9.	หากมีความจำเป็น เตรียมกระโถนปัสสาวะไว้ใกล้ๆ ที่นอน  หรือใช้ผ้าอ้อมสำหรับผู้สูงอายุ"
+                    android:text="9.	หากมีความจำเป็น เตรียมกระโถนปัสสาวะไว้ใกล้ ๆ ที่นอน  หรือใช้ผ้าอ้อมสำหรับผู้สูงอายุ"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -978,7 +978,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="2.	จัดบรรยากาศ เวลา สถานที่ ในการรับประทานอาหารให้เหมือนเดิมสม่ำเสมอ สังเกตชนิดของอาหารที่ผู้ป่วยชอบรับประทาน การจัดอาหารประเภทเดิมๆที่ผู้ป่วยคุ้นเคย"
+                    android:text="2.	จัดบรรยากาศ เวลา สถานที่ ในการรับประทานอาหารให้เหมือนเดิมสม่ำเสมอ สังเกตชนิดของอาหารที่ผู้ป่วยชอบรับประทาน การจัดอาหารประเภทเดิม ๆ ที่ผู้ป่วยคุ้นเคย"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -1116,7 +1116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="8.	จัดอาหารมื้อเล็กๆ หลายมื้อ"
+                    android:text="8.	จัดอาหารมื้อเล็ก ๆ หลายมื้อ"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -1300,7 +1300,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="16.	ใช้สิ่งที่เตือนความจำในเวลากินอาหาร เช่น นาฬิกาที่มีตัวเลขใหญ่ๆ นาฬิกาปลุก"
+                    android:text="16.	ใช้สิ่งที่เตือนความจำในเวลากินอาหาร เช่น นาฬิกาที่มีตัวเลขใหญ่ ๆ นาฬิกาปลุก"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -1542,7 +1542,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="7.	หลีกเลี่ยงการทำกิจกรรมที่ตื่นเต้น หรือการพาไปในสถานที่ที่มีคนมากๆในช่วงเย็นและค่ำ"
+                    android:text="7.	หลีกเลี่ยงการทำกิจกรรมที่ตื่นเต้น หรือการพาไปในสถานที่ที่มีคนมาก ๆ ในช่วงเย็นและค่ำ"
                     android:textSize="16sp"/>
 
             </LinearLayout>
@@ -1646,7 +1646,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#808080"
-                    android:text="2.	เมื่อผู้ป่วยเล่าถึงความหลังควรปล่อยให้เล่าไปเรื่อยๆ ไม่ควรขัดจังหวะ หรือขัดแย้ง "
+                    android:text="2.	เมื่อผู้ป่วยเล่าถึงความหลังควรปล่อยให้เล่าไปเรื่อย ๆ ไม่ควรขัดจังหวะ หรือขัดแย้ง "
                     android:textSize="16sp"/>
 
             </LinearLayout>

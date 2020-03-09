@@ -13,7 +13,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
-        android:text="6. ทดสอบการบอกชื่อสิ่งของทีไ่ด้เห็น" />
+        android:text="6. ทดสอบการบอกชื่อสิ่งของที่ได้เห็น" />
 
     <LinearLayout
         android:layout_width="match_parent"

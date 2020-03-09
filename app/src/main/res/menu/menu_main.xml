@@ -9,9 +9,9 @@
         android:title="นำเข้าผู้ป่วย">
     </item>
 
-    <item android:id="@+id/add_patient"
-        android:title="เพิ่มผู้ป่วย">
-    </item>
+<!--    <item android:id="@+id/add_patient"-->
+<!--        android:title="เพิ่มผู้ป่วย">-->
+<!--    </item>-->
 
     <item android:id="@+id/google_drive"
         android:title="เข้าสู่ระบบกูเกิลไดรฟ์">

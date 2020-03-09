@@ -229,7 +229,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ทดสอบการบอกชื่อสิ่งของทีไ่ด้เห็น"
+                    android:text="ทดสอบการบอกชื่อสิ่งของที่ได้เห็น"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:layout_weight="1"
@@ -305,7 +305,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ทดสอบการเข้าใจความมายและทำตามคำสั่ง"
+                    android:text="ทดสอบการเข้าใจความหมายและทำตามคำสั่ง"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:layout_weight="1"

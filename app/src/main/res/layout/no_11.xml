@@ -52,7 +52,7 @@
                     android:textSize="14sp"
                     android:theme="@style/Button_3"
                     android:id="@+id/show_message"
-                    android:text="แสดงข้อความ" />
+                    android:text="แสดงภาพ" />
 
                 <View
                     android:layout_width="match_parent"
