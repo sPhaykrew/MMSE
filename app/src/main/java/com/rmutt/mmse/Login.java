@@ -1,6 +1,7 @@
 package com.rmutt.mmse;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,6 +29,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.json.gson.GsonFactory;
@@ -88,7 +90,7 @@ public class Login extends AppCompatActivity {
         switch (requestCode){
             case 48 :
                 if (resultCode == RESULT_OK){
-                    handleSignInIntent(data);
+                handleSignInIntent(data);
                 }
                 break;
         }
@@ -97,7 +99,7 @@ public class Login extends AppCompatActivity {
     public void requestSignIn(){
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail().requestScopes(new Scope(DriveScopes.DRIVE_FILE)).build();
-        GoogleSignInClient client = GoogleSignIn.getClient(this,signInOptions);
+        GoogleSignInClient client = GoogleSignIn.getClient(getApplicationContext(),signInOptions);
         startActivityForResult(client.getSignInIntent(),48);
     }
 

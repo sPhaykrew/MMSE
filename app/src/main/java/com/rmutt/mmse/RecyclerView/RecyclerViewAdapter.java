@@ -50,9 +50,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<Recycler_ViewHolde
         holder.time.setText(model.get(position).getTime());
         holder.status_corlor.setBackgroundColor(model.get(position).getStatus_color());
 
-        if (model.get(position).getStatus().equals("พร้อมส่ง")){ //hide button dele if status = พร้อมส่ง
-            holder.imageButton.setVisibility(View.INVISIBLE);
-        }
+//        if (model.get(position).getStatus().equals("พร้อมส่ง")){ //hide button dele if status = พร้อมส่ง
+//            holder.imageButton.setVisibility(View.INVISIBLE);
+//        }
 
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override

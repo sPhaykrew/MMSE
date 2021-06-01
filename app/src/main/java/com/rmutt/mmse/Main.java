@@ -243,7 +243,7 @@ public class Main extends AppCompatActivity implements PopupMenu.OnMenuItemClick
     public void requestSignIn(){
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail().requestScopes(new Scope(DriveScopes.DRIVE_FILE)).build();
-        GoogleSignInClient client = GoogleSignIn.getClient(this,signInOptions);
+        GoogleSignInClient client = GoogleSignIn.getClient(getApplicationContext(),signInOptions);
         startActivityForResult(client.getSignInIntent(),48);
     }
 
